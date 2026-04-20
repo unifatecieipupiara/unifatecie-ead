@@ -234,10 +234,7 @@
       display: flex;
       transition: transform .45s cubic-bezier(.4,0,.2,1);
     }
-    .depoimento-card {
-      min-width: 100%;
-      padding: 0 8px;
-    }
+    .depoimento-card { min-width: 100%; padding: 0 8px; }
     .depoimento-inner {
       background: var(--light);
       border-radius: 16px;
@@ -251,8 +248,7 @@
       gap: 16px;
     }
     .depoimento-foto {
-      width: 100px;
-      height: 100px;
+      width: 88px; height: 88px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid var(--primary);
@@ -261,7 +257,7 @@
     }
     .depoimento-estrelas { color: #f97316; font-size: 1.2rem; letter-spacing: 2px; }
     .depoimento-texto {
-      font-size: .90rem;
+      font-size: 0.9rem;
       color: #374151;
       line-height: 1.5;
       font-style: italic;
@@ -269,29 +265,17 @@
     }
     .depoimento-texto::before { content: '"'; }
     .depoimento-texto::after  { content: '"'; }
-    .depoimento-nome {
-      font-weight: 700;
-      font-size: .95rem;
-      color: var(--dark);
-    }
-    .depoimento-detalhes {
-      font-size: .82rem;
-      color: var(--gray);
-      margin-top: -10px;
-    }
+    .depoimento-nome { font-weight: 700; font-size: .95rem; color: var(--dark); }
+    .depoimento-detalhes { font-size: .82rem; color: var(--gray); margin-top: -10px; }
 
     .carrossel-btn {
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 50%; transform: translateY(-50%);
       background: var(--primary);
       color: var(--white);
-      border: none;
-      border-radius: 50%;
+      border: none; border-radius: 50%;
       width: 42px; height: 42px;
-      font-size: 1.2rem;
-      cursor: pointer;
-      z-index: 10;
+      font-size: 1.2rem; cursor: pointer; z-index: 10;
       box-shadow: 0 4px 14px rgba(0,0,0,.15);
       transition: background .2s, transform .2s;
       display: flex; align-items: center; justify-content: center;
@@ -306,41 +290,29 @@
     }
 
     .carrossel-dots {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 24px;
+      display: flex; justify-content: center;
+      gap: 8px; margin-top: 24px;
     }
     .dot {
-      width: 10px; height: 10px;
-      border-radius: 50%;
-      background: #d1d5db;
-      cursor: pointer;
-      transition: background .2s, transform .2s;
-      border: none;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: #d1d5db; cursor: pointer;
+      transition: background .2s, transform .2s; border: none;
     }
     .dot.ativo { background: var(--primary); transform: scale(1.25); }
 
-    .depoimento-cta {
-      text-align: center;
-      margin-top: 40px;
-    }
+    .depoimento-cta { text-align: center; margin-top: 40px; }
     .btn-depoimento {
       display: inline-block;
       background: transparent;
       border: 2px solid var(--primary);
       color: var(--primary);
-      font-weight: 700;
-      font-size: .95rem;
-      padding: 12px 30px;
-      border-radius: 50px;
+      font-weight: 700; font-size: .95rem;
+      padding: 12px 30px; border-radius: 50px;
       text-decoration: none;
       transition: background .2s, color .2s, transform .2s;
     }
     .btn-depoimento:hover {
-      background: var(--primary);
-      color: var(--white);
-      transform: translateY(-2px);
+      background: var(--primary); color: var(--white); transform: translateY(-2px);
     }
 
     /* ===== FORMULÁRIO ===== */
@@ -358,110 +330,103 @@
     }
     .form-group { margin-bottom: 20px; }
     .form-group label {
-      display: block;
-      font-weight: 600;
-      font-size: .88rem;
-      color: var(--dark);
-      margin-bottom: 6px;
+      display: block; font-weight: 600;
+      font-size: .88rem; color: var(--dark); margin-bottom: 6px;
     }
     .form-group input,
     .form-group textarea {
-      width: 100%;
-      padding: 12px 16px;
-      border: 1.5px solid #d4d4d8;
-      border-radius: 8px;
-      font-size: .95rem;
-      color: var(--dark);
+      width: 100%; padding: 12px 16px;
+      border: 1.5px solid #d4d4d8; border-radius: 8px;
+      font-size: .95rem; color: var(--dark);
       background: var(--light);
       transition: border-color .2s, background .2s;
       font-family: inherit;
     }
     .form-group input:focus,
     .form-group textarea:focus {
-      outline: none;
-      border-color: var(--primary);
-      background: var(--white);
+      outline: none; border-color: var(--primary); background: var(--white);
     }
     .form-group textarea { resize: vertical; min-height: 90px; }
 
     .opcoes-curso {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 20px;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 12px; margin-bottom: 20px;
     }
     @media(max-width: 480px){ .opcoes-curso { grid-template-columns: 1fr; } }
     .opcao-btn {
       padding: 14px 16px;
-      border: 2px solid #d4d4d8;
-      border-radius: 10px;
-      background: var(--light);
-      color: var(--dark);
-      font-size: .9rem;
-      font-weight: 600;
-      cursor: pointer;
+      border: 2px solid #d4d4d8; border-radius: 10px;
+      background: var(--light); color: var(--dark);
+      font-size: .9rem; font-weight: 600; cursor: pointer;
       text-align: center;
       transition: border-color .2s, background .2s, color .2s, transform .15s;
-      font-family: inherit;
-      line-height: 1.4;
+      font-family: inherit; line-height: 1.4;
     }
     .opcao-btn:hover { border-color: var(--primary); background: #fff7ed; transform: translateY(-2px); }
     .opcao-btn.ativo { border-color: var(--primary); background: var(--primary); color: var(--white); }
     .opcao-btn .opcao-icon { font-size: 1.4rem; display: block; margin-bottom: 6px; }
 
-    #campo-curso {
-      display: none;
-      margin-bottom: 20px;
-      animation: slideDown .25s ease;
-    }
+    #campo-curso { display: none; margin-bottom: 20px; animation: slideDown .25s ease; }
     @keyframes slideDown {
       from { opacity: 0; transform: translateY(-8px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
     .btn-submit {
-      width: 100%;
-      background: var(--primary);
-      color: #111111;
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 14px;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
+      width: 100%; background: var(--primary); color: #111111;
+      font-weight: 700; font-size: 1rem; padding: 14px;
+      border: none; border-radius: 50px; cursor: pointer;
       transition: background .2s, transform .2s;
-      margin-top: 4px;
-      box-shadow: 0 4px 18px rgba(0,0,0,.2);
+      margin-top: 4px; box-shadow: 0 4px 18px rgba(0,0,0,.2);
     }
     .btn-submit:hover { background: #ea580c; transform: translateY(-2px); }
     .form-note { text-align: center; font-size: .8rem; color: var(--gray); margin-top: 12px; }
     .success-msg {
-      display: none;
-      background: #d1fae5;
-      border: 1px solid #6ee7b7;
-      border-radius: 8px;
-      padding: 16px;
-      text-align: center;
-      color: #065f46;
-      font-weight: 600;
-      margin-top: 20px;
+      display: none; background: #d1fae5;
+      border: 1px solid #6ee7b7; border-radius: 8px;
+      padding: 16px; text-align: center;
+      color: #065f46; font-weight: 600; margin-top: 20px;
     }
 
     /* ===== FOOTER ===== */
     footer {
-      background: #18181b;
-      color: rgba(229,231,235,.8);
-      text-align: center;
-      padding: 32px 20px;
-      font-size: .88rem;
+      background: #18181b; color: rgba(229,231,235,.8);
+      text-align: center; padding: 32px 20px; font-size: .88rem;
     }
     footer strong { color: var(--primary); }
     footer a { color: var(--primary); text-decoration: none; }
 
-    /* ===== WHATSAPP FLUTUANTE ===== */
-    .float-wa {
+    /* ===== BOTÕES FLUTUANTES ===== */
+    .float-buttons {
       position: fixed;
       bottom: 28px; right: 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
+      z-index: 999;
+    }
+
+    /* Instagram */
+    .float-ig {
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #f77737);
+      color: var(--white);
+      border-radius: 50px;
+      padding: 12px 18px;
+      font-weight: 700;
+      font-size: .85rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 6px 24px rgba(131,58,180,.4);
+      transition: transform .2s, opacity .2s;
+    }
+    .float-ig:hover { transform: scale(1.06); opacity: .92; }
+    .float-ig svg { width: 20px; height: 20px; fill: var(--white); }
+
+    /* WhatsApp */
+    .float-wa {
       background: var(--accent);
       color: var(--white);
       border-radius: 50px;
@@ -473,7 +438,6 @@
       align-items: center;
       gap: 8px;
       box-shadow: 0 6px 24px rgba(37,211,102,.45);
-      z-index: 999;
       transition: transform .2s, background .2s;
     }
     .float-wa:hover { transform: scale(1.06); background: #1ebe5c; }
@@ -519,9 +483,20 @@
         <div class="feature-icon">📱</div>
         <h3>Atendimento pelo WhatsApp</h3>
         <p>Tire dúvidas e faça sua matrícula com atendimento rápido e humanizado.</p>
-      </div>      
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📚</div>
+        <h3>Material Atualizado</h3>
+        <p>Conteúdos desenvolvidos por especialistas e focados no mercado de trabalho.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏠</div>
+        <h3>Perto de Você</h3>
+        <p>Polos por todo o Brasil para realização de aulas e provas em cursos semipresenciais.</p>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
 <!-- ===== POLOS ===== -->
 <section id="polos">
@@ -544,7 +519,7 @@
           <a href="https://wa.me/5574981270882?text=Ol%C3%A1!%20Tenho%20interesse%20em%20um%20curso%20EAD%20da%20Unifatecie%20-%20Polo%20Barra%20do%20Mendes.%20Pode%20me%20ajudar%3F"
              class="btn-whatsapp" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.659 1.438 5.168L2 22l4.985-1.407A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.18a8.18 8.18 0 01-4.169-1.14l-.299-.178-3.094.873.858-3.02-.195-.31A8.18 8.18 0 013.82 12c0-4.517 3.664-8.18 8.18-8.18 4.517 0 8.18 3.663 8.18 8.18 0 4.516-3.663 8.18-8.18 8.18z"/></svg>
-            FALAR COM O POLO
+            Falar com o Polo Barra do Mendes
           </a>
         </div>
       </div>
@@ -556,13 +531,13 @@
         </div>
         <div class="polo-body">
           <ul class="polo-info">
-            <li><span class="icon">📞</span><span><strong>WhatsApp:</strong> (74) 98127-0882</span></li>
+            <li><span class="icon">📞</span><span><strong>WhatsApp:</strong> (74) 99957-5795</span></li>
             <li><span class="icon">✅</span><span>Suporte completo desde a inscrição até a conclusão do curso.</span></li>
           </ul>
-          <a href="https://wa.me/557498127-0882?text=Ol%C3%A1!%20Tenho%20interesse%20em%20um%20curso%20EAD%20da%20Unifatecie%20-%20Polo%20Ipupiara.%20Pode%20me%20ajudar%3F"
+          <a href="https://wa.me/5574999575795?text=Ol%C3%A1!%20Tenho%20interesse%20em%20um%20curso%20EAD%20da%20Unifatecie%20-%20Polo%20Ipupiara.%20Pode%20me%20ajudar%3F"
              class="btn-whatsapp" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.659 1.438 5.168L2 22l4.985-1.407A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.18a8.18 8.18 0 01-4.169-1.14l-.299-.178-3.094.873.858-3.02-.195-.31A8.18 8.18 0 013.82 12c0-4.517 3.664-8.18 8.18-8.18 4.517 0 8.18 3.663 8.18 8.18 0 4.516-3.663 8.18-8.18 8.18z"/></svg>
-            FALAR COM O POLO
+            Falar com o Polo Ipupiara
           </a>
         </div>
       </div>
@@ -580,7 +555,7 @@
           <a href="https://wa.me/5574999575795?text=Ol%C3%A1!%20Gostaria%20de%20encontrar%20um%20polo%20Unifatecie%20EAD%20perto%20de%20mim.%20Pode%20me%20ajudar%3F"
              class="btn-whatsapp" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.659 1.438 5.168L2 22l4.985-1.407A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.18a8.18 8.18 0 01-4.169-1.14l-.299-.178-3.094.873.858-3.02-.195-.31A8.18 8.18 0 013.82 12c0-4.517 3.664-8.18 8.18-8.18 4.517 0 8.18 3.663 8.18 8.18 0 4.516-3.663 8.18-8.18 8.18z"/></svg>
-            ENCONTRAR MEU POLO
+            Encontrar meu polo pelo WhatsApp
           </a>
         </div>
       </div>
@@ -679,16 +654,14 @@
 <!-- ===== DEPOIMENTOS ===== -->
 <section id="depoimentos">
   <div class="container">
-    <h2 class="section-title">O que nossos alunos dizem:</h2>
+    <h2 class="section-title">O que nossos alunos dizem</h2>
     <p class="section-sub">Depoimentos reais de quem já estudou ou estuda nos nossos polos.</p>
     <div class="divider"></div>
 
     <div class="carrossel-wrapper">
       <button class="carrossel-btn prev" onclick="moverCarrossel(-1)" aria-label="Anterior">&#8592;</button>
       <button class="carrossel-btn next" onclick="moverCarrossel(1)"  aria-label="Próximo">&#8594;</button>
-
       <div class="carrossel-track" id="carrosselTrack">
-
 
         <!-- DEPOIMENTO 1 -->
         <div class="depoimento-card">
@@ -696,23 +669,19 @@
             <img class="depoimento-foto" src="foto1.jpeg" alt="Foto do aluno 1"
                  onerror="this.style.background='#d1d5db';this.removeAttribute('src')"/>
             <div class="depoimento-estrelas">★★★★★</div>
-            <p class="depoimento-texto">
-              Fico muito feliz em falar da experiência com a Unifatecie, especialmente no polo de Barra do Mendes. Foi lá que tive a oportunidade de concluir minha pós-graduação, e só tenho gratidão por tudo que vivi durante esse período. O polo oferece um ambiente acolhedor, com suporte sempre disponível e profissionais comprometidos em ajudar cada aluno a alcançar seus objetivos. A flexibilidade no ensino on-line, aliada à qualidade do conteúdo, fez toda a diferença na minha formação. Sem dúvidas, é uma excelente escolha para quem busca crescer profissionalmente sem abrir mão da organização da rotina. Uma experiência que levarei comigo com muito carinho!
-            </p>
-            <div class="depoimento-nome">Karen Mirielly</div>
-            <div class="depoimento-detalhes">Pós-Graduação – Polo Barra do Mendes</div>
+            <p class="depoimento-texto">[Conte sua experiência: copie aqui o texto enviado no Forms.]</p>
+            <div class="depoimento-nome">[Nome do Aluno 1]</div>
+            <div class="depoimento-detalhes">[Curso] – Polo [Barra do Mendes ou Ipupiara]</div>
           </div>
         </div>
 
         <!-- DEPOIMENTO 2 -->
         <div class="depoimento-card">
           <div class="depoimento-inner">
-            <img class="depoimento-foto" src="foto2.jpg" alt="Foto do aluno 2"
+            <img class="depoimento-foto" src="foto2.jpeg" alt="Foto do aluno 2"
                  onerror="this.style.background='#d1d5db';this.removeAttribute('src')"/>
             <div class="depoimento-estrelas">★★★★★</div>
-            <p class="depoimento-texto">
-              [Conte sua experiência: copie aqui o texto enviado no Forms.]
-            </p>
+            <p class="depoimento-texto">[Conte sua experiência: copie aqui o texto enviado no Forms.]</p>
             <div class="depoimento-nome">[Nome do Aluno 2]</div>
             <div class="depoimento-detalhes">[Curso] – Polo [Barra do Mendes ou Ipupiara]</div>
           </div>
@@ -721,12 +690,10 @@
         <!-- DEPOIMENTO 3 -->
         <div class="depoimento-card">
           <div class="depoimento-inner">
-            <img class="depoimento-foto" src="foto3.jpg" alt="Foto do aluno 3"
+            <img class="depoimento-foto" src="foto3.jpeg" alt="Foto do aluno 3"
                  onerror="this.style.background='#d1d5db';this.removeAttribute('src')"/>
             <div class="depoimento-estrelas">★★★★★</div>
-            <p class="depoimento-texto">
-              [Conte sua experiência: copie aqui o texto enviado no Forms.]
-            </p>
+            <p class="depoimento-texto">[Conte sua experiência: copie aqui o texto enviado no Forms.]</p>
             <div class="depoimento-nome">[Nome do Aluno 3]</div>
             <div class="depoimento-detalhes">[Curso] – Polo [Barra do Mendes ou Ipupiara]</div>
           </div>
@@ -735,12 +702,10 @@
         <!-- DEPOIMENTO 4 -->
         <div class="depoimento-card">
           <div class="depoimento-inner">
-            <img class="depoimento-foto" src="foto4.jpg" alt="Foto do aluno 4"
+            <img class="depoimento-foto" src="foto4.jpeg" alt="Foto do aluno 4"
                  onerror="this.style.background='#d1d5db';this.removeAttribute('src')"/>
             <div class="depoimento-estrelas">★★★★★</div>
-            <p class="depoimento-texto">
-              [Conte sua experiência: copie aqui o texto enviado no Forms.]
-            </p>
+            <p class="depoimento-texto">[Conte sua experiência: copie aqui o texto enviado no Forms.]</p>
             <div class="depoimento-nome">[Nome do Aluno 4]</div>
             <div class="depoimento-detalhes">[Curso] – Polo [Barra do Mendes ou Ipupiara]</div>
           </div>
@@ -749,12 +714,10 @@
         <!-- DEPOIMENTO 5 -->
         <div class="depoimento-card">
           <div class="depoimento-inner">
-            <img class="depoimento-foto" src="foto5.jpg" alt="Foto do aluno 5"
+            <img class="depoimento-foto" src="foto5.jpeg" alt="Foto do aluno 5"
                  onerror="this.style.background='#d1d5db';this.removeAttribute('src')"/>
             <div class="depoimento-estrelas">★★★★★</div>
-            <p class="depoimento-texto">
-              [Conte sua experiência: copie aqui o texto enviado no Forms.]
-            </p>
+            <p class="depoimento-texto">[Conte sua experiência: copie aqui o texto enviado no Forms.]</p>
             <div class="depoimento-nome">[Nome do Aluno 5]</div>
             <div class="depoimento-detalhes">[Curso] – Polo [Barra do Mendes ou Ipupiara]</div>
           </div>
@@ -771,7 +734,6 @@
         Deixe seu depoimento
       </a>
     </div>
-
   </div>
 </section>
 
@@ -832,59 +794,29 @@
   <p style="margin-top:12px;font-size:.78rem;opacity:.6;">© 2026 Polos Unifatecie EAD. Todos os direitos reservados.</p>
 </footer>
 
-    /* ===== BOTÕES FLUTUANTES ===== */
-    .float-buttons {
-      position: fixed;
-      bottom: 28px; right: 28px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 12px;
-      z-index: 999;
-    }
+<!-- ===== BOTÕES FLUTUANTES ===== -->
+<div class="float-buttons">
 
-    /* Instagram */
-    .float-ig {
-      background: linear-gradient(135deg, #833ab4, #fd1d1d, #f77737);
-      color: var(--white);
-      border-radius: 50px;
-      padding: 12px 18px;
-      font-weight: 700;
-      font-size: .85rem;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 6px 24px rgba(131,58,180,.4);
-      transition: transform .2s, opacity .2s;
-    }
-    .float-ig:hover { transform: scale(1.06); opacity: .92; }
-    .float-ig svg { width: 20px; height: 20px; fill: var(--white); }
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/unifatecie.barradomendes/"
+     class="float-ig" target="_blank" rel="noopener" aria-label="Instagram">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+    </svg>
+    Instagram
+  </a>
 
-    /* WhatsApp */
-    .float-wa {
-      background: var(--accent);
-      color: var(--white);
-      border-radius: 50px;
-      padding: 14px 22px;
-      font-weight: 700;
-      font-size: .9rem;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 6px 24px rgba(37,211,102,.45);
-      transition: transform .2s, background .2s;
-    }
-    .float-wa:hover { transform: scale(1.06); background: #1ebe5c; }
-    .float-wa svg { width: 22px; height: 22px; fill: var(--white); }
-  </style>
-</head>
-<body>
+  <!-- WhatsApp -->
+  <a href="https://wa.me/5574981270882?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20cursos%20EAD%20da%20Unifatecie."
+     class="float-wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.659 1.438 5.168L2 22l4.985-1.407A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.18a8.18 8.18 0 01-4.169-1.14l-.299-.178-3.094.873.858-3.02-.195-.31A8.18 8.18 0 013.82 12c0-4.517 3.664-8.18 8.18-8.18 4.517 0 8.18 3.663 8.18 8.18 0 4.516-3.663 8.18-8.18 8.18z"/></svg>
+    WhatsApp
+  </a>
 
+</div>
 
 <script>
-  /* ===== CARROSSEL DE DEPOIMENTOS ===== */
+  /* ===== CARROSSEL ===== */
   let atual = 0;
   const track  = document.getElementById('carrosselTrack');
   const cards  = track.querySelectorAll('.depoimento-card');
@@ -909,7 +841,6 @@
   }
 
   function moverCarrossel(dir) { irPara(atual + dir); }
-
   setInterval(() => moverCarrossel(1), 6000);
 
   let startX = 0;
@@ -919,7 +850,7 @@
     if(Math.abs(diff) > 50) moverCarrossel(diff > 0 ? 1 : -1);
   });
 
-  /* ===== OPÇÕES DO FORMULÁRIO ===== */
+  /* ===== FORMULÁRIO ===== */
   let opcaoSelecionada = '';
 
   function selecionarOpcao(opcao) {
@@ -939,7 +870,6 @@
     }
   }
 
-  /* ===== ENVIO DO FORMULÁRIO ===== */
   document.getElementById('leadForm').addEventListener('submit', function(e) {
     e.preventDefault();
     const nome     = document.getElementById('nome').value.trim();
