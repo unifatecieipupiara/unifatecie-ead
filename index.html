@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Unifatecie EAD – Polos Barra do Mendes e Ipupiara</title>
   <style>
-    /* ===== RESET & BASE ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
@@ -13,11 +12,8 @@
       color: #111111;
       background: #f4f4f5;
     }
-
-    /* ===== VARIÁVEIS DE COR ===== */
     :root {
       --primary:   #f97316;
-      --secondary: #111111;
       --accent:    #25D366;
       --light:     #f4f4f5;
       --dark:      #111111;
@@ -26,7 +22,7 @@
       --radius:    12px;
     }
 
-    /* ===== HEADER / HERO ===== */
+    /* ===== HEADER ===== */
     header {
       background: linear-gradient(135deg, #111111 45%, #18181b 100%);
       color: var(--white);
@@ -54,12 +50,9 @@
     .logo-img {
       max-height: 80px;
       width: auto;
-      margin-bottom: 16px;
-      position: relative;
-      z-index: 1;
+      margin: 0 auto 16px;
       display: block;
-      margin-left: auto;
-      margin-right: auto;
+      position: relative; z-index: 1;
     }
     header h1 {
       font-size: clamp(1.6rem, 4vw, 2.8rem);
@@ -90,19 +83,13 @@
     }
     .btn-hero:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(0,0,0,.4);
       background: #ea580c;
     }
 
     /* ===== WAVE ===== */
-    .wave {
-      display: block;
-      width: 100%;
-      background: #111111;
-      margin-bottom: -2px;
-    }
+    .wave { display: block; width: 100%; background: #111111; margin-bottom: -2px; }
 
-    /* ===== SEÇÕES GENÉRICAS ===== */
+    /* ===== GENÉRICO ===== */
     section { padding: 64px 20px; }
     .container { max-width: 1100px; margin: 0 auto; }
     .section-title {
@@ -140,17 +127,9 @@
       border: 1px solid #e5e7eb;
       transition: transform .2s, box-shadow .2s;
     }
-    .feature-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 6px 22px rgba(0,0,0,.12);
-    }
+    .feature-card:hover { transform: translateY(-6px); box-shadow: 0 6px 22px rgba(0,0,0,.12); }
     .feature-icon { font-size: 2.4rem; margin-bottom: 16px; }
-    .feature-card h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 8px;
-    }
+    .feature-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
     .feature-card p { color: var(--gray); font-size: .95rem; line-height: 1.5; }
 
     /* ===== POLOS ===== */
@@ -168,10 +147,7 @@
       transition: transform .2s, box-shadow .2s;
       background: var(--white);
     }
-    .polo-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 28px rgba(0,0,0,.12);
-    }
+    .polo-card:hover { transform: translateY(-6px); box-shadow: 0 8px 28px rgba(0,0,0,.12); }
     .polo-header {
       background: linear-gradient(135deg, #111111, #27272a);
       color: var(--white);
@@ -208,11 +184,7 @@
       transition: background .2s, transform .2s, box-shadow .2s;
       box-shadow: 0 4px 14px rgba(37,211,102,.3);
     }
-    .btn-whatsapp:hover {
-      background: #1ebe5c;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(37,211,102,.45);
-    }
+    .btn-whatsapp:hover { background: #1ebe5c; transform: translateY(-2px); }
     .btn-whatsapp svg { width: 20px; height: 20px; fill: var(--white); flex-shrink: 0; }
 
     /* ===== CURSOS ===== */
@@ -231,30 +203,11 @@
       box-shadow: 0 2px 8px rgba(0,0,0,.04);
       transition: transform .15s, box-shadow .15s;
     }
-    .curso-item:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 16px rgba(0,0,0,.08);
-    }
-    .curso-nome {
-      font-weight: 700;
-      font-size: .98rem;
-      color: var(--dark);
-      margin-bottom: 6px;
-    }
-    .curso-info {
-      font-size: .85rem;
-      color: var(--gray);
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
+    .curso-item:hover { transform: translateY(-3px); box-shadow: 0 4px 16px rgba(0,0,0,.08); }
+    .curso-nome { font-weight: 700; font-size: .98rem; color: var(--dark); margin-bottom: 6px; }
+    .curso-info { font-size: .85rem; color: var(--gray); display: flex; flex-direction: column; gap: 2px; }
     .curso-info span strong { color: #374151; }
-
-    /* ===== CURSOS FOOTER ===== */
-    .cursos-footer {
-      text-align: center;
-      margin-top: 36px;
-    }
+    .cursos-footer { text-align: center; margin-top: 36px; }
     .cursos-footer-destaque {
       display: inline-block;
       background: var(--primary);
@@ -265,19 +218,10 @@
       border-radius: 50px;
       text-decoration: none;
       box-shadow: 0 4px 18px rgba(249,115,22,.35);
-      transition: background .2s, transform .2s, box-shadow .2s;
+      transition: background .2s, transform .2s;
     }
-    .cursos-footer-destaque:hover {
-      background: #ea580c;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 22px rgba(249,115,22,.45);
-    }
-    .cursos-footer-destaque svg {
-      width: 20px; height: 20px;
-      fill: var(--white);
-      vertical-align: middle;
-      margin-right: 8px;
-    }
+    .cursos-footer-destaque:hover { background: #ea580c; transform: translateY(-2px); }
+    .cursos-footer-destaque svg { width: 20px; height: 20px; fill: var(--white); vertical-align: middle; margin-right: 8px; }
 
     /* ===== FORMULÁRIO ===== */
     #contato { background: #111111; }
@@ -288,10 +232,9 @@
       background: var(--white);
       border-radius: var(--radius);
       padding: 40px 36px;
-      max-width: 640px;
+      max-width: 580px;
       margin: 0 auto;
       box-shadow: 0 8px 40px rgba(0,0,0,.35);
-      border: 1px solid #e5e7eb;
     }
     .form-group { margin-bottom: 20px; }
     .form-group label {
@@ -319,9 +262,53 @@
       border-color: var(--primary);
       background: var(--white);
     }
-    .form-group textarea { resize: vertical; min-height: 100px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    @media(max-width:520px){ .form-row { grid-template-columns: 1fr; } }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+
+    /* ===== OPÇÕES DE CURSO ===== */
+    .opcoes-curso {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    @media(max-width: 480px){ .opcoes-curso { grid-template-columns: 1fr; } }
+    .opcao-btn {
+      padding: 14px 16px;
+      border: 2px solid #d4d4d8;
+      border-radius: 10px;
+      background: var(--light);
+      color: var(--dark);
+      font-size: .9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: border-color .2s, background .2s, color .2s, transform .15s;
+      font-family: inherit;
+      line-height: 1.4;
+    }
+    .opcao-btn:hover {
+      border-color: var(--primary);
+      background: #fff7ed;
+      transform: translateY(-2px);
+    }
+    .opcao-btn.ativo {
+      border-color: var(--primary);
+      background: var(--primary);
+      color: var(--white);
+    }
+    .opcao-btn .opcao-icon { font-size: 1.4rem; display: block; margin-bottom: 6px; }
+
+    /* Campo curso (oculto por padrão) */
+    #campo-curso {
+      display: none;
+      margin-bottom: 20px;
+      animation: slideDown .25s ease;
+    }
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
     .btn-submit {
       width: 100%;
       background: var(--primary);
@@ -334,19 +321,10 @@
       cursor: pointer;
       transition: background .2s, transform .2s, box-shadow .2s;
       margin-top: 4px;
-      box-shadow: 0 4px 18px rgba(0,0,0,.25);
+      box-shadow: 0 4px 18px rgba(0,0,0,.2);
     }
-    .btn-submit:hover {
-      background: #ea580c;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 22px rgba(0,0,0,.35);
-    }
-    .form-note {
-      text-align: center;
-      font-size: .8rem;
-      color: var(--gray);
-      margin-top: 12px;
-    }
+    .btn-submit:hover { background: #ea580c; transform: translateY(-2px); }
+    .form-note { text-align: center; font-size: .8rem; color: var(--gray); margin-top: 12px; }
     .success-msg {
       display: none;
       background: #d1fae5;
@@ -386,13 +364,9 @@
       gap: 8px;
       box-shadow: 0 6px 24px rgba(37,211,102,.45);
       z-index: 999;
-      transition: transform .2s, box-shadow .2s, background .2s;
+      transition: transform .2s, background .2s;
     }
-    .float-wa:hover {
-      transform: scale(1.06);
-      box-shadow: 0 8px 28px rgba(37,211,102,.5);
-      background: #1ebe5c;
-    }
+    .float-wa:hover { transform: scale(1.06); background: #1ebe5c; }
     .float-wa svg { width: 22px; height: 22px; fill: var(--white); }
   </style>
 </head>
@@ -400,14 +374,12 @@
 
 <!-- ===== HERO ===== -->
 <header>
-  <!-- Certifique-se que o arquivo se chama logo.png no repositório -->
   <img src="logo.png" alt="Unifatecie EAD" class="logo-img"/>
   <h1>Graduação e Pós-Graduação para Barra do Mendes e Ipupiara</h1>
   <p>Estude no seu ritmo, com apoio dos polos autorizados Unifatecie em Barra do Mendes e Ipupiara - BA. Qualidade reconhecida e mensalidades que cabem no bolso.</p>
   <a href="#contato" class="btn-hero">Quero receber mais informações</a>
 </header>
 
-<!-- Wave SVG -->
 <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" height="60" xmlns="http://www.w3.org/2000/svg">
   <path d="M0,40 C360,80 1080,0 1440,40 L1440,0 L0,0 Z" fill="#111111"/>
 </svg>
@@ -460,7 +432,6 @@
     <div class="divider"></div>
     <div class="polos-grid">
 
-      <!-- ====== POLO BARRA DO MENDES ====== -->
       <div class="polo-card">
         <div class="polo-header">
           <h2>Polo Barra do Mendes - BA</h2>
@@ -468,27 +439,17 @@
         </div>
         <div class="polo-body">
           <ul class="polo-info">
-            <li>
-              <span class="icon">📞</span>
-              <span><strong>WhatsApp:</strong> (74) 98127-0882</span>
-            </li>
-            <li>
-              <span class="icon">✅</span>
-              <span>Suporte completo para inscrição, matrícula e acompanhamento acadêmico.</span>
-            </li>
+            <li><span class="icon">📞</span><span><strong>WhatsApp:</strong> (74) 98127-0882</span></li>
+            <li><span class="icon">✅</span><span>Suporte completo para inscrição, matrícula e acompanhamento acadêmico.</span></li>
           </ul>
           <a href="https://wa.me/5574981270882?text=Ol%C3%A1!%20Tenho%20interesse%20em%20um%20curso%20EAD%20da%20Unifatecie%20-%20Polo%20Barra%20do%20Mendes.%20Pode%20me%20ajudar%3F"
              class="btn-whatsapp" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-              <path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.659 1.438 5.168L2 22l4.985-1.407A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.18a8.18 8.18 0 01-4.169-1.14l-.299-.178-3.094.873.858-3.02-.195-.31A8.18 8.18 0 013.82 12c0-4.517 3.664-8.18 8.18-8.18 4.517 0 8.18 3.663 8.18 8.18 0 4.516-3.663 8.18-8.18 8.18z"/>
-            </svg>
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.659 1.438 5.168L2 22l4.985-1.407A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.18a8.18 8.18 0 01-4.169-1.14l-.299-.178-3.094.873.858-3.02-.195-.31A8.18 8.18 0 013.82 12c0-4.517 3.664-8.18 8.18-8.18 4.517 0 8.18 3.663 8.18 8.18 0 4.516-3.663 8.18-8.18 8.18z"/></svg>
             Falar com o Polo Barra do Mendes
           </a>
         </div>
       </div>
 
-      <!-- ====== POLO IPUPIARA ====== -->
       <div class="polo-card">
         <div class="polo-header">
           <h2>Polo Ipupiara - BA</h2>
@@ -496,27 +457,17 @@
         </div>
         <div class="polo-body">
           <ul class="polo-info">
-            <li>
-              <span class="icon">📞</span>
-              <span><strong>WhatsApp:</strong> (74) 99957-5795</span>
-            </li>
-            <li>
-              <span class="icon">✅</span>
-              <span>Atendimento para escolha de curso, valores, documentação e matrícula.</span>
-            </li>
+            <li><span class="icon">📞</span><span><strong>WhatsApp:</strong> (74) 99957-5795</span></li>
+            <li><span class="icon">✅</span><span>Atendimento para escolha de curso, valores, documentação e matrícula.</span></li>
           </ul>
           <a href="https://wa.me/5574999575795?text=Ol%C3%A1!%20Tenho%20interesse%20em%20um%20curso%20EAD%20da%20Unifatecie%20-%20Polo%20Ipupiara.%20Pode%20me%20ajudar%3F"
              class="btn-whatsapp" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-              <path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.659 1.438 5.168L2 22l4.985-1.407A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.18a8.18 8.18 0 01-4.169-1.14l-.299-.178-3.094.873.858-3.02-.195-.31A8.18 8.18 0 013.82 12c0-4.517 3.664-8.18 8.18-8.18 4.517 0 8.18 3.663 8.18 8.18 0 4.516-3.663 8.18-8.18 8.18z"/>
-            </svg>
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.659 1.438 5.168L2 22l4.985-1.407A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.18a8.18 8.18 0 01-4.169-1.14l-.299-.178-3.094.873.858-3.02-.195-.31A8.18 8.18 0 013.82 12c0-4.517 3.664-8.18 8.18-8.18 4.517 0 8.18 3.663 8.18 8.18 0 4.516-3.663 8.18-8.18 8.18z"/></svg>
             Falar com o Polo Ipupiara
           </a>
         </div>
       </div>
 
-      <!-- ====== CARD – ENCONTRE UM POLO PERTO DE VOCÊ ====== -->
       <div class="polo-card">
         <div class="polo-header">
           <h2>Encontre um Polo Unifatecie perto de você</h2>
@@ -524,21 +475,12 @@
         </div>
         <div class="polo-body">
           <ul class="polo-info">
-            <li>
-              <span class="icon">📞</span>
-              <span><strong>WhatsApp:</strong> (74) 99957-5795</span>
-            </li>
-            <li>
-              <span class="icon">📍</span>
-              <span>Informe sua cidade e nossa equipe indica o polo ideal para você.</span>
-            </li>
+            <li><span class="icon">📞</span><span><strong>WhatsApp:</strong> (74) 99957-5795</span></li>
+            <li><span class="icon">📍</span><span>Informe sua cidade e nossa equipe indica o polo ideal para você.</span></li>
           </ul>
           <a href="https://wa.me/5574999575795?text=Ol%C3%A1!%20Gostaria%20de%20encontrar%20um%20polo%20Unifatecie%20EAD%20perto%20de%20mim.%20Pode%20me%20ajudar%3F"
              class="btn-whatsapp" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-              <path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.659 1.438 5.168L2 22l4.985-1.407A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.18a8.18 8.18 0 01-4.169-1.14l-.299-.178-3.094.873.858-3.02-.195-.31A8.18 8.18 0 013.82 12c0-4.517 3.664-8.18 8.18-8.18 4.517 0 8.18 3.663 8.18 8.18 0 4.516-3.663 8.18-8.18 8.18z"/>
-            </svg>
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.659 1.438 5.168L2 22l4.985-1.407A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.18a8.18 8.18 0 01-4.169-1.14l-.299-.178-3.094.873.858-3.02-.195-.31A8.18 8.18 0 013.82 12c0-4.517 3.664-8.18 8.18-8.18 4.517 0 8.18 3.663 8.18 8.18 0 4.516-3.663 8.18-8.18 8.18z"/></svg>
             Encontrar meu polo pelo WhatsApp
           </a>
         </div>
@@ -627,18 +569,13 @@
       </div>
     </div>
 
-    <!-- Destaque lista completa -->
     <div class="cursos-footer">
-      <a href="https://wa.me/5574981270882?text=Ol%C3%A1!%20Gostaria%20de%20receber%20a%20lista%20completa%20de%20cursos%20dispon%C3%ADveis%20nos%20polos%20Barra%20do%20Mendes%20e%20Ipupiara."
+      <a href="https://wa.me/5574981270882?text=Ol%C3%A1!%20Gostaria%20de%20receber%20a%20lista%20completa%20de%20cursos%20dispon%C3%ADveis."
          class="cursos-footer-destaque" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-          <path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.659 1.438 5.168L2 22l4.985-1.407A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.18a8.18 8.18 0 01-4.169-1.14l-.299-.178-3.094.873.858-3.02-.195-.31A8.18 8.18 0 013.82 12c0-4.517 3.664-8.18 8.18-8.18 4.517 0 8.18 3.663 8.18 8.18 0 4.516-3.663 8.18-8.18 8.18z"/>
-        </svg>
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.659 1.438 5.168L2 22l4.985-1.407A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.18a8.18 8.18 0 01-4.169-1.14l-.299-.178-3.094.873.858-3.02-.195-.31A8.18 8.18 0 013.82 12c0-4.517 3.664-8.18 8.18-8.18 4.517 0 8.18 3.663 8.18 8.18 0 4.516-3.663 8.18-8.18 8.18z"/></svg>
         Quer receber a lista completa de cursos disponíveis?
       </a>
     </div>
-
   </div>
 </section>
 
@@ -650,33 +587,52 @@
     <div class="divider"></div>
     <div class="form-wrapper">
       <form id="leadForm" novalidate>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="nome">Nome completo *</label>
-            <input type="text" id="nome" name="nome" placeholder="Seu nome" required/>
-          </div>
-          <div class="form-group">
-            <label for="whatsapp">WhatsApp *</label>
-            <input type="tel" id="whatsapp" name="whatsapp" placeholder="(74) 9XXXX-XXXX" required/>
-          </div>
+
+        <!-- Nome -->
+        <div class="form-group">
+          <label for="nome">Nome completo *</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome" required/>
         </div>
+
+        <!-- Cidade -->
         <div class="form-group">
           <label for="cidade">Cidade/UF *</label>
           <input type="text" id="cidade" name="cidade" placeholder="Ex: Barra do Mendes/BA" required/>
         </div>
+
+        <!-- Opções de curso -->
         <div class="form-group">
-          <label for="curso">Curso desejado (opcional)</label>
+          <label>O que você está buscando? *</label>
+          <div class="opcoes-curso">
+            <button type="button" class="opcao-btn" id="btn-sei" onclick="selecionarOpcao('sei')">
+              <span class="opcao-icon">🎯</span>
+              Já sei qual curso eu quero
+            </button>
+            <button type="button" class="opcao-btn" id="btn-conferir" onclick="selecionarOpcao('conferir')">
+              <span class="opcao-icon">📋</span>
+              Desejo conferir todos os cursos
+            </button>
+          </div>
+        </div>
+
+        <!-- Campo curso (aparece só ao clicar em "já sei") -->
+        <div id="campo-curso" class="form-group">
+          <label for="curso">Qual curso você deseja? *</label>
           <input type="text" id="curso" name="curso" placeholder="Ex: Pedagogia, Administração..."/>
         </div>
+
+        <!-- Mensagem opcional -->
         <div class="form-group">
           <label for="mensagem">Mensagem (opcional)</label>
           <textarea id="mensagem" name="mensagem" placeholder="Alguma dúvida ou informação adicional?"></textarea>
         </div>
-        <button type="submit" class="btn-submit">Enviar meus dados</button>
-        <p class="form-note">Seus dados serão usados apenas para contato sobre os cursos. Não enviamos spam.</p>
+
+        <button type="submit" class="btn-submit">Enviar e falar no WhatsApp</button>
+        <p class="form-note">Seus dados serão usados apenas para contato sobre os cursos.</p>
         <div class="success-msg" id="successMsg">
-          Dados enviados com sucesso! Já abrimos uma conversa com nossa equipe no WhatsApp.
+          Dados enviados! Abrimos a conversa no WhatsApp para você.
         </div>
+
       </form>
     </div>
   </div>
@@ -692,56 +648,88 @@
   <p style="margin-top:12px;font-size:.78rem;opacity:.6;">© 2026 Polos Unifatecie EAD. Todos os direitos reservados.</p>
 </footer>
 
-<!-- ===== BOTÃO FLUTUANTE WHATSAPP ===== -->
-<a href="https://wa.me/5574981270882?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20cursos%20EAD%20dispon%C3%ADveis%20nos%20polos%20Barra%20do%20Mendes%20e%20Ipupiara."
-   class="float-wa" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-    <path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.659 1.438 5.168L2 22l4.985-1.407A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.18a8.18 8.18 0 01-4.169-1.14l-.299-.178-3.094.873.858-3.02-.195-.31A8.18 8.18 0 013.82 12c0-4.517 3.664-8.18 8.18-8.18 4.517 0 8.18 3.663 8.18 8.18 0 4.516-3.663 8.18-8.18 8.18z"/>
-  </svg>
+<!-- ===== BOTÃO FLUTUANTE ===== -->
+<a href="https://wa.me/5574981270882?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20cursos%20EAD%20da%20Unifatecie."
+   class="float-wa" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.659 1.438 5.168L2 22l4.985-1.407A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.18a8.18 8.18 0 01-4.169-1.14l-.299-.178-3.094.873.858-3.02-.195-.31A8.18 8.18 0 013.82 12c0-4.517 3.664-8.18 8.18-8.18 4.517 0 8.18 3.663 8.18 8.18 0 4.516-3.663 8.18-8.18 8.18z"/></svg>
   Fale pelo WhatsApp
 </a>
 
-<!-- ===== SCRIPTS ===== -->
 <script>
-  /* ----- Máscara de telefone ----- */
-  document.getElementById('whatsapp').addEventListener('input', function(e){
-    let v = e.target.value.replace(/\D/g,'');
-    if(v.length > 11) v = v.slice(0,11);
-    if(v.length > 6) v = '('+v.slice(0,2)+') '+v.slice(2,7)+'-'+v.slice(7);
-    else if(v.length > 2) v = '('+v.slice(0,2)+') '+v.slice(2);
-    else if(v.length > 0) v = '('+v;
-    e.target.value = v;
-  });
+  /* ===== Controle das opções de curso ===== */
+  let opcaoSelecionada = '';
 
-  /* ----- Envio do formulário para WhatsApp ----- */
-  document.getElementById('leadForm').addEventListener('submit', function(e){
+  function selecionarOpcao(opcao) {
+    opcaoSelecionada = opcao;
+    const campoCurso = document.getElementById('campo-curso');
+    const inputCurso = document.getElementById('curso');
+    const btnSei     = document.getElementById('btn-sei');
+    const btnConf    = document.getElementById('btn-conferir');
+
+    btnSei.classList.remove('ativo');
+    btnConf.classList.remove('ativo');
+
+    if (opcao === 'sei') {
+      btnSei.classList.add('ativo');
+      campoCurso.style.display = 'block';
+      inputCurso.required = true;
+      inputCurso.focus();
+    } else {
+      btnConf.classList.add('ativo');
+      campoCurso.style.display = 'none';
+      inputCurso.required = false;
+      inputCurso.value = '';
+    }
+  }
+
+  /* ===== Máscara de telefone (não usada no form, mantida para futuros campos) ===== */
+
+  /* ===== Envio do formulário ===== */
+  document.getElementById('leadForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
     const nome     = document.getElementById('nome').value.trim();
-    const whatsapp = document.getElementById('whatsapp').value.trim();
     const cidade   = document.getElementById('cidade').value.trim();
     const curso    = document.getElementById('curso').value.trim();
     const mensagem = document.getElementById('mensagem').value.trim();
 
-    if(!nome || !whatsapp || !cidade){
-      alert('Por favor, preencha nome, WhatsApp e cidade/UF.');
+    if (!nome || !cidade) {
+      alert('Por favor, preencha seu nome e cidade/UF.');
+      return;
+    }
+    if (!opcaoSelecionada) {
+      alert('Por favor, selecione o que você está buscando.');
+      return;
+    }
+    if (opcaoSelecionada === 'sei' && !curso) {
+      alert('Por favor, informe o curso desejado.');
       return;
     }
 
     const numero = '5574981270882';
-    const texto  = encodeURIComponent(
-      `📌 *Novo Lead – Polos Unifatecie EAD*\n\n`+
-      `👤 Nome: ${nome}\n`+
-      `📱 WhatsApp do aluno: ${whatsapp}\n`+
-      `📍 Cidade/UF: ${cidade}\n`+
-      (curso ? `📚 Curso desejado: ${curso}\n` : '')+
+
+    let intencao = '';
+    if (opcaoSelecionada === 'sei') {
+      intencao = `📚 Curso desejado: ${curso}`;
+    } else {
+      intencao = `📋 Interesse: Deseja conferir todos os cursos disponíveis`;
+    }
+
+    const texto = encodeURIComponent(
+      `📌 *Novo Lead – Polos Unifatecie EAD*\n\n` +
+      `👤 Nome: ${nome}\n` +
+      `📍 Cidade/UF: ${cidade}\n` +
+      `${intencao}\n` +
       (mensagem ? `💬 Mensagem: ${mensagem}` : '')
     );
 
     window.open(`https://wa.me/${numero}?text=${texto}`, '_blank');
     document.getElementById('successMsg').style.display = 'block';
     this.reset();
+    opcaoSelecionada = '';
+    document.getElementById('btn-sei').classList.remove('ativo');
+    document.getElementById('btn-conferir').classList.remove('ativo');
+    document.getElementById('campo-curso').style.display = 'none';
   });
 </script>
 
