@@ -319,7 +319,109 @@
     footer .back-link:hover { text-decoration: underline; }
   </style>
 </head>
-<body>
+<script>
+  // Estado atual dos filtros
+  let tabAtual = 'graduacao';   // 'graduacao' ou 'pos'
+  let areaAtual = 'todas';      // 'todas' ou uma das áreas (saude, educacao, etc.)
+  let buscaAtual = '';          // texto da busca
+
+  function atualizarVisibilidade() {
+    const cards = document.querySelectorAll('.curso-card');
+    const semResultado = document.getElementById('semResultado');
+    let temAlgum = false;
+
+    cards.forEach(card => {
+      const tab = card.getAttribute('data-tab');      // graduacao ou pos
+      const area = card.getAttribute('data-area');    // saude, educacao, etc.
+      const nome = card.querySelector('.curso-nome').innerText.toLowerCase();
+
+      let visivel = true;
+
+      // Filtra por tab (Graduação / Pós)
+      if (tab !== tabAtual) {
+        visivel = false;
+      }
+
+      // Filtra por área (se não for "todas")
+      if (visivel && areaAtual !== 'todas' && area !== areaAtual) {
+        visivel = false;
+      }
+
+      // Filtra por busca (se tiver texto)
+      if (visivel && buscaAtual) {
+        if (!nome.includes(buscaAtual.toLowerCase())) {
+          visivel = false;
+        }
+      }
+
+      if (visivel) {
+        card.classList.remove('oculto');
+        temAlgum = true;
+      } else {
+        card.classList.add('oculto');
+      }
+    });
+
+    // Exibe / oculta mensagem "Nenhum curso encontrado"
+    semResultado.style.display = temAlgum ? 'none' : 'block';
+  }
+
+  function mudarTab(tab) {
+    tabAtual = tab;
+
+    // Atualiza botões de tab
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.classList.toggle('ativo', btn.textContent.includes('Graduação') && tab === 'graduacao' ||
+                                      btn.textContent.includes('Pós-Graduação') && tab === 'pos');
+    });
+
+    // Mostra / esconde containers de tab
+    const tabGrad = document.getElementById('tab-graduacao');
+    const tabPos  = document.getElementById('tab-pos');
+    if (tab === 'graduacao') {
+      tabGrad.style.display = '';
+      tabPos.style.display  = 'none';
+    } else {
+      tabGrad.style.display = 'none';
+      tabPos.style.display  = '';
+    }
+
+    // Quando muda para Pós, o filtro de área vira "todas"
+    if (tab === 'pos') {
+      areaAtual = 'todas';
+      document.querySelectorAll('.area-btn').forEach(btn => {
+        btn.classList.toggle('ativo', btn.textContent.includes('Todas'));
+      });
+    }
+
+    atualizarVisibilidade();
+  }
+
+  function filtrarArea(area) {
+    areaAtual = area;
+    document.querySelectorAll('.area-btn').forEach(btn => {
+      const texto = btn.textContent.toLowerCase();
+      if (area === 'todas') {
+        btn.classList.toggle('ativo', texto.includes('todas'));
+      } else {
+        btn.classList.toggle('ativo', texto.includes(area));
+      }
+    });
+    atualizarVisibilidade();
+  }
+
+  function filtrarBusca() {
+    const campo = document.getElementById('campoBusca');
+    buscaAtual = campo.value.trim();
+    atualizarVisibilidade();
+  }
+
+  // Inicialização quando a página carrega
+  document.addEventListener('DOMContentLoaded', () => {
+    atualizarVisibilidade();
+  });
+</script>
+  <body>
 
 <!-- ===== HEADER ===== -->
 <header>
