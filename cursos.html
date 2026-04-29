@@ -366,6 +366,40 @@
       color: var(--gray);
       text-align: center;
     }
+    /* ===== BOTÃO VOLTAR ABAIXO DAS ÁREAS ===== */
+.voltar-wrapper {
+  max-width: 1100px;
+  margin: 24px auto 32px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 26px;
+  border-radius: 999px;
+  border: 2px solid var(--primary);
+  background: #fff7ed;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: .95rem;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  transition: background .2s, color .2s, transform .2s, box-shadow .2s;
+}
+
+.btn-voltar .seta {
+  font-size: 1.1rem;
+}
+
+.btn-voltar:hover {
+  background: var(--primary);
+  color: #111827;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+}
 
     /* ===== FOOTER ===== */
     footer {
@@ -1243,7 +1277,12 @@
         </div>
       </div>
     </div>
-      <a href="index.html" class="back-link">← Voltar para o site principal</a>
+    <div class="voltar-wrapper">
+      <a href="index.html" class="btn-voltar">
+        <span class="seta">←</span>
+        Voltar para a página principal
+      </a>
+    </div>
   </div><!-- /tab-graduacao -->
 
   <!-- TAB PÓS-GRADUAÇÃO -->
