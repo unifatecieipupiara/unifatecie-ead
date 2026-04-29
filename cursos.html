@@ -101,6 +101,42 @@
     .btn-cta.ipupiara { background: #16a34a; color: var(--white); }
     .btn-cta.polo   { background: var(--primary); color: #111; }
 
+    /* ===== BOTÃO FLUTUANTE ===== */
+.btn-flutuante {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary);
+  color: #111;
+  font-weight: 700;
+  font-size: .88rem;
+  padding: 14px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,.25);
+  transition: transform .2s, opacity .2s;
+  white-space: nowrap;
+}
+.btn-flutuante:hover {
+  transform: translateY(-3px);
+  opacity: .92;
+}
+.btn-flutuante svg {
+  width: 18px;
+  height: 18px;
+  fill: #111;
+  flex-shrink: 0;
+}
+
+/* Em telas pequenas, esconde o texto e deixa só o ícone */
+@media (max-width: 480px) {
+  .btn-flutuante span { display: none; }
+  .btn-flutuante { padding: 14px; border-radius: 50%; }
+}
     /* ===== FILTROS ===== */
     .filtros-section {
       max-width: 1100px;
@@ -1364,4 +1400,13 @@
     });
   });
 </script>
+   <!-- ===== BOTÃO FLUTUANTE ===== -->
+<a href="https://wa.me/5574999575795?text=Ol%C3%A1!%20Gostaria%20de%20encontrar%20um%20polo%20Unifatecie%20EAD%20perto%20de%20mim."
+   class="btn-flutuante"
+   target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24">
+    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+  </svg>
+  <span>Encontre um Polo perto de você</span>
+</a>
   </body>
