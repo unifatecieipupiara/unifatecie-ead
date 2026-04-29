@@ -137,6 +137,58 @@
   .btn-flutuante span { display: none; }
   .btn-flutuante { padding: 14px; border-radius: 50%; }
 }
+    /* ===== BALÃO FLUTUANTE DA PÓS ===== */
+.pos-balao {
+  position: fixed;
+  bottom: 88px;              /* fica acima do botão de WhatsApp, se existir */
+  right: 16px;
+  z-index: 999;
+  max-width: 260px;
+  font-family: inherit;
+}
+
+.pos-balao-inner {
+  background: #111827;
+  color: #f9fafb;
+  border-radius: 999px;
+  padding: 10px 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border: 1px solid rgba(249, 115, 22, 0.9); /* laranja */
+}
+
+.pos-balao-titulo {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: #f97316;            /* laranja */
+  font-weight: 700;
+}
+
+.pos-balao-valor {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+/* Responsivo: em telas muito pequenas, reduz o tamanho */
+@media (max-width: 480px) {
+  .pos-balao {
+    bottom: 80px;
+    right: 10px;
+    max-width: 220px;
+  }
+
+  .pos-balao-inner {
+    padding: 8px 14px;
+  }
+
+  .pos-balao-valor {
+    font-size: 0.88rem;
+  }
+}
+    
     /* ===== FILTROS ===== */
     .filtros-section {
       max-width: 1100px;
@@ -1299,6 +1351,13 @@
 <!-- TAB PÓS-GRADUAÇÃO -->
 <div id="tab-pos" style="display:none;">
 
+  <div class="pos-balao">
+    <div class="pos-balao-inner">
+      <span class="pos-balao-titulo">Pós-Graduação EAD</span>
+      <span class="pos-balao-valor">Qualquer uma por 12x R$ 47,50*</span>
+    </div>
+  </div>
+
   <!-- EDUCAÇÃO -->
   <div class="grupo-area" data-area="educacao">
     <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
@@ -1683,6 +1742,24 @@
         <div class="curso-tags">
           <span class="tag modalidade">Especialização</span>
           <span class="tag duracao">03 meses • 360h</span>
+          <a href="#" class="tag grade-link" target="_blank" rel="noopener">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+
+      <div class="curso-card" data-area="educacao" data-tab="pos">
+        <div class="curso-nome">Especialização em Literatura Brasileira e Internacional</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">04 meses • 440h</span>
+          <a href="#" class="tag grade-link" target="_blank" rel="noopener">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+
+      <div class="curso-card" data-area="educacao" data-tab="pos">
+        <div class="curso-nome">Especialização em Sociologia na Educação</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">04 meses • 400h</span>
           <a href="#" class="tag grade-link" target="_blank" rel="noopener">Conferir a Grade Curricular</a>
         </div>
       </div>
