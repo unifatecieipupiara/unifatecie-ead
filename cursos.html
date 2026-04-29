@@ -220,16 +220,49 @@
     .grupo-area {
       margin-bottom: 36px;
     }
-    .grupo-titulo {
-      font-size: 1rem;
-      font-weight: 800;
-      color: var(--primary);
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      margin-bottom: 14px;
-      padding-bottom: 6px;
-      border-bottom: 2px solid #fed7aa;
-    }
+    /* Título clicável do grupo */
+.grupo-titulo {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--white);
+  background: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-bottom: 0;
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: inherit;
+  transition: background .2s;
+}
+.grupo-titulo:hover { background: #ea580c; }
+.grupo-titulo[aria-expanded="true"] { border-radius: 8px 8px 0 0; }
+
+/* Seta rotaciona quando aberto */
+.grupo-arrow {
+  font-size: .85rem;
+  transition: transform .3s;
+  display: inline-block;
+}
+.grupo-titulo[aria-expanded="true"] .grupo-arrow {
+  transform: rotate(180deg);
+}
+
+/* Corpo do grupo com animação */
+.grupo-body {
+  border: 1px solid #fed7aa;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  padding: 16px;
+  margin-bottom: 0;
+  background: var(--white);
+}
 
     .cursos-grid {
       display: grid;
@@ -484,8 +517,11 @@
 
     <!-- SAÚDE -->
     <div class="grupo-area" data-area="saude">
-      <div class="grupo-titulo">Saúde</div>
-      <div class="cursos-grid">
+      <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
+        Saúde
+        <span class="grupo-arrow">▼</span>
+      </button>
+      <div class="cursos-grid grupo-body" style="display:none;">
         <div class="curso-card" data-area="saude" data-tab="graduacao">
           <div class="curso-nome">Biomedicina</div>
           <div class="curso-tags">
@@ -587,8 +623,11 @@
 
     <!-- EDUCAÇÃO -->
     <div class="grupo-area" data-area="educacao">
-      <div class="grupo-titulo">Educação</div>
-      <div class="cursos-grid">
+      <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
+        Educação
+        <span class="grupo-arrow">▼</span>
+      </button>
+      <div class="cursos-grid grupo-body" style="display:none;">
         <div class="curso-card" data-area="educacao" data-tab="graduacao">
           <div class="curso-nome">Pedagogia</div>
           <div class="curso-tags">
@@ -722,8 +761,11 @@
 
     <!-- EMPRESARIAL -->
     <div class="grupo-area" data-area="empresarial">
-      <div class="grupo-titulo">Empresarial</div>
-      <div class="cursos-grid">
+      <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
+        Empresarial
+        <span class="grupo-arrow">▼</span>
+      </button>
+      <div class="cursos-grid grupo-body" style="display:none;">
         <div class="curso-card" data-area="empresarial" data-tab="graduacao">
           <div class="curso-nome">Administração</div>
           <div class="curso-tags">
@@ -897,8 +939,11 @@
 
     <!-- TECNOLOGIA -->
     <div class="grupo-area" data-area="tecnologia">
-      <div class="grupo-titulo">Tecnologia</div>
-      <div class="cursos-grid">
+      <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
+       Tecnologia
+        <span class="grupo-arrow">▼</span>
+      </button>
+      <div class="cursos-grid grupo-body" style="display:none;">
         <div class="curso-card" data-area="tecnologia" data-tab="graduacao">
           <div class="curso-nome">Análise e Desenvolvimento de Sistemas</div>
           <div class="curso-tags">
@@ -968,8 +1013,11 @@
 
     <!-- ENGENHARIA -->
     <div class="grupo-area" data-area="engenharia">
-      <div class="grupo-titulo">Engenharia</div>
-      <div class="cursos-grid">
+      <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
+        Engenharia
+        <span class="grupo-arrow">▼</span>
+      </button>
+      <div class="cursos-grid grupo-body" style="display:none;">
         <div class="curso-card" data-area="engenharia" data-tab="graduacao">
           <div class="curso-nome">Engenharia Civil</div>
           <div class="curso-tags">
@@ -1055,8 +1103,11 @@
 
     <!-- COMUNICAÇÃO -->
     <div class="grupo-area" data-area="comunicacao">
-      <div class="grupo-titulo">Comunicação e Design</div>
-      <div class="cursos-grid">
+      <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
+        Comunicação
+        <span class="grupo-arrow">▼</span>
+      </button>
+      <div class="cursos-grid grupo-body" style="display:none;">
         <div class="curso-card" data-area="comunicacao" data-tab="graduacao">
           <div class="curso-nome">Jornalismo</div>
           <div class="curso-tags">
@@ -1134,8 +1185,11 @@
 
     <!-- OUTRAS ÁREAS -->
     <div class="grupo-area" data-area="outras">
-      <div class="grupo-titulo">Outras Áreas</div>
-      <div class="cursos-grid">
+      <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
+        Outras áreas
+        <span class="grupo-arrow">▼</span>
+      </button>
+      <div class="cursos-grid grupo-body" style="display:none;">
         <div class="curso-card" data-area="outras" data-tab="graduacao">
           <div class="curso-nome">Biblioteconomia</div>
           <div class="curso-tags">
