@@ -221,48 +221,48 @@
       margin-bottom: 36px;
     }
     /* Título clicável do grupo */
-.grupo-titulo {
-  font-size: 1rem;
-  font-weight: 800;
-  color: var(--white);
-  background: var(--primary);
-  text-transform: uppercase;
-  letter-spacing: .06em;
-  margin-bottom: 0;
-  padding: 12px 18px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-family: inherit;
-  transition: background .2s;
-}
-.grupo-titulo:hover { background: #ea580c; }
-.grupo-titulo[aria-expanded="true"] { border-radius: 8px 8px 0 0; }
+    .grupo-titulo {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--white);
+      background: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 0;
+      padding: 12px 18px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: inherit;
+      transition: background .2s;
+    }
+    .grupo-titulo:hover { background: #ea580c; }
+    .grupo-titulo[aria-expanded="true"] { border-radius: 8px 8px 0 0; }
 
 /* Seta rotaciona quando aberto */
-.grupo-arrow {
-  font-size: .85rem;
-  transition: transform .3s;
-  display: inline-block;
-}
-.grupo-titulo[aria-expanded="true"] .grupo-arrow {
-  transform: rotate(180deg);
-}
+    .grupo-arrow {
+      font-size: .85rem;
+      transition: transform .3s;
+      display: inline-block;
+    }
+    .grupo-titulo[aria-expanded="true"] .grupo-arrow {
+      transform: rotate(180deg);
+    }
 
 /* Corpo do grupo com animação */
-.grupo-body {
-  border: 1px solid #fed7aa;
-  border-top: none;
-  border-radius: 0 0 8px 8px;
-  padding: 16px;
-  margin-bottom: 0;
-  background: var(--white);
-}
+    .grupo-body {
+      border: 1px solid #fed7aa;
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      padding: 16px;
+      margin-bottom: 0;
+      background: var(--white);
+    }
 
     .cursos-grid {
       display: grid;
@@ -353,62 +353,32 @@
   </style>
 </head>
 <script>
-  // Estado atual dos filtros
-  let tabAtual = 'graduacao';   // 'graduacao' ou 'pos'
-  let areaAtual = 'todas';      // 'todas' ou uma das áreas (saude, educacao, etc.)
-  let buscaAtual = '';          // texto da busca
-
-  function atualizarVisibilidade() {
-    const cards = document.querySelectorAll('.curso-card');
-    const semResultado = document.getElementById('semResultado');
-    let temAlgum = false;
-
-    cards.forEach(card => {
-      const tab = card.getAttribute('data-tab');      // graduacao ou pos
-      const area = card.getAttribute('data-area');    // saude, educacao, etc.
-      const nome = card.querySelector('.curso-nome').innerText.toLowerCase();
-
-      let visivel = true;
-
-      // Filtra por tab (Graduação / Pós)
-      if (tab !== tabAtual) {
-        visivel = false;
-      }
-
-      // Filtra por área (se não for "todas")
-      if (visivel && areaAtual !== 'todas' && area !== areaAtual) {
-        visivel = false;
-      }
-
-      // Filtra por busca (se tiver texto)
-      if (visivel && buscaAtual) {
-        if (!nome.includes(buscaAtual.toLowerCase())) {
-          visivel = false;
-        }
-      }
-
-      if (visivel) {
-        card.classList.remove('oculto');
-        temAlgum = true;
-      } else {
-        card.classList.add('oculto');
-      }
-    });
-
-    // Exibe / oculta mensagem "Nenhum curso encontrado"
-    semResultado.style.display = temAlgum ? 'none' : 'block';
+  // ── Accordion por área ──────────────────────────────────────
+  function toggleArea(btn) {
+    const body = btn.nextElementSibling;
+    const aberto = btn.getAttribute('aria-expanded') === 'true';
+    if (aberto) {
+      btn.setAttribute('aria-expanded', 'false');
+      body.style.display = 'none';
+    } else {
+      btn.setAttribute('aria-expanded', 'true');
+      body.style.display = 'grid';
+    }
   }
+
+  // ── Tabs Graduação / Pós ────────────────────────────────────
+  let tabAtual = 'graduacao';
 
   function mudarTab(tab) {
     tabAtual = tab;
-
-    // Atualiza botões de tab
     document.querySelectorAll('.tab-btn').forEach(btn => {
-      btn.classList.toggle('ativo', btn.textContent.includes('Graduação') && tab === 'graduacao' ||
-                                      btn.textContent.includes('Pós-Graduação') && tab === 'pos');
+      btn.classList.toggle(
+        'ativo',
+        (btn.textContent.includes('Graduação') && tab === 'graduacao') ||
+        (btn.textContent.includes('Pós') && tab === 'pos')
+      );
     });
 
-    // Mostra / esconde containers de tab
     const tabGrad = document.getElementById('tab-graduacao');
     const tabPos  = document.getElementById('tab-pos');
     if (tab === 'graduacao') {
@@ -419,39 +389,66 @@
       tabPos.style.display  = '';
     }
 
-    // Quando muda para Pós, o filtro de área vira "todas"
-    if (tab === 'pos') {
-      areaAtual = 'todas';
-      document.querySelectorAll('.area-btn').forEach(btn => {
-        btn.classList.toggle('ativo', btn.textContent.includes('Todas'));
-      });
-    }
-
-    atualizarVisibilidade();
-  }
-
-  function filtrarArea(area) {
-    areaAtual = area;
-    document.querySelectorAll('.area-btn').forEach(btn => {
-      const texto = btn.textContent.toLowerCase();
-      if (area === 'todas') {
-        btn.classList.toggle('ativo', texto.includes('todas'));
-      } else {
-        btn.classList.toggle('ativo', texto.includes(area));
-      }
+    // Fecha todos os grupos ao trocar de tab
+    document.querySelectorAll('.grupo-titulo').forEach(b => {
+      b.setAttribute('aria-expanded', 'false');
+      const body = b.nextElementSibling;
+      if (body) body.style.display = 'none';
     });
-    atualizarVisibilidade();
+
+    filtrarBusca();
   }
 
+  // ── Busca por nome ──────────────────────────────────────────
   function filtrarBusca() {
     const campo = document.getElementById('campoBusca');
-    buscaAtual = campo.value.trim();
-    atualizarVisibilidade();
+    const busca = campo ? campo.value.trim().toLowerCase() : '';
+    const semResultado = document.getElementById('semResultado');
+    let temAlgum = false;
+
+    const tabEl = tabAtual === 'graduacao'
+      ? document.getElementById('tab-graduacao')
+      : document.getElementById('tab-pos');
+
+    tabEl.querySelectorAll('.grupo-area').forEach(grupo => {
+      const cards = grupo.querySelectorAll('.curso-card');
+      let temNoGrupo = false;
+
+      cards.forEach(card => {
+        const nome = card.querySelector('.curso-nome').innerText.toLowerCase();
+        const visivel = !busca || nome.includes(busca);
+        card.classList.toggle('oculto', !visivel);
+        if (visivel) temNoGrupo = true;
+      });
+
+      const btn  = grupo.querySelector('.grupo-titulo');
+      const body = grupo.querySelector('.grupo-body');
+
+      if (busca) {
+        if (temNoGrupo) {
+          if (btn)  btn.setAttribute('aria-expanded', 'true');
+          if (body) body.style.display = 'grid';
+        } else {
+          if (btn)  btn.setAttribute('aria-expanded', 'false');
+          if (body) body.style.display = 'none';
+        }
+      }
+
+      if (temNoGrupo) temAlgum = true;
+    });
+
+    if (semResultado) {
+      semResultado.style.display = (busca && !temAlgum) ? 'block' : 'none';
+    }
   }
 
-  // Inicialização quando a página carrega
+  // ── Inicialização ───────────────────────────────────────────
   document.addEventListener('DOMContentLoaded', () => {
-    atualizarVisibilidade();
+    document.querySelectorAll('.grupo-titulo').forEach(btn => {
+      btn.setAttribute('aria-expanded', 'false');
+      const body = btn.nextElementSibling;
+      if (body) body.style.display = 'none';
+    });
   });
 </script>
   <body>
