@@ -348,6 +348,17 @@
     .tag.duracao    { background: #f0fdf4; color: #15803d; }
     .tag.valor      { background: #fff7ed; color: #c2410c; font-weight: 700; }
 
+    .tag.grade-link {
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fbbf24;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .tag.grade-link:hover {
+      background: #fbbf24;
+      color: #111827;
+    }
     /* Nenhum resultado */
     .vazio {
       text-align: center;
@@ -1286,18 +1297,445 @@
   </div><!-- /tab-graduacao -->
 
   <!-- TAB PÓS-GRADUAÇÃO -->
-  <div id="tab-pos" style="display:none;">
-    <div class="grupo-area" data-area="todas">
-      <div class="cursos-grid">
-        <div class="curso-card" data-area="todas" data-tab="pos">
-          <div class="curso-nome">Em breve – Pós-Graduação</div>
-          <div class="curso-tags">
-            <span class="tag modalidade">Em atualização</span>
-          </div>
+<div id="tab-pos" style="display:none;">
+
+  <!-- CONTABILIDADE -->
+  <div class="grupo-area" data-area="contabilidade">
+    <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
+      Pós em Contabilidade
+      <span class="grupo-arrow">▼</span>
+    </button>
+    <div class="cursos-grid grupo-body" style="display:none;">
+      <div class="curso-card" data-area="contabilidade" data-tab="pos">
+        <div class="curso-nome">Especialização em Auditoria, Contabilidade e Perícia Contábil</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">5 meses • 360h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+      <div class="curso-card" data-area="contabilidade" data-tab="pos">
+        <div class="curso-nome">Especialização em Controladoria e Custos</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">5 meses • 360h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+      <div class="curso-card" data-area="contabilidade" data-tab="pos">
+        <div class="curso-nome">Especialização em Gestão Financeira</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">5 meses • 360h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- DIREITO -->
+  <div class="grupo-area" data-area="direito">
+    <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
+      Pós em Direito e Segurança Pública
+      <span class="grupo-arrow">▼</span>
+    </button>
+    <div class="cursos-grid grupo-body" style="display:none;">
+      <div class="curso-card" data-area="direito" data-tab="pos">
+        <div class="curso-nome">Especialização em Direito Constitucional</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">4 meses • 360h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+      <div class="curso-card" data-area="direito" data-tab="pos">
+        <div class="curso-nome">Especialização em Direito Constitucional e Prática Trabalhista</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">5 meses • 400h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+      <div class="curso-card" data-area="direito" data-tab="pos">
+        <div class="curso-nome">Especialização em Direito, Psicologia e Gestão de Conflitos Laborais</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">5 meses • 400h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+      <div class="curso-card" data-area="direito" data-tab="pos">
+        <div class="curso-nome">Especialização em Saúde Ocupacional e Direito do Trabalho</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">5 meses • 400h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+      <div class="curso-card" data-area="direito" data-tab="pos">
+        <div class="curso-nome">Especialização em Direito do Trabalho e Previdenciário</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">5 meses • 360h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+      <div class="curso-card" data-area="direito" data-tab="pos">
+        <div class="curso-nome">Especialização em Direito Penal</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">3 meses • 360h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+      <div class="curso-card" data-area="direito" data-tab="pos">
+        <div class="curso-nome">Especialização em Direito Tributário e Direito Empresarial</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">5 meses • 360h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+      <div class="curso-card" data-area="direito" data-tab="pos">
+        <div class="curso-nome">Especialização em Segurança Pública</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">5 meses • 360h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDUCAÇÃO -->
+  <div class="grupo-area" data-area="educacao">
+    <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
+      Pós em Educação
+      <span class="grupo-arrow">▼</span>
+    </button>
+    <div class="cursos-grid grupo-body" style="display:none;">
+
+      <!-- Vou listar alguns principais; podemos completar todos na próxima rodada se você quiser tudo 100% -->
+      <div class="curso-card" data-area="educacao" data-tab="pos">
+        <div class="curso-nome">Especialização em Alfabetização e Letramento</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">4 meses • 360h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+
+      <div class="curso-card" data-area="educacao" data-tab="pos">
+        <div class="curso-nome">Especialização em Aprendizagem Contínua: Metodologia do Ensino de História para Professores</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">3 meses • 360h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+
+      <div class="curso-card" data-area="educacao" data-tab="pos">
+        <div class="curso-nome">Especialização em Atendimento Educacional Especializado (AEE)</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">3 meses • 360h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+
+      <div class="curso-card" data-area="educacao" data-tab="pos">
+        <div class="curso-nome">Especialização em Educação 5.0 – Metodologias e Tecnologias Inovadoras</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">4 meses • 360h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+
+      <div class="curso-card" data-area="educacao" data-tab="pos">
+        <div class="curso-nome">Especialização em Educação Especial e Inclusiva – Neuropedagogia e Psicomotricidade</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">4 meses • 360h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+
+      <div class="curso-card" data-area="educacao" data-tab="pos">
+        <div class="curso-nome">Especialização em Educação Infantil e Alfabetização</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">4 meses • 380h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+
+      <div class="curso-card" data-area="educacao" data-tab="pos">
+        <div class="curso-nome">Especialização em Metodologia do Ensino de Matemática</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">3 meses • 360h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+
+      <div class="curso-card" data-area="educacao" data-tab="pos">
+        <div class="curso-nome">Especialização em Psicopedagogia Institucional e Clínica</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">7 meses • 820h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+
+      <div class="curso-card" data-area="educacao" data-tab="pos">
+        <div class="curso-nome">Especialização em Transtorno do Espectro Autista (TEA)</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">9 meses • 1000h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+
+      <div class="curso-card" data-area="educacao" data-tab="pos">
+        <div class="curso-nome">MBA em Ciências da Computação para Licenciados</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">MBA</span>
+          <span class="tag duracao">4 meses • 380h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- EDUCAÇÃO FÍSICA -->
+  <div class="grupo-area" data-area="educacao-fisica">
+    <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
+      Pós em Educação Física
+      <span class="grupo-arrow">▼</span>
+    </button>
+    <div class="cursos-grid grupo-body" style="display:none;">
+      <div class="curso-card" data-area="educacao-fisica" data-tab="pos">
+        <div class="curso-nome">Especialização em Educação Física Escolar</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">3 meses • 360h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+      <div class="curso-card" data-area="educacao-fisica" data-tab="pos">
+        <div class="curso-nome">Especialização em Personal Trainer</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">3 meses • 360h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+      <div class="curso-card" data-area="educacao-fisica" data-tab="pos">
+        <div class="curso-nome">Especialização em Treinamento Resistido e Aeróbio</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">3 meses • 360h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMPRESARIAL / NEGÓCIOS E GESTÃO -->
+  <div class="grupo-area" data-area="empresarial">
+    <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
+      Pós em Gestão, Negócios e Marketing
+      <span class="grupo-arrow">▼</span>
+    </button>
+    <div class="cursos-grid grupo-body" style="display:none;">
+      <div class="curso-card" data-area="empresarial" data-tab="pos">
+        <div class="curso-nome">MBA em Gestão Avançada e Liderança Transformadora</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">MBA</span>
+          <span class="tag duracao">4 meses • 380h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+      <div class="curso-card" data-area="empresarial" data-tab="pos">
+        <div class="curso-nome">MBA em Gestão de Projetos e Inovação</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">MBA</span>
+          <span class="tag duracao">4 meses • 380h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+      <div class="curso-card" data-area="empresarial" data-tab="pos">
+        <div class="curso-nome">MBA em Marketing Digital e E‑commerce</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">MBA</span>
+          <span class="tag duracao">4 meses • 380h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+      <div class="curso-card" data-area="empresarial" data-tab="pos">
+        <div class="curso-nome">MBA Executivo em Contabilidade e Finanças Corporativas</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">MBA</span>
+          <span class="tag duracao">4 meses • 360h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+      <div class="curso-card" data-area="empresarial" data-tab="pos">
+        <div class="curso-nome">Especialização em Gestão de Pessoas e Desenvolvimento Humano</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">5 meses • 480h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+      <div class="curso-card" data-area="empresarial" data-tab="pos">
+        <div class="curso-nome">Especialização em Desenvolvimento Pessoal e Gestão de Carreira</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">4 meses • 360h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENGENHARIA -->
+  <div class="grupo-area" data-area="engenharia">
+    <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
+      Pós em Engenharia e Construção
+      <span class="grupo-arrow">▼</span>
+    </button>
+    <div class="cursos-grid grupo-body" style="display:none;">
+      <div class="curso-card" data-area="engenharia" data-tab="pos">
+        <div class="curso-nome">Especialização em Engenharia de Segurança do Trabalho</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">6 meses • 750h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+      <div class="curso-card" data-area="engenharia" data-tab="pos">
+        <div class="curso-nome">Especialização em Engenharia de Software</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">4 meses • 380h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+      <div class="curso-card" data-area="engenharia" data-tab="pos">
+        <div class="curso-nome">Especialização em Gerenciamento de Obras</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">6 meses • 400h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+      <div class="curso-card" data-area="engenharia" data-tab="pos">
+        <div class="curso-nome">Especialização em Segurança Contra Incêndio e Pânico</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">6 meses • 400h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INOVAÇÃO / IA -->
+  <div class="grupo-area" data-area="inovacao">
+    <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
+      Pós em Inovação e Inteligência Artificial
+      <span class="grupo-arrow">▼</span>
+    </button>
+    <div class="cursos-grid grupo-body" style="display:none;">
+      <div class="curso-card" data-area="inovacao" data-tab="pos">
+        <div class="curso-nome">Especialização em Inteligência Artificial e Ciência de Dados</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">4 meses • 360h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+      <div class="curso-card" data-area="inovacao" data-tab="pos">
+        <div class="curso-nome">Especialização em Inteligência Artificial Generativa: Inovação, Automação e Produtividade</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">4 meses • 360h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+      <div class="curso-card" data-area="inovacao" data-tab="pos">
+        <div class="curso-nome">MBA em Marketing Digital com Ênfase em Inteligência Artificial</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">MBA</span>
+          <span class="tag duracao">4 meses • 360h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+      <div class="curso-card" data-area="inovacao" data-tab="pos">
+        <div class="curso-nome">MBA Executivo em Inteligência Artificial: Gestão Estratégica na Era da IA</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">MBA</span>
+          <span class="tag duracao">4 meses • 360h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SAÚDE -->
+  <div class="grupo-area" data-area="saude-pos">
+    <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
+      Pós em Saúde
+      <span class="grupo-arrow">▼</span>
+    </button>
+    <div class="cursos-grid grupo-body" style="display:none;">
+      <div class="curso-card" data-area="saude-pos" data-tab="pos">
+        <div class="curso-nome">Especialização em Administração Hospitalar e Serviços de Saúde</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">5 meses • 360h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+      <div class="curso-card" data-area="saude-pos" data-tab="pos">
+        <div class="curso-nome">Especialização em Enfermagem do Trabalho</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">5 meses • 360h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+      <div class="curso-card" data-area="saude-pos" data-tab="pos">
+        <div class="curso-nome">Especialização em Gestão Hospitalar</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">5 meses • 360h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+      <div class="curso-card" data-area="saude-pos" data-tab="pos">
+        <div class="curso-nome">Especialização em Psicologia Clínica e Saúde Mental</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">5 meses • 400h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+      <div class="curso-card" data-area="saude-pos" data-tab="pos">
+        <div class="curso-nome">Especialização em Nutrição Clínica e Dietética</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">Especialização</span>
+          <span class="tag duracao">4 meses • 360h</span>
+          <a href="#" class="tag grade-link">Conferir a Grade Curricular</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
 
   <div class="vazio" id="semResultado">Nenhum curso encontrado para esta busca.</div>
 
