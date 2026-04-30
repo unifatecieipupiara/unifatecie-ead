@@ -101,6 +101,22 @@
     .btn-cta.ipupiara { background: #16a34a; color: var(--white); }
     .btn-cta.polo   { background: var(--primary); color: #111; }
 
+    .btn-matricula {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 6px 14px;
+      background: #25d366;
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 700;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-matricula:hover {
+      background: #1ebe5d;
+    }
+    
     /* ===== BOTÃO FLUTUANTE ===== */
 .btn-flutuante {
   position: fixed;
@@ -138,41 +154,41 @@
   .btn-flutuante { padding: 14px; border-radius: 50%; }
 }
     /* ===== BALÃO FLUTUANTE DA PÓS ===== */
-.pos-balao {
-  position: fixed;
-  bottom: 88px;              /* fica acima do botão de WhatsApp, se existir */
-  right: 16px;
-  z-index: 999;
-  max-width: 260px;
-  font-family: inherit;
-}
-
-.pos-balao-inner {
-  background: #111827;
-  color: #f9fafb;
-  border-radius: 999px;
-  padding: 10px 18px;
-  box-shadow: 0 12px 30px rgba(0,0,0,.35);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 2px;
-  border: 1px solid rgba(249, 115, 22, 0.9); /* laranja */
-}
-
-.pos-balao-titulo {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  color: #f97316;            /* laranja */
-  font-weight: 700;
-}
-
-.pos-balao-valor {
-  font-size: 1.2rem;
-  font-weight: 800;
-}
+    .pos-balao {
+      position: fixed;
+      bottom: 88px;              /* fica acima do botão de WhatsApp, se existir */
+      right: 16px;
+      z-index: 999;
+      max-width: 260px;
+      font-family: inherit;
+    }
+    
+    .pos-balao-inner {
+      background: #111827;
+      color: #f9fafb;
+      border-radius: 999px;
+      padding: 10px 18px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.35);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 2px;
+      border: 1px solid rgba(249, 115, 22, 0.9); /* laranja */
+    }
+    
+    .pos-balao-titulo {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: #f97316;            /* laranja */
+      font-weight: 700;
+    }
+    
+    .pos-balao-valor {
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
 
 /* Responsivo: em telas muito pequenas, reduz o tamanho */
 @media (max-width: 480px) {
@@ -421,7 +437,112 @@
       padding: 40px 0;
       display: none;
     }
+Copiar
 
+/* ===== CARD CLICÁVEL ===== */
+.curso-card {
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.curso-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+/* ===== MODAL ===== */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.modal-overlay.aberto {
+  display: flex;
+}
+.modal-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 24px 24px;
+  max-width: 480px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.modal-fechar {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 1.4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+  line-height: 1;
+}
+.modal-fechar:hover {
+  color: #111827;
+}
+.modal-titulo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 6px;
+  padding-right: 24px;
+  line-height: 1.4;
+}
+.modal-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.modal-meta span {
+  background: #f3f4f6;
+  color: #374151;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 4px 12px;
+}
+.modal-descricao {
+  font-size: 0.92rem;
+  color: #374151;
+  line-height: 1.65;
+  margin-bottom: 20px;
+  white-space: pre-line;
+}
+.modal-btn-wpp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #25d366;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 12px 20px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.modal-btn-wpp:hover {
+  background: #1ebe5d;
+}
+
+@media (max-width: 480px) {
+  .modal-box {
+    padding: 22px 16px 20px;
+  }
+  .modal-titulo {
+    font-size: 1rem;
+  }
+}
     /* ===== NOTA RODAPÉ ===== */
     .nota {
       max-width: 1100px;
@@ -625,112 +746,305 @@
 
   <div id="tab-graduacao">
 
-    <!-- SAÚDE -->
-    <div class="grupo-area" data-area="saude">
-      <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
-        Saúde
-        <span class="grupo-arrow">▼</span>
-      </button>
-      <div class="cursos-grid grupo-body" style="display:none;">
-        <div class="curso-card" data-area="saude" data-tab="graduacao">
-          <div class="curso-nome">Biomedicina</div>
-          <div class="curso-tags">
-            <span class="tag modalidade">Bacharelado</span>
-            <span class="tag duracao">4 anos</span>
-            <span class="tag valor">R$ 214,75/mês</span>
-          </div>
-        </div>
-        <div class="curso-card" data-area="saude" data-tab="graduacao">
-          <div class="curso-nome">Farmácia</div>
-          <div class="curso-tags">
-            <span class="tag modalidade">Bacharelado</span>
-            <span class="tag duracao">4 anos</span>
-            <span class="tag valor">R$ 214,75/mês</span>
-          </div>
-        </div>
-        <div class="curso-card" data-area="saude" data-tab="graduacao">
-          <div class="curso-nome">Fisioterapia</div>
-          <div class="curso-tags">
-            <span class="tag modalidade">Bacharelado</span>
-            <span class="tag duracao">4 anos</span>
-            <span class="tag valor">R$ 214,75/mês</span>
-          </div>
-        </div>
-        <div class="curso-card" data-area="saude" data-tab="graduacao">
-          <div class="curso-nome">Fonoaudiologia</div>
-          <div class="curso-tags">
-            <span class="tag modalidade">Bacharelado</span>
-            <span class="tag duracao">4 anos</span>
-            <span class="tag valor">R$ 214,75/mês</span>
-          </div>
-        </div>
-        <div class="curso-card" data-area="saude" data-tab="graduacao">
-          <div class="curso-nome">Nutrição</div>
-          <div class="curso-tags">
-            <span class="tag modalidade">Bacharelado</span>
-            <span class="tag duracao">4 anos</span>
-            <span class="tag valor">R$ 214,75/mês</span>
-          </div>
-        </div>
-        <div class="curso-card" data-area="saude" data-tab="graduacao">
-          <div class="curso-nome">Podologia</div>
-          <div class="curso-tags">
-            <span class="tag modalidade">Tecnólogo</span>
-            <span class="tag duracao">2,5 anos</span>
-            <span class="tag valor">R$ 214,75/mês</span>
-          </div>
-        </div>
-        <div class="curso-card" data-area="saude" data-tab="graduacao">
-          <div class="curso-nome">Radiologia</div>
-          <div class="curso-tags">
-            <span class="tag modalidade">Tecnólogo</span>
-            <span class="tag duracao">3 anos</span>
-            <span class="tag valor">R$ 214,75/mês</span>
-          </div>
-        </div>
-        <div class="curso-card" data-area="saude" data-tab="graduacao">
-          <div class="curso-nome">Terapia Ocupacional</div>
-          <div class="curso-tags">
-            <span class="tag modalidade">Bacharelado</span>
-            <span class="tag duracao">4 anos</span>
-            <span class="tag valor">R$ 214,75/mês</span>
-          </div>
-        </div>
-        <div class="curso-card" data-area="saude" data-tab="graduacao">
-          <div class="curso-nome">Estética e Cosmética</div>
-          <div class="curso-tags">
-            <span class="tag modalidade">Tecnólogo</span>
-            <span class="tag duracao">2,5 anos</span>
-            <span class="tag valor">R$ 124,75/mês</span>
-          </div>
-        </div>
-        <div class="curso-card" data-area="saude" data-tab="graduacao">
-          <div class="curso-nome">Terapias Integrativas e Complementares</div>
-          <div class="curso-tags">
-            <span class="tag modalidade">Tecnólogo</span>
-            <span class="tag duracao">2,5 anos</span>
-            <span class="tag valor">R$ 124,75/mês</span>
-          </div>
-        </div>
-        <div class="curso-card" data-area="saude" data-tab="graduacao">
-          <div class="curso-nome">Agente Comunitário</div>
-          <div class="curso-tags">
-            <span class="tag modalidade">Tecnólogo</span>
-            <span class="tag duracao">2,5 anos</span>
-            <span class="tag valor">R$ 124,75/mês</span>
-          </div>
-        </div>
-        <div class="curso-card" data-area="saude" data-tab="graduacao">
-          <div class="curso-nome">Psicopedagogia</div>
-          <div class="curso-tags">
-            <span class="tag modalidade">Bacharelado</span>
-            <span class="tag duracao">4 anos</span>
-            <span class="tag valor">R$ 82,50/mês</span>
-          </div>
-        </div>
+<!-- SAÚDE -->
+<div class="grupo-area" data-area="saude">
+  <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
+    Saúde
+    <span class="grupo-arrow">▼</span>
+  </button>
+  <div class="cursos-grid grupo-body" style="display:none;">
+
+    <div class="curso-card"
+         data-area="saude"
+         data-tab="graduacao"
+         onclick="abrirModal(
+           'Biomedicina',
+           'Bacharelado',
+           '4 anos • R$ 214,75/mês',
+           'Tem Estágio Obrigatório.\nTem TCC.\nTem Aula Prática no MegaPolo.\nTem reajuste anual na mensalidade.'
+         )">
+      <div class="curso-nome">Biomedicina</div>
+      <div class="curso-tags">
+        <span class="tag modalidade">Bacharelado</span>
+        <span class="tag duracao">4 anos</span>
+        <span class="tag valor">R$ 214,75/mês</span>
       </div>
+      <a href="https://wa.me/5574981270882?text=Quero%20me%20matricular%20no%20curso%20de%20Biomedicina"
+         class="btn-matricula"
+         target="_blank"
+         rel="noopener"
+         onclick="event.stopPropagation()">
+        Quero me matricular
+      </a>
     </div>
 
+    <div class="curso-card"
+         data-area="saude"
+         data-tab="graduacao"
+         onclick="abrirModal(
+           'Farmácia',
+           'Bacharelado',
+           '4 anos • R$ 214,75/mês',
+           'Tem Estágio Obrigatório.\nTem TCC.\nTem Aula Prática no MegaPolo.\nTem reajuste anual na mensalidade.'
+         )">
+      <div class="curso-nome">Farmácia</div>
+      <div class="curso-tags">
+        <span class="tag modalidade">Bacharelado</span>
+        <span class="tag duracao">4 anos</span>
+        <span class="tag valor">R$ 214,75/mês</span>
+      </div>
+      <a href="https://wa.me/5574981270882?text=Quero%20me%20matricular%20no%20curso%20de%20Farm%C3%A1cia"
+         class="btn-matricula"
+         target="_blank"
+         rel="noopener"
+         onclick="event.stopPropagation()">
+        Quero me matricular
+      </a>
+    </div>
+
+    <div class="curso-card"
+         data-area="saude"
+         data-tab="graduacao"
+         onclick="abrirModal(
+           'Fisioterapia',
+           'Bacharelado',
+           '4 anos • R$ 214,75/mês',
+           'Tem Estágio Obrigatório.\nTem TCC.\nTem Aula Prática no MegaPolo.\nTem reajuste anual na mensalidade.'
+         )">
+      <div class="curso-nome">Fisioterapia</div>
+      <div class="curso-tags">
+        <span class="tag modalidade">Bacharelado</span>
+        <span class="tag duracao">4 anos</span>
+        <span class="tag valor">R$ 214,75/mês</span>
+      </div>
+      <a href="https://wa.me/5574981270882?text=Quero%20me%20matricular%20no%20curso%20de%20Fisioterapia"
+         class="btn-matricula"
+         target="_blank"
+         rel="noopener"
+         onclick="event.stopPropagation()">
+        Quero me matricular
+      </a>
+    </div>
+
+    <div class="curso-card"
+         data-area="saude"
+         data-tab="graduacao"
+         onclick="abrirModal(
+           'Fonoaudiologia',
+           'Bacharelado',
+           '4 anos • R$ 214,75/mês',
+           'Tem Estágio Obrigatório.\nTem TCC.\nTem Aula Prática no MegaPolo.\nTem reajuste anual na mensalidade.'
+         )">
+      <div class="curso-nome">Fonoaudiologia</div>
+      <div class="curso-tags">
+        <span class="tag modalidade">Bacharelado</span>
+        <span class="tag duracao">4 anos</span>
+        <span class="tag valor">R$ 214,75/mês</span>
+      </div>
+      <a href="https://wa.me/5574981270882?text=Quero%20me%20matricular%20no%20curso%20de%20Fonoaudiologia"
+         class="btn-matricula"
+         target="_blank"
+         rel="noopener"
+         onclick="event.stopPropagation()">
+        Quero me matricular
+      </a>
+    </div>
+
+    <div class="curso-card"
+         data-area="saude"
+         data-tab="graduacao"
+         onclick="abrirModal(
+           'Nutrição',
+           'Bacharelado',
+           '4 anos • R$ 214,75/mês',
+           'Tem Estágio Obrigatório.\nTem TCC.\nTem Aula Prática no MegaPolo.\nTem reajuste anual na mensalidade.'
+         )">
+      <div class="curso-nome">Nutrição</div>
+      <div class="curso-tags">
+        <span class="tag modalidade">Bacharelado</span>
+        <span class="tag duracao">4 anos</span>
+        <span class="tag valor">R$ 214,75/mês</span>
+      </div>
+      <a href="https://wa.me/5574981270882?text=Quero%20me%20matricular%20no%20curso%20de%20Nutri%C3%A7%C3%A3o"
+         class="btn-matricula"
+         target="_blank"
+         rel="noopener"
+         onclick="event.stopPropagation()">
+        Quero me matricular
+      </a>
+    </div>
+
+    <div class="curso-card"
+         data-area="saude"
+         data-tab="graduacao"
+         onclick="abrirModal(
+           'Podologia',
+           'Tecnólogo',
+           '2,5 anos • R$ 214,75/mês',
+           'Não tem Estágio Obrigatório.\nNão tem TCC.\nPode ter reajuste anual na mensalidade.'
+         )">
+      <div class="curso-nome">Podologia</div>
+      <div class="curso-tags">
+        <span class="tag modalidade">Tecnólogo</span>
+        <span class="tag duracao">2,5 anos</span>
+        <span class="tag valor">R$ 214,75/mês</span>
+      </div>
+      <a href="https://wa.me/5574981270882?text=Quero%20me%20matricular%20no%20curso%20de%20Podologia"
+         class="btn-matricula"
+         target="_blank"
+         rel="noopener"
+         onclick="event.stopPropagation()">
+        Quero me matricular
+      </a>
+    </div>
+
+    <div class="curso-card"
+         data-area="saude"
+         data-tab="graduacao"
+         onclick="abrirModal(
+           'Radiologia',
+           'Tecnólogo',
+           '3 anos • R$ 214,75/mês',
+           'Tem Estágio Obrigatório.\nNão tem TCC.\nTem Aula Prática no MegaPolo.\nTem reajuste anual na mensalidade.'
+         )">
+      <div class="curso-nome">Radiologia</div>
+      <div class="curso-tags">
+        <span class="tag modalidade">Tecnólogo</span>
+        <span class="tag duracao">3 anos</span>
+        <span class="tag valor">R$ 214,75/mês</span>
+      </div>
+      <a href="https://wa.me/5574981270882?text=Quero%20me%20matricular%20no%20curso%20de%20Radiologia"
+         class="btn-matricula"
+         target="_blank"
+         rel="noopener"
+         onclick="event.stopPropagation()">
+        Quero me matricular
+      </a>
+    </div>
+
+    <div class="curso-card"
+         data-area="saude"
+         data-tab="graduacao"
+         onclick="abrirModal(
+           'Terapia Ocupacional',
+           'Bacharelado',
+           '4 anos • R$ 214,75/mês',
+           'Tem Estágio Obrigatório.\nTem TCC.\nTem Aula Prática no MegaPolo.\nTem reajuste anual na mensalidade.'
+         )">
+      <div class="curso-nome">Terapia Ocupacional</div>
+      <div class="curso-tags">
+        <span class="tag modalidade">Bacharelado</span>
+        <span class="tag duracao">4 anos</span>
+        <span class="tag valor">R$ 214,75/mês</span>
+      </div>
+      <a href="https://wa.me/5574981270882?text=Quero%20me%20matricular%20no%20curso%20de%20Terapia%20Ocupacional"
+         class="btn-matricula"
+         target="_blank"
+         rel="noopener"
+         onclick="event.stopPropagation()">
+        Quero me matricular
+      </a>
+    </div>
+
+    <div class="curso-card"
+         data-area="saude"
+         data-tab="graduacao"
+         onclick="abrirModal(
+           'Estética e Cosmética',
+           'Tecnólogo',
+           '2,5 anos • R$ 124,75/mês',
+           'Não tem Estágio Obrigatório.\nNão tem TCC.\nPode ter reajuste anual na mensalidade.'
+         )">
+      <div class="curso-nome">Estética e Cosmética</div>
+      <div class="curso-tags">
+        <span class="tag modalidade">Tecnólogo</span>
+        <span class="tag duracao">2,5 anos</span>
+        <span class="tag valor">R$ 124,75/mês</span>
+      </div>
+      <a href="https://wa.me/5574981270882?text=Quero%20me%20matricular%20no%20curso%20de%20Est%C3%A9tica%20e%20Cosm%C3%A9tica"
+         class="btn-matricula"
+         target="_blank"
+         rel="noopener"
+         onclick="event.stopPropagation()">
+        Quero me matricular
+      </a>
+    </div>
+
+    <div class="curso-card"
+         data-area="saude"
+         data-tab="graduacao"
+         onclick="abrirModal(
+           'Terapias Integrativas e Complementares',
+           'Tecnólogo',
+           '2,5 anos • R$ 124,75/mês',
+           'Não tem Estágio Obrigatório.\nNão tem TCC.\nPode ter reajuste anual na mensalidade.'
+         )">
+      <div class="curso-nome">Terapias Integrativas e Complementares</div>
+      <div class="curso-tags">
+        <span class="tag modalidade">Tecnólogo</span>
+        <span class="tag duracao">2,5 anos</span>
+        <span class="tag valor">R$ 124,75/mês</span>
+      </div>
+      <a href="https://wa.me/5574981270882?text=Quero%20me%20matricular%20no%20curso%20de%20Terapias%20Integrativas%20e%20Complementares"
+         class="btn-matricula"
+         target="_blank"
+         rel="noopener"
+         onclick="event.stopPropagation()">
+        Quero me matricular
+      </a>
+    </div>
+
+    <div class="curso-card"
+         data-area="saude"
+         data-tab="graduacao"
+         onclick="abrirModal(
+           'Agente Comunitário',
+           'Tecnólogo',
+           '2,5 anos • R$ 124,75/mês',
+           'Não tem Estágio Obrigatório.\nNão tem TCC.\nPode ter reajuste anual na mensalidade.'
+         )">
+      <div class="curso-nome">Agente Comunitário</div>
+      <div class="curso-tags">
+        <span class="tag modalidade">Tecnólogo</span>
+        <span class="tag duracao">2,5 anos</span>
+        <span class="tag valor">R$ 124,75/mês</span>
+      </div>
+      <a href="https://wa.me/5574981270882?text=Quero%20me%20matricular%20no%20curso%20de%20Agente%20Comunit%C3%A1rio"
+         class="btn-matricula"
+         target="_blank"
+         rel="noopener"
+         onclick="event.stopPropagation()">
+        Quero me matricular
+      </a>
+    </div>
+
+    <div class="curso-card"
+         data-area="saude"
+         data-tab="graduacao"
+         onclick="abrirModal(
+           'Psicopedagogia',
+           'Bacharelado',
+           '4 anos • R$ 82,50/mês',
+           'Tem Estágio Obrigatório.\nTem TCC.\nPode ter reajuste anual na mensalidade.'
+         )">
+      <div class="curso-nome">Psicopedagogia</div>
+      <div class="curso-tags">
+        <span class="tag modalidade">Bacharelado</span>
+        <span class="tag duracao">4 anos</span>
+        <span class="tag valor">R$ 82,50/mês</span>
+      </div>
+      <a href="https://wa.me/5574981270882?text=Quero%20me%20matricular%20no%20curso%20de%20Psicopedagogia"
+         class="btn-matricula"
+         target="_blank"
+         rel="noopener"
+         onclick="event.stopPropagation()">
+        Quero me matricular
+      </a>
+    </div>
+
+  </div>
+</div>
+  
     <!-- EDUCAÇÃO -->
     <div class="grupo-area" data-area="educacao">
       <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
@@ -2706,8 +3020,50 @@
 
 </div><!-- /cursos-container -->
     
-<p class="nota">* Valores referentes ao Módulo 2/2026 com desconto de pontualidade de 75%. Sujeitos a reajuste anual. Consulte o polo para confirmar condições vigentes.</p>
+<!-- MODAL DE CURSO -->
+<div class="modal-overlay" id="modalCurso" onclick="fecharModalFora(event)">
+  <div class="modal-box">
+    <button class="modal-fechar" onclick="fecharModal()">✕</button>
+    <div class="modal-titulo" id="modalTitulo"></div>
+    <div class="modal-meta" id="modalMeta"></div>
+    <div class="modal-descricao" id="modalDescricao"></div>
+    <a href="#" class="modal-btn-wpp" id="modalWpp" target="_blank" rel="noopener">
+      📲 Quero me matricular
+    </a>
+  </div>
+</div>
 
+    <script>
+  function abrirModal(titulo, modalidade, duracao, descricao) {
+    document.getElementById('modalTitulo').textContent = titulo;
+    document.getElementById('modalMeta').innerHTML =
+      '<span>' + modalidade + '</span><span>' + duracao + '</span>';
+    document.getElementById('modalDescricao').textContent = descricao;
+
+    var msg = encodeURIComponent('Quero me matricular no curso de ' + titulo);
+    document.getElementById('modalWpp').href =
+      'https://wa.me/5574981270882?text=' + msg;
+
+    document.getElementById('modalCurso').classList.add('aberto');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function fecharModal() {
+    document.getElementById('modalCurso').classList.remove('aberto');
+    document.body.style.overflow = '';
+  }
+
+  function fecharModalFora(e) {
+    if (e.target === document.getElementById('modalCurso')) {
+      fecharModal();
+    }
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') fecharModal();
+  });
+</script>
+    
 <!-- ===== FOOTER ===== -->
 <footer>
   <p><strong>Polos Unifatecie EAD</strong> – Barra do Mendes e Ipupiara - BA</p>
