@@ -623,37 +623,37 @@ Copiar
     }
   }
 
-  // ── Tabs Graduação / Pós ────────────────────────────────────
-  let tabAtual = 'graduacao';
+  // ── Tabs Graduação / Pós / 2ª Graduação ────────────────────
+  let tabAtual = 'graduacao'; // Ou 'segunda' se quiser que comece nela
 
   function mudarTab(tab) {
     tabAtual = tab;
     document.querySelectorAll('.tab-btn').forEach(btn => {
-      btn.classList.toggle(
-        'ativo',
-        (btn.textContent.includes('Graduação') && tab === 'graduacao') ||
-        (btn.textContent.includes('Pós') && tab === 'pos')
-      );
+      btn.classList.remove('ativo'); // Remove 'ativo' de todos primeiro
+      if (btn.dataset.tab === tab) { // Verifica se o data-tab do botão corresponde à aba atual
+        btn.classList.add('ativo'); // Adiciona 'ativo' apenas ao botão correto
+      }
     });
 
-    const tabGrad = document.getElementById('tab-graduacao');
-    const tabPos  = document.getElementById('tab-pos');
-    if (tab === 'graduacao') {
-      tabGrad.style.display = '';
-      tabPos.style.display  = 'none';
-    } else {
-      tabGrad.style.display = 'none';
-      tabPos.style.display  = '';
+    // Esconde todas as abas de conteúdo primeiro
+    document.querySelectorAll('.tab-content').forEach(content => {
+      content.style.display = 'none';
+    });
+
+    // Mostra apenas a aba de conteúdo correta
+    const tabContentToShow = document.querySelector(`.tab-content[data-tab="${tab}"]`);
+    if (tabContentToShow) {
+      tabContentToShow.style.display = ''; // Ou 'block' ou 'grid' dependendo do seu layout
     }
 
-    // Fecha todos os grupos ao trocar de tab
+    // Fecha todos os grupos (accordions) ao trocar de tab
     document.querySelectorAll('.grupo-titulo').forEach(b => {
       b.setAttribute('aria-expanded', 'false');
       const body = b.nextElementSibling;
       if (body) body.style.display = 'none';
     });
 
-    filtrarBusca();
+    filtrarBusca(); // Mantém a função de busca se ela existir
   }
 
   // ── Busca por nome ──────────────────────────────────────────
@@ -729,11 +729,33 @@ Copiar
   <p class="filtros-sub">Use os filtros abaixo para navegar pelos cursos disponíveis.</p>
   <div class="divider"></div>
 
-  <!-- Tabs -->
-  <div class="tabs">
-    <button class="tab-btn ativo" onclick="mudarTab('graduacao')">🎓 Graduação</button>
-    <button class="tab-btn" onclick="mudarTab('pos')">📚 Pós-Graduação</button>
-  </div>
+<!-- Tabs -->
+<div class="tabs">
+  <button class="tab-btn ativo"
+          data-tab="graduacao"
+          onclick="mudarTab('graduacao')">
+    🎓 Graduação
+  </button>
+
+  <button class="tab-btn"
+          data-tab="segunda"
+          onclick="mudarTab('segunda')">
+    2ª Graduação
+  </button>
+
+  <button class="tab-btn"
+          data-tab="pos"
+          onclick="mudarTab('pos')">
+    📚 Pós-Graduação
+  </button>
+
+  <button class="tab-btn"
+    data-tab="tecnicos"
+    onclick="mudarTab('tecnicos')">
+    Cursos Técnicos <span style="font-size:0.8em; opacity:0.7;">(Em breve)</span>
+  </button>
+  
+</div>
 
   <!-- Busca -->
   <div class="busca-wrapper">
@@ -2244,6 +2266,225 @@ Copiar
     </div>
   </div><!-- /tab-graduacao -->
 
+<!-- ABA 2ª GRADUAÇÃO -->
+<div class="tab-content" data-tab="segunda" style="display:none;">
+
+  <!-- 2ª LICENCIATURA -->
+  <div class="grupo-area" data-area="segunda-licenciatura">
+    <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
+      2ª Licenciatura
+      <span class="grupo-arrow">▼</span>
+    </button>
+    <div class="cursos-grid grupo-body" style="display:none;">
+
+      <!-- CARD DE INFORMAÇÕES GERAIS -->
+      <div class="info-card" style="grid-column: 1 / -1; background:#f9fafb; border:1px solid #e5e7eb; border-radius:12px; padding:16px 20px; margin-bottom:8px; font-size:0.88rem; color:#374151; line-height:1.8;">
+        <div style="display:flex; flex-wrap:wrap; gap:10px 24px; margin-bottom:10px;">
+          <span><strong>Duração:</strong> Mínimo de 1 ano</span>
+          <span><strong>Aula no Polo:</strong> Não</span>
+          <span><strong>Estágio:</strong> Sim</span>
+          <span><strong>TCC:</strong> Não</span>
+          <span><strong>Matrícula:</strong> R$ 19,90</span>
+          <span><strong>Mensalidade:</strong> R$ 82,50</span>
+        </div>
+        <p style="margin:0 0 4px;">💡 Valor com desconto de pontualidade (pagamento até o vencimento). Pode haver reajuste anual ao longo do curso.</p>
+        <p style="margin:0; font-weight:600;">⚠️ Pré-requisito: portador de diploma de licenciatura (conforme regulamento).</p>
+      </div>
+
+      <!-- CURSOS SEGUNDA GRADUAÇÃO -->
+      <div class="curso-card"
+           data-area="segunda-licenciatura"
+           data-tab="segunda"
+           onclick="abrirModal(
+             'Sociologia – 2ª Licenciatura',
+             '2ª Licenciatura',
+             'Mín. 1 ano • R$ 82,50/mês',
+             '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Duração mínima de 1 ano.</li><li>Tem Estágio Obrigatório.</li><li>Não tem TCC.</li><li>Não tem aula presencial no Polo.</li><li>Matrícula: R$ 19,90.</li><li>Pode haver reajuste anual na mensalidade.</li><li>Pré-requisito: portador de diploma de licenciatura (conforme regulamento).</li></ul>'
+           )">
+        <div class="curso-nome">Sociologia</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">2ª Licenciatura</span>
+          <span class="tag duracao">Mín. 1 ano</span>
+          <span class="tag valor">R$ 82,50/mês</span>
+        </div>
+      </div>
+
+      <div class="curso-card"
+           data-area="segunda-licenciatura"
+           data-tab="segunda"
+           onclick="abrirModal(
+             'Pedagogia – 2ª Licenciatura',
+             '2ª Licenciatura',
+             'Mín. 1 ano • R$ 82,50/mês',
+             '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Duração mínima de 1 ano.</li><li>Tem Estágio Obrigatório.</li><li>Não tem TCC.</li><li>Não tem aula presencial no Polo.</li><li>Matrícula: R$ 19,90.</li><li>Pode haver reajuste anual na mensalidade.</li><li>Pré-requisito: portador de diploma de licenciatura (conforme regulamento).</li></ul>'
+           )">
+        <div class="curso-nome">Pedagogia</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">2ª Licenciatura</span>
+          <span class="tag duracao">Mín. 1 ano</span>
+          <span class="tag valor">R$ 82,50/mês</span>
+        </div>
+      </div>
+
+      <div class="curso-card"
+           data-area="segunda-licenciatura"
+           data-tab="segunda"
+           onclick="abrirModal(
+             'Matemática – 2ª Licenciatura',
+             '2ª Licenciatura',
+             'Mín. 1 ano • R$ 82,50/mês',
+             '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Duração mínima de 1 ano.</li><li>Tem Estágio Obrigatório.</li><li>Não tem TCC.</li><li>Não tem aula presencial no Polo.</li><li>Matrícula: R$ 19,90.</li><li>Pode haver reajuste anual na mensalidade.</li><li>Pré-requisito: portador de diploma de licenciatura (conforme regulamento).</li></ul>'
+           )">
+        <div class="curso-nome">Matemática</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">2ª Licenciatura</span>
+          <span class="tag duracao">Mín. 1 ano</span>
+          <span class="tag valor">R$ 82,50/mês</span>
+        </div>
+      </div>
+
+      <div class="curso-card"
+           data-area="segunda-licenciatura"
+           data-tab="segunda"
+           onclick="abrirModal(
+             'Letras – Português e Inglês – 2ª Licenciatura',
+             '2ª Licenciatura',
+             'Mín. 1 ano • R$ 82,50/mês',
+             '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Duração mínima de 1 ano.</li><li>Tem Estágio Obrigatório.</li><li>Não tem TCC.</li><li>Não tem aula presencial no Polo.</li><li>Matrícula: R$ 19,90.</li><li>Pode haver reajuste anual na mensalidade.</li><li>Pré-requisito: portador de diploma de licenciatura (conforme regulamento).</li></ul>'
+           )">
+        <div class="curso-nome">Letras – Português e Inglês</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">2ª Licenciatura</span>
+          <span class="tag duracao">Mín. 1 ano</span>
+          <span class="tag valor">R$ 82,50/mês</span>
+        </div>
+      </div>
+
+      <div class="curso-card"
+           data-area="segunda-licenciatura"
+           data-tab="segunda"
+           onclick="abrirModal(
+             'Letras – Português e Libras – 2ª Licenciatura',
+             '2ª Licenciatura',
+             'Mín. 1 ano • R$ 82,50/mês',
+             '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Duração mínima de 1 ano.</li><li>Tem Estágio Obrigatório.</li><li>Não tem TCC.</li><li>Não tem aula presencial no Polo.</li><li>Matrícula: R$ 19,90.</li><li>Pode haver reajuste anual na mensalidade.</li><li>Pré-requisito: portador de diploma de licenciatura (conforme regulamento).</li></ul>'
+           )">
+        <div class="curso-nome">Letras – Português e Libras</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">2ª Licenciatura</span>
+          <span class="tag duracao">Mín. 1 ano</span>
+          <span class="tag valor">R$ 82,50/mês</span>
+        </div>
+      </div>
+
+      <div class="curso-card"
+           data-area="segunda-licenciatura"
+           data-tab="segunda"
+           onclick="abrirModal(
+             'História – 2ª Licenciatura',
+             '2ª Licenciatura',
+             'Mín. 1 ano • R$ 82,50/mês',
+             '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Duração mínima de 1 ano.</li><li>Tem Estágio Obrigatório.</li><li>Não tem TCC.</li><li>Não tem aula presencial no Polo.</li><li>Matrícula: R$ 19,90.</li><li>Pode haver reajuste anual na mensalidade.</li><li>Pré-requisito: portador de diploma de licenciatura (conforme regulamento).</li></ul>'
+           )">
+        <div class="curso-nome">História</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">2ª Licenciatura</span>
+          <span class="tag duracao">Mín. 1 ano</span>
+          <span class="tag valor">R$ 82,50/mês</span>
+        </div>
+      </div>
+
+      <div class="curso-card"
+           data-area="segunda-licenciatura"
+           data-tab="segunda"
+           onclick="abrirModal(
+             'Geografia – 2ª Licenciatura',
+             '2ª Licenciatura',
+             'Mín. 1 ano • R$ 82,50/mês',
+             '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Duração mínima de 1 ano.</li><li>Tem Estágio Obrigatório.</li><li>Não tem TCC.</li><li>Não tem aula presencial no Polo.</li><li>Matrícula: R$ 19,90.</li><li>Pode haver reajuste anual na mensalidade.</li><li>Pré-requisito: portador de diploma de licenciatura (conforme regulamento).</li></ul>'
+           )">
+        <div class="curso-nome">Geografia</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">2ª Licenciatura</span>
+          <span class="tag duracao">Mín. 1 ano</span>
+          <span class="tag valor">R$ 82,50/mês</span>
+        </div>
+      </div>
+
+      <div class="curso-card"
+           data-area="segunda-licenciatura"
+           data-tab="segunda"
+           onclick="abrirModal(
+             'Filosofia – 2ª Licenciatura',
+             '2ª Licenciatura',
+             'Mín. 1 ano • R$ 82,50/mês',
+             '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Duração mínima de 1 ano.</li><li>Tem Estágio Obrigatório.</li><li>Não tem TCC.</li><li>Não tem aula presencial no Polo.</li><li>Matrícula: R$ 19,90.</li><li>Pode haver reajuste anual na mensalidade.</li><li>Pré-requisito: portador de diploma de licenciatura (conforme regulamento).</li></ul>'
+           )">
+        <div class="curso-nome">Filosofia</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">2ª Licenciatura</span>
+          <span class="tag duracao">Mín. 1 ano</span>
+          <span class="tag valor">R$ 82,50/mês</span>
+        </div>
+      </div>
+
+      <div class="curso-card"
+           data-area="segunda-licenciatura"
+           data-tab="segunda"
+           onclick="abrirModal(
+             'Ciências Biológicas – 2ª Licenciatura',
+             '2ª Licenciatura',
+             'Mín. 1 ano • R$ 82,50/mês',
+             '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Duração mínima de 1 ano.</li><li>Tem Estágio Obrigatório.</li><li>Não tem TCC.</li><li>Não tem aula presencial no Polo.</li><li>Matrícula: R$ 19,90.</li><li>Pode haver reajuste anual na mensalidade.</li><li>Pré-requisito: portador de diploma de licenciatura (conforme regulamento).</li></ul>'
+           )">
+        <div class="curso-nome">Ciências Biológicas</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">2ª Licenciatura</span>
+          <span class="tag duracao">Mín. 1 ano</span>
+          <span class="tag valor">R$ 82,50/mês</span>
+        </div>
+      </div>
+
+      <div class="curso-card"
+           data-area="segunda-licenciatura"
+           data-tab="segunda"
+           onclick="abrirModal(
+             'Artes – 2ª Licenciatura',
+             '2ª Licenciatura',
+             'Mín. 1 ano • R$ 82,50/mês',
+             '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Duração mínima de 1 ano.</li><li>Tem Estágio Obrigatório.</li><li>Não tem TCC.</li><li>Não tem aula presencial no Polo.</li><li>Matrícula: R$ 19,90.</li><li>Pode haver reajuste anual na mensalidade.</li><li>Pré-requisito: portador de diploma de licenciatura (conforme regulamento).</li></ul>'
+           )">
+        <div class="curso-nome">Artes</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">2ª Licenciatura</span>
+          <span class="tag duracao">Mín. 1 ano</span>
+          <span class="tag valor">R$ 82,50/mês</span>
+        </div>
+      </div>
+
+      <div class="curso-card"
+           data-area="segunda-licenciatura"
+           data-tab="segunda"
+           onclick="abrirModal(
+             'Educação Especial – 2ª Licenciatura',
+             '2ª Licenciatura',
+             'Mín. 1 ano • R$ 82,50/mês',
+             '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Duração mínima de 1 ano.</li><li>Tem Estágio Obrigatório.</li><li>Não tem TCC.</li><li>Não tem aula presencial no Polo.</li><li>Matrícula: R$ 19,90.</li><li>Pode haver reajuste anual na mensalidade.</li><li>Pré-requisito: portador de diploma de licenciatura (conforme regulamento).</li></ul>'
+           )">
+        <div class="curso-nome">Educação Especial</div>
+        <div class="curso-tags">
+          <span class="tag modalidade">2ª Licenciatura</span>
+          <span class="tag duracao">Mín. 1 ano</span>
+          <span class="tag valor">R$ 82,50/mês</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+  
 <!-- TAB PÓS-GRADUAÇÃO -->
 <div id="tab-pos" style="display:none;">
 
@@ -3594,6 +3835,13 @@ Copiar
     </div>
   </div>
 
+  <!-- CURSOS TECNICOS -->
+  <div class="tab-content" data-tab="tecnicos" style="display:none;">
+    <p style="margin:16px 0; color:#4b5563;">
+    Em breve você poderá conferir aqui nossos Cursos Técnicos presenciais e EAD.
+    </p>
+  </div>
+  
 </div>
 
   <div class="vazio" id="semResultado">Nenhum curso encontrado para esta busca.</div>
