@@ -609,106 +609,8 @@ Copiar
     footer .back-link:hover { text-decoration: underline; }
   </style>
 </head>
-<script>
-  // ── Accordion por área ──────────────────────────────────────
-  function toggleArea(btn) {
-    const body = btn.nextElementSibling;
-    const aberto = btn.getAttribute('aria-expanded') === 'true';
-    if (aberto) {
-      btn.setAttribute('aria-expanded', 'false');
-      body.style.display = 'none';
-    } else {
-      btn.setAttribute('aria-expanded', 'true');
-      body.style.display = 'grid';
-    }
-  }
-
-  // ── Tabs Graduação / Pós / 2ª Graduação ────────────────────
-  let tabAtual = 'graduacao'; // Ou 'segunda' se quiser que comece nela
-
-  function mudarTab(tab) {
-    tabAtual = tab;
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-      btn.classList.remove('ativo'); // Remove 'ativo' de todos primeiro
-      if (btn.dataset.tab === tab) { // Verifica se o data-tab do botão corresponde à aba atual
-        btn.classList.add('ativo'); // Adiciona 'ativo' apenas ao botão correto
-      }
-    });
-
-    // Esconde todas as abas de conteúdo primeiro
-    document.querySelectorAll('.tab-content').forEach(content => {
-      content.style.display = 'none';
-    });
-
-    // Mostra apenas a aba de conteúdo correta
-    const tabContentToShow = document.querySelector(`.tab-content[data-tab="${tab}"]`);
-    if (tabContentToShow) {
-      tabContentToShow.style.display = ''; // Ou 'block' ou 'grid' dependendo do seu layout
-    }
-
-    // Fecha todos os grupos (accordions) ao trocar de tab
-    document.querySelectorAll('.grupo-titulo').forEach(b => {
-      b.setAttribute('aria-expanded', 'false');
-      const body = b.nextElementSibling;
-      if (body) body.style.display = 'none';
-    });
-
-    filtrarBusca(); // Mantém a função de busca se ela existir
-  }
-
-  // ── Busca por nome ──────────────────────────────────────────
-  function filtrarBusca() {
-    const campo = document.getElementById('campoBusca');
-    const busca = campo ? campo.value.trim().toLowerCase() : '';
-    const semResultado = document.getElementById('semResultado');
-    let temAlgum = false;
-
-    const tabEl = tabAtual === 'graduacao'
-      ? document.getElementById('tab-graduacao')
-      : document.getElementById('tab-pos');
-
-    tabEl.querySelectorAll('.grupo-area').forEach(grupo => {
-      const cards = grupo.querySelectorAll('.curso-card');
-      let temNoGrupo = false;
-
-      cards.forEach(card => {
-        const nome = card.querySelector('.curso-nome').innerText.toLowerCase();
-        const visivel = !busca || nome.includes(busca);
-        card.classList.toggle('oculto', !visivel);
-        if (visivel) temNoGrupo = true;
-      });
-
-      const btn  = grupo.querySelector('.grupo-titulo');
-      const body = grupo.querySelector('.grupo-body');
-
-      if (busca) {
-        if (temNoGrupo) {
-          if (btn)  btn.setAttribute('aria-expanded', 'true');
-          if (body) body.style.display = 'grid';
-        } else {
-          if (btn)  btn.setAttribute('aria-expanded', 'false');
-          if (body) body.style.display = 'none';
-        }
-      }
-
-      if (temNoGrupo) temAlgum = true;
-    });
-
-    if (semResultado) {
-      semResultado.style.display = (busca && !temAlgum) ? 'block' : 'none';
-    }
-  }
-
-  // ── Inicialização ───────────────────────────────────────────
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.grupo-titulo').forEach(btn => {
-      btn.setAttribute('aria-expanded', 'false');
-      const body = btn.nextElementSibling;
-      if (body) body.style.display = 'none';
-    });
-  });
-</script>
-  <body>
+  
+<body>
 
 <!-- ===== HEADER ===== -->
 <header>
@@ -3858,7 +3760,108 @@ Copiar
   </div>
 </div>
 
-    <script>
+<script>
+  // ── Accordion por área ──────────────────────────────────────
+  function toggleArea(btn) {
+    const body = btn.nextElementSibling;
+    const aberto = btn.getAttribute('aria-expanded') === 'true';
+    if (aberto) {
+      btn.setAttribute('aria-expanded', 'false');
+      body.style.display = 'none';
+    } else {
+      btn.setAttribute('aria-expanded', 'true');
+      body.style.display = 'grid';
+    }
+  }
+
+  // ── Tabs Graduação / Pós / 2ª Graduação / Técnicos ────────────────────
+  let tabAtual = 'graduacao'; // Define a aba inicial
+
+  function mudarTab(tab) {
+    tabAtual = tab;
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.classList.remove('ativo'); // Remove 'ativo' de todos primeiro
+      if (btn.dataset.tab === tab) { // Verifica se o data-tab do botão corresponde à aba atual
+        btn.classList.add('ativo'); // Adiciona 'ativo' apenas ao botão correto
+      }
+    });
+
+    // Esconde todas as abas de conteúdo primeiro
+    document.querySelectorAll('.tab-content').forEach(content => {
+      content.style.display = 'none';
+    });
+
+    // Mostra apenas a aba de conteúdo correta
+    const tabContentToShow = document.querySelector(`.tab-content[data-tab="${tab}"]`);
+    if (tabContentToShow) {
+      tabContentToShow.style.display = ''; // Ou 'block' ou 'grid' dependendo do seu layout
+    }
+
+    // Fecha todos os grupos (accordions) ao trocar de tab
+    document.querySelectorAll('.grupo-titulo').forEach(b => {
+      b.setAttribute('aria-expanded', 'false');
+      const body = b.nextElementSibling;
+      if (body) body.style.display = 'none';
+    });
+
+    filtrarBusca(); // Mantém a função de busca se ela existir
+  }
+
+  // ── Busca por nome ──────────────────────────────────────────
+  function filtrarBusca() {
+    const campo = document.getElementById('campoBusca'); // Assumindo que 'campoBusca' é o ID do seu input de busca
+    const busca = campo ? campo.value.trim().toLowerCase() : '';
+    const semResultado = document.getElementById('semResultado'); // Assumindo que 'semResultado' é o ID do seu elemento de "nenhum resultado"
+    let temAlgum = false;
+
+    // AQUI ESTÁ A MUDANÇA PRINCIPAL: Agora busca o elemento da aba ativa usando class e data-tab
+    const tabEl = document.querySelector(`.tab-content[data-tab="${tabAtual}"]`);
+
+    // Se a aba ativa não for encontrada (o que não deve acontecer se o HTML estiver correto),
+    // ou se não houver um campo de busca, apenas sai da função.
+    if (!tabEl || !campo) {
+      // console.warn(`Aba de conteúdo com data-tab="${tabAtual}" não encontrada ou campoBusca ausente para filtrar.`);
+      return;
+    }
+
+    // Itera sobre todos os grupos de área dentro da aba ativa
+    tabEl.querySelectorAll('.grupo-area').forEach(grupo => {
+      const cards = grupo.querySelectorAll('.curso-card');
+      let temNoGrupo = false;
+
+      cards.forEach(card => {
+        const nome = card.querySelector('.curso-nome').innerText.toLowerCase();
+        const visivel = !busca || nome.includes(busca);
+        card.classList.toggle('oculto', !visivel);
+        if (visivel) temNoGrupo = true;
+      });
+
+      const btn  = grupo.querySelector('.grupo-titulo');
+      const body = grupo.querySelector('.grupo-body');
+
+      // Se houver busca, ajusta a visibilidade dos grupos
+      if (busca) {
+        if (temNoGrupo) {
+          if (btn)  btn.setAttribute('aria-expanded', 'true');
+          if (body) body.style.display = 'grid';
+        } else {
+          if (btn)  btn.setAttribute('aria-expanded', 'false');
+          if (body) body.style.display = 'none';
+        }
+      } else { // Se não houver busca, garante que os grupos voltem ao estado inicial (fechados)
+        if (btn)  btn.setAttribute('aria-expanded', 'false');
+        if (body) body.style.display = 'none';
+      }
+
+      if (temNoGrupo) temAlgum = true;
+    });
+
+    if (semResultado) {
+      semResultado.style.display = (busca && !temAlgum) ? 'block' : 'none';
+    }
+  }
+
+  // ── Funções do Modal ────────────────────────────────────────
   function abrirModal(titulo, modalidade, duracao, descricao) {
     document.getElementById('modalTitulo').textContent = titulo;
     document.getElementById('modalMeta').innerHTML =
@@ -3887,6 +3890,19 @@ Copiar
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') fecharModal();
   });
+
+  // ── Inicialização ───────────────────────────────────────────
+  document.addEventListener('DOMContentLoaded', () => {
+    // Inicializa todos os accordions fechados
+    document.querySelectorAll('.grupo-titulo').forEach(btn => {
+      btn.setAttribute('aria-expanded', 'false');
+      const body = btn.nextElementSibling;
+      if (body) body.style.display = 'none';
+    });
+
+    // Garante que a aba inicial esteja ativa e visível
+    mudarTab(tabAtual); // Chama mudarTab para a aba inicial
+  });
 </script>
     
 <!-- ===== FOOTER ===== -->
@@ -3898,115 +3914,14 @@ Copiar
   </p>
   <p style="margin-top:12px;font-size:.78rem;opacity:.6;">© 2026 Polos Unifatecie EAD. Todos os direitos reservados.</p>
 </footer>
-<script>
-  // Abre/fecha a área ao clicar no título
-  function toggleArea(btn) {
-    const body = btn.nextElementSibling;
-    const aberto = btn.getAttribute('aria-expanded') === 'true';
 
-    if (aberto) {
-      btn.setAttribute('aria-expanded', 'false');
-      body.style.display = 'none';
-    } else {
-      btn.setAttribute('aria-expanded', 'true');
-      body.style.display = 'grid';
-    }
-  }
-
-  // Controle da aba (Graduação / Pós)
-  let tabAtual = 'graduacao';
-
-  function mudarTab(tab) {
-    tabAtual = tab;
-
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-      btn.classList.toggle(
-        'ativo',
-        (btn.textContent.includes('Graduação') && tab === 'graduacao') ||
-        (btn.textContent.includes('Pós') && tab === 'pos')
-      );
-    });
-
-    const tabGrad = document.getElementById('tab-graduacao');
-    const tabPos  = document.getElementById('tab-pos');
-
-    if (tab === 'graduacao') {
-      tabGrad.style.display = '';
-      tabPos.style.display  = 'none';
-    } else {
-      tabGrad.style.display = 'none';
-      tabPos.style.display  = '';
-    }
-
-    // Fecha todos os grupos ao trocar de tab
-    document.querySelectorAll('.grupo-titulo').forEach(b => {
-      b.setAttribute('aria-expanded', 'false');
-      const body = b.nextElementSibling;
-      if (body) body.style.display = 'none';
-    });
-
-    filtrarBusca();
-  }
-
-  // Busca por nome do curso
-  function filtrarBusca() {
-    const campo = document.getElementById('campoBusca');
-    const busca = campo ? campo.value.trim().toLowerCase() : '';
-    const semResultado = document.getElementById('semResultado');
-    let temAlgum = false;
-
-    const tabEl = tabAtual === 'graduacao'
-      ? document.getElementById('tab-graduacao')
-      : document.getElementById('tab-pos');
-
-    tabEl.querySelectorAll('.grupo-area').forEach(grupo => {
-      const cards = grupo.querySelectorAll('.curso-card');
-      let temNoGrupo = false;
-
-      cards.forEach(card => {
-        const nome = card.querySelector('.curso-nome').innerText.toLowerCase();
-        const visivel = !busca || nome.includes(busca);
-        card.classList.toggle('oculto', !visivel);
-        if (visivel) temNoGrupo = true;
-      });
-
-      const btn  = grupo.querySelector('.grupo-titulo');
-      const body = grupo.querySelector('.grupo-body');
-
-      if (busca) {
-        if (temNoGrupo) {
-          if (btn) btn.setAttribute('aria-expanded', 'true');
-          if (body) body.style.display = 'grid';
-        } else {
-          if (btn) btn.setAttribute('aria-expanded', 'false');
-          if (body) body.style.display = 'none';
-        }
-      }
-
-      if (temNoGrupo) temAlgum = true;
-    });
-
-    if (semResultado) {
-      semResultado.style.display = (busca && !temAlgum) ? 'block' : 'none';
-    }
-  }
-
-  // Deixa tudo fechado ao carregar
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.grupo-titulo').forEach(btn => {
-      btn.setAttribute('aria-expanded', 'false');
-      const body = btn.nextElementSibling;
-      if (body) body.style.display = 'none';
-    });
-  });
-</script>
    <!-- ===== BOTÃO FLUTUANTE ===== -->
-<a href="https://wa.me/5574999575795?text=Ol%C3%A1!%20Gostaria%20de%20encontrar%20um%20polo%20Unifatecie%20EAD%20perto%20de%20mim."
-   class="btn-flutuante"
-   target="_blank" rel="noopener">
-  <svg viewBox="0 0 24 24">
-    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-  </svg>
-  <span>Encontre um Polo perto de você</span>
-</a>
-  </body>
+  <a href="https://wa.me/5574999575795?text=Ol%C3%A1!%20Gostaria%20de%20encontrar%20um%20polo%20Unifatecie%20EAD%20perto%20de%20mim."
+    class="btn-flutuante"
+    target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+    </svg>
+    <span>Encontre um Polo perto de você</span>
+  </a>
+</body>
