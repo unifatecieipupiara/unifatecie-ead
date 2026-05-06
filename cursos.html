@@ -3713,6 +3713,10 @@ Copiar
     <div class="modal-titulo" id="modalTitulo"></div>
     <div class="modal-meta" id="modalMeta"></div>
     <div class="modal-descricao" id="modalDescricao"></div>
+
+    <!-- NOVO: Div para a Grade Curricular -->
+    <div id="modalGradeCurricular" style="display:none;"></div>
+    
     <a href="#" class="modal-btn-wpp" id="modalWpp" target="_blank" rel="noopener">
       📲 Quero me matricular
     </a>
@@ -3820,8 +3824,15 @@ Copiar
     }
   }
 
-  // ── Funções do Modal ────────────────────────────────────────
+// ── Funções do Modal ────────────────────────────────────────
   function abrirModal(titulo, modalidade, duracao, descricao) {
+    // Esconde a grade curricular se estiver visível
+    document.getElementById('modalGradeCurricular').style.display = 'none';
+    // Mostra os elementos de descrição do curso
+    document.getElementById('modalMeta').style.display = '';
+    document.getElementById('modalDescricao').style.display = '';
+    document.getElementById('modalWpp').style.display = '';
+
     document.getElementById('modalTitulo').textContent = titulo;
     document.getElementById('modalMeta').innerHTML =
       '<span>' + modalidade + '</span><span>' + duracao + '</span>';
@@ -3835,9 +3846,31 @@ Copiar
     document.body.style.overflow = 'hidden';
   }
 
+  // NOVA FUNÇÃO PARA ABRIR O MODAL COM A GRADE CURRICULAR
+  function abrirModalGrade(titulo, gradeCurricularHTML) {
+    // Esconde os elementos de descrição do curso
+    document.getElementById('modalMeta').style.display = 'none';
+    document.getElementById('modalDescricao').style.display = 'none';
+    document.getElementById('modalWpp').style.display = 'none';
+
+    // Mostra e preenche a grade curricular
+    document.getElementById('modalTitulo').textContent = 'Grade Curricular: ' + titulo;
+    document.getElementById('modalGradeCurricular').innerHTML = gradeCurricularHTML;
+    document.getElementById('modalGradeCurricular').style.display = 'block'; // Ou 'flex', dependendo do seu CSS
+
+    document.getElementById('modalCurso').classList.add('aberto');
+    document.body.style.overflow = 'hidden';
+  }
+
   function fecharModal() {
     document.getElementById('modalCurso').classList.remove('aberto');
     document.body.style.overflow = '';
+    // Opcional: Limpar o conteúdo do modal ao fechar
+    document.getElementById('modalTitulo').textContent = '';
+    document.getElementById('modalMeta').innerHTML = '';
+    document.getElementById('modalDescricao').innerHTML = '';
+    document.getElementById('modalGradeCurricular').innerHTML = '';
+    document.getElementById('modalGradeCurricular').style.display = 'none';
   }
 
   function fecharModalFora(e) {
