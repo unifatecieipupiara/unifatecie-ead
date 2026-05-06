@@ -154,58 +154,21 @@
   .btn-flutuante span { display: none; }
   .btn-flutuante { padding: 14px; border-radius: 50%; }
 }
-    /* ===== BALÃO FLUTUANTE DA PÓS ===== */
-    .pos-balao {
-      position: fixed;
-      bottom: 88px;              /* fica acima do botão de WhatsApp, se existir */
-      right: 16px;
-      z-index: 999;
-      max-width: 260px;
-      font-family: inherit;
-    }
-    
-    .pos-balao-inner {
-      background: #111827;
-      color: #f9fafb;
-      border-radius: 999px;
-      padding: 10px 18px;
-      box-shadow: 0 12px 30px rgba(0,0,0,.35);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 2px;
-      border: 1px solid rgba(249, 115, 22, 0.9); /* laranja */
-    }
-    
-    .pos-balao-titulo {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      color: #f97316;            /* laranja */
-      font-weight: 700;
-    }
-    
-    .pos-balao-valor {
-      font-size: 1.2rem;
-      font-weight: 800;
+
+    .faixa-pos-graduacao {
+      background-color: #000; /* Cor de fundo preta */
+      color: #fff; /* Cor do texto branca */
+      padding: 15px 20px; /* Espaçamento interno */
+      text-align: center; /* Centraliza o texto */
+      font-size: 1.2em; /* Tamanho da fonte */
+      margin-bottom: 20px; /* Espaçamento abaixo da faixa, para separar do primeiro grupo */
+      border-radius: 5px; /* Opcional: bordas levemente arredondadas */
+      font-weight: bold; /* Opcional: texto em negrito */
     }
 
-/* Responsivo: em telas muito pequenas, reduz o tamanho */
-@media (max-width: 480px) {
-  .pos-balao {
-    bottom: 80px;
-    right: 10px;
-    max-width: 220px;
-  }
-
-  .pos-balao-inner {
-    padding: 8px 14px;
-  }
-
-  .pos-balao-valor {
-    font-size: 0.88rem;
-  }
+/* Se você quiser que o parágrafo dentro da faixa não tenha margens padrão */
+.faixa-pos-graduacao p {
+  margin: 0;
 }
     
     /* ===== FILTROS ===== */
@@ -2389,11 +2352,9 @@ Copiar
 <!-- TAB PÓS-GRADUAÇÃO -->
 <div class="tab-content" data-tab="pos" style="display:none;">
 
-  <div class="pos-balao">
-    <div class="pos-balao-inner">
-      <span class="pos-balao-titulo">Qualquer Pós por</span>
-      <span class="pos-balao-valor">12x R$ 29,90</span>
-    </div>
+    <!-- NOVA FAIXA PRETA -->
+  <div class="faixa-pos-graduacao">
+    <p>Qualquer Pós-Graduação por <strong>12x R$29,90</strong></p>
   </div>
 
   <!-- EDUCAÇÃO -->
