@@ -708,6 +708,14 @@
       color: var(--primary);
       letter-spacing: -.01em;
     }
+    .preco-limite {
+      flex-basis: 100%;
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #ffb27a;
+    }
     .selo-off {
       margin-left: auto;
       align-self: center;
@@ -836,6 +844,7 @@ Copiar
 }
 .modal-preco .preco-por strong { font-size: 1.6rem; }
 .modal-preco .preco-de { flex-basis: auto; font-size: .85rem; }
+.modal-preco .preco-de[hidden] { display: none; }
 .modal-preco-nota {
   flex-basis: 100%;
   font-size: .75rem;
@@ -849,6 +858,7 @@ Copiar
   margin-bottom: 20px;
   white-space: pre-line;
 }
+.modal-descricao ul { white-space: normal; } /* evita linhas em branco entre os itens */
 .modal-btn-wpp {
   display: flex;
   align-items: center;
@@ -998,7 +1008,7 @@ Copiar
   <button class="tab-btn"
           data-tab="pos"
           onclick="mudarTab('pos')">
-    📚 Pós-Graduação
+    📚 Pós-Graduação <span class="tab-selo">BLACK</span>
   </button>
   
 </div>
@@ -3234,7 +3244,7 @@ Copiar
       <span class="combo-mais" aria-hidden="true">+</span>
       <div class="combo-item">
         <span class="combo-rotulo">Pós-Graduação</span>
-        <span class="combo-preco"><strong>12x R$ 17,98</strong>com 40% de desconto</span>
+        <span class="combo-preco"><strong>12x R$ 17,94</strong>com 40% de desconto</span>
         <span class="combo-obs">especializações EAD</span>
       </div>
     </div>
@@ -3504,15 +3514,17 @@ Copiar
 <!-- TAB PÓS-GRADUAÇÃO -->
 <div class="tab-content" data-tab="pos" style="display:none;">
 
-    <!-- NOVA FAIXA PRETA -->
-  <div class="faixa-pos-graduacao">
-    <p>Entre em contato para mais informações</p>
+  <!-- AVISO FATECIE BLACK -->
+  <div class="faixa-black">
+    🔥 <strong>Fatecie Black:</strong> todas as Pós-Graduações por <strong>12x R$ 29,90</strong>, por tempo limitado.
+    Matrícula grátis. Toque em uma área para ver os cursos.
+    <small>Entre em contato para mais informações.</small>
   </div>
 
   <!-- ABA PÓS: Educação - 12x R$ 29,90/mês -->
   <div class="grupo-area" data-area="educacao">
     <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
-      Educação - 12x R$ 29,90/mês
+      Educação – 12x R$ 29,90
       <span class="grupo-arrow">▼</span>
     </button>
     <div class="cursos-grid grupo-body" style="display:none;">
@@ -3525,20 +3537,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Alfabetização e Letramento',
        'Pós-graduação • Educação',
-       '4 meses • 360h • 12x R$ 29,90',
+       '4 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90 (valor da campanha).</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Alfabetização e Letramento</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">4 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -3549,20 +3564,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Aprendizagem Contínua: Metodologia do Ensino de História para Professores',
        'Pós-graduação • Educação',
-       '3 meses • 360h • 12x R$ 29,90',
+       '3 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 3 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90 (valor da campanha).</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Aprendizagem Contínua: Metodologia do Ensino de História</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">3 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -3573,20 +3591,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Aprendizagem Organizacional',
        'Pós-graduação • Educação',
-       '4 meses • 360h • 12x R$ 29,90',
+       '4 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90 (valor da campanha).</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Aprendizagem Organizacional</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">4 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -3597,20 +3618,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Artes e Ludicidade',
        'Pós-graduação • Educação',
-       '4 meses • 360h • 12x R$ 29,90',
+       '4 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90 (valor da campanha).</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Artes e Ludicidade</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">4 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -3621,20 +3645,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Atendimento Educacional Especializado – AEE',
        'Pós-graduação • Educação',
-       '3 meses • 360h • 12x R$ 29,90',
+       '3 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 3 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90 (valor da campanha).</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Atendimento Educacional Especializado – AEE</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">3 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -3645,20 +3672,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Biblioteconomia e Gestão de Bibliotecas',
        'Pós-graduação • Educação',
-       '3 meses • 360h • 12x R$ 29,90',
+       '3 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 3 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90 (valor da campanha).</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Biblioteconomia e Gestão de Bibliotecas</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">3 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -3669,20 +3699,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Didática e Metodologia do Ensino Básico e Superior',
        'Pós-graduação • Educação',
-       '4 meses • 360h • 12x R$ 29,90',
+       '4 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90 (valor da campanha).</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Didática e Metodologia do Ensino Básico e Superior</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">4 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -3693,20 +3726,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em EAD e Novas Tecnologias Educacionais',
        'Pós-graduação • Educação',
-       '4 meses • 360h • 12x R$ 29,90',
+       '4 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90 (valor da campanha).</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">EAD e Novas Tecnologias Educacionais</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">4 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -3717,20 +3753,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Educação 5.0: Metodologias e Tecnologias Inovadoras',
        'Pós-graduação • Educação',
-       '4 meses • 360h • 12x R$ 29,90',
+       '4 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90 (valor da campanha).</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Educação 5.0: Metodologias e Tecnologias Inovadoras</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">4 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -3741,20 +3780,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Educação de Jovens e Adultos',
        'Pós-graduação • Educação',
-       '4 meses • 360h • 12x R$ 29,90',
+       '4 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90 (valor da campanha).</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Educação de Jovens e Adultos</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">4 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -3765,20 +3807,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Educação Digital e Inovação Pedagógica',
        'Pós-graduação • Educação',
-       '3 meses • 360h • 12x R$ 29,90',
+       '3 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 3 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90 (valor da campanha).</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Educação Digital e Inovação Pedagógica</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">3 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -3789,20 +3834,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Educação do Campo',
        'Pós-graduação • Educação',
-       '4 meses • 360h • 12x R$ 29,90',
+       '4 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90 (valor da campanha).</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Educação do Campo</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">4 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -3813,20 +3861,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Educação do Futuro',
        'Pós-graduação • Educação',
-       '5 meses • 360h • 12x R$ 29,90',
+       '5 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 5 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90 (valor da campanha).</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Educação do Futuro</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">5 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -3837,20 +3888,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Educação Especial (Atendimento às Necessidades Especiais)',
        'Pós-graduação • Educação',
-       '4 meses • 360h • 12x R$ 29,90',
+       '4 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90 (valor da campanha).</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Educação Especial (Atendimento às Necessidades Especiais)</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">4 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -3861,20 +3915,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Educação Especial e Inclusiva – Neuropedagogia e Psicomotricidade',
        'Pós-graduação • Educação',
-       '4 meses • 360h • 12x R$ 29,90',
+       '4 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90 (valor da campanha).</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Educação Especial e Inclusiva – Neuropedagogia e Psicomotricidade</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">4 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -3885,20 +3942,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Educação Física e Psicomotricidade',
        'Pós-graduação • Educação',
-       '3 meses • 360h • 12x R$ 29,90',
+       '3 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 3 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90 (valor da campanha).</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Educação Física e Psicomotricidade</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">3 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -3909,20 +3969,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Educação Física Escolar',
        'Pós-graduação • Educação',
-       '3 meses • 360h • 12x R$ 29,90',
+       '3 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 3 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90 (valor da campanha).</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Educação Física Escolar</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">3 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -3933,20 +3996,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Educação Física, Abordagens Pedagógicas',
        'Pós-graduação • Educação',
-       '4 meses • 400h • 12x R$ 29,90',
+       '4 meses • 400h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 400h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90 (valor da campanha).</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Educação Física, Abordagens Pedagógicas</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">4 meses • 400h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -3957,20 +4023,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Educação Infantil',
        'Pós-graduação • Educação',
-       '4 meses • 360h • 12x R$ 29,90',
+       '4 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Educação Infantil</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">4 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -3981,20 +4050,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Educação Infantil e Alfabetização',
        'Pós-graduação • Educação',
-       '4 meses • 380h • 12x R$ 29,90',
+       '4 meses • 380h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Educação Infantil e Alfabetização</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -4005,20 +4077,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Ensino de Inglês',
        'Pós-graduação • Educação',
-       '4 meses • 380h • 12x R$ 29,90',
+       '4 meses • 380h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Ensino de Inglês</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -4029,20 +4104,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Ensino Religioso',
        'Pós-graduação • Educação',
-       '4 meses • 360h • 12x R$ 29,90',
+       '4 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Ensino Religioso</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">4 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -4053,20 +4131,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Filosofia: Tradições e Reflexões',
        'Pós-graduação • Educação',
-       '4 meses • 360h • 12x R$ 29,90',
+       '4 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Filosofia: Tradições e Reflexões</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">4 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -4077,20 +4158,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Gestão da Aprendizagem e Inovação Tecnológica na Educação',
        'Pós-graduação • Educação',
-       '4 meses • 380h • 12x R$ 29,90',
+       '4 meses • 380h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Gestão da Aprendizagem e Inovação Tecnológica na Educação</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -4101,20 +4185,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Gestão Escolar',
        'Pós-graduação • Educação',
-       '4 meses • 360h • 12x R$ 29,90',
+       '4 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Gestão Escolar</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">4 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -4125,20 +4212,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Literatura Brasileira e Internacional',
        'Pós-graduação • Educação',
-       '4 meses • 440h • 12x R$ 29,90',
+       '4 meses • 440h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 440h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Literatura Brasileira e Internacional</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">4 meses • 440h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -4149,20 +4239,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Literatura e Cultura',
        'Pós-graduação • Educação',
-       '3 meses • 360h • 12x R$ 29,90',
+       '3 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 3 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Literatura e Cultura</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">3 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -4173,20 +4266,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Ludopedagogia',
        'Pós-graduação • Educação',
-       '3 meses • 360h • 12x R$ 29,90',
+       '3 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 3 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Ludopedagogia</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">3 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -4197,20 +4293,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Língua Portuguesa: Redação Avançada',
        'Pós-graduação • Educação',
-       '3 meses • 360h • 12x R$ 29,90',
+       '3 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 3 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Língua Portuguesa: Redação Avançada</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">3 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -4221,20 +4320,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Mediação para o Ensino a Distância: InovEaDucação',
        'Pós-graduação • Educação',
-       '3 meses • 360h • 12x R$ 29,90',
+       '3 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 3 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Mediação para o Ensino a Distância: InovEaDucação</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">3 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -4245,20 +4347,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Metodologia do Ensino de Biologia e Ciências',
        'Pós-graduação • Educação',
-       '3 meses • 360h • 12x R$ 29,90',
+       '3 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 3 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Metodologia do Ensino de Biologia e Ciências</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">3 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -4269,20 +4374,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Metodologia do Ensino de Geografia',
        'Pós-graduação • Educação',
-       '3 meses • 360h • 12x R$ 29,90',
+       '3 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 3 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Metodologia do Ensino de Geografia</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">3 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -4293,20 +4401,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Metodologia do Ensino de Matemática',
        'Pós-graduação • Educação',
-       '3 meses • 360h • 12x R$ 29,90',
+       '3 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 3 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Metodologia do Ensino de Matemática</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">3 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -4317,20 +4428,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Neuropedagogia',
        'Pós-graduação • Educação',
-       '4 meses • 380h • 12x R$ 29,90',
+       '4 meses • 380h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Neuropedagogia</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -4341,20 +4455,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Neuropsicologia Educacional',
        'Pós-graduação • Educação',
-       '4 meses • 380h • 12x R$ 29,90',
+       '4 meses • 380h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Neuropsicologia Educacional</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -4365,20 +4482,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Pedagogia e Inclusão: Educação Especial',
        'Pós-graduação • Educação',
-       '5 meses • 480h • 12x R$ 29,90',
+       '5 meses • 480h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 5 meses.</li>
           <li>Carga horária: 480h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Pedagogia e Inclusão: Educação Especial</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">5 meses • 480h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -4389,20 +4509,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Psicopedagogia e Práticas Educacionais',
        'Pós-graduação • Educação',
-       '4 meses • 380h • 12x R$ 29,90',
+       '4 meses • 380h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Psicopedagogia e Práticas Educacionais</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -4413,20 +4536,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Psicopedagogia Institucional e Clínica',
        'Pós-graduação • Educação',
-       '7 meses • 820h • 12x R$ 29,90',
+       '7 meses • 820h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 7 meses.</li>
           <li>Carga horária: 820h.</li>
           <li>Estágio obrigatório: sim.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Psicopedagogia Institucional e Clínica</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">7 meses • 820h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -4437,20 +4563,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Sociologia da Educação',
        'Pós-graduação • Educação',
-       '4 meses • 400h • 12x R$ 29,90',
+       '4 meses • 400h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 400h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Sociologia da Educação</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">4 meses • 400h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -4461,20 +4590,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Teologia Cristã e Estudos Bíblicos Avançados',
        'Pós-graduação • Educação',
-       '4 meses • 380h • 12x R$ 29,90',
+       '4 meses • 380h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Teologia Cristã e Estudos Bíblicos Avançados</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -4485,20 +4617,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Terapia Ocupacional com Ênfase em Educação Especial e Inclusiva',
        'Pós-graduação • Educação',
-       '6 meses • 360h • 12x R$ 29,90',
+       '6 meses • 360h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 6 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Terapia Ocupacional com Ênfase em Educação Especial e Inclusiva</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">6 meses • 360h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -4509,20 +4644,23 @@ Copiar
      onclick="abrirModal(
        'Especialização em Transtorno do Espectro Autista – TEA',
        'Pós-graduação • Educação',
-       '9 meses • 1000h • 12x R$ 29,90',
+       '9 meses • 1000h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 9 meses.</li>
           <li>Carga horária: 1000h.</li>
           <li>Estágio obrigatório: sim.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Transtorno do Espectro Autista – TEA</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">9 meses • 1000h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -4533,20 +4671,23 @@ Copiar
      onclick="abrirModal(
        'MBA em Ciências da Computação para Licenciados',
        'Pós-graduação • Educação',
-       '4 meses • 380h • 12x R$ 29,90',
+       '4 meses • 380h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">MBA em Ciências da Computação para Licenciados</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
         </div>
 
@@ -4557,20 +4698,23 @@ Copiar
      onclick="abrirModal(
        'MBA em Educação Executiva',
        'Pós-graduação • Educação',
-       '4 meses • 380h • 12x R$ 29,90',
+       '4 meses • 380h • por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 29,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">MBA em Educação Executiva</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Educação</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 29,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
       </div>
     </div>
@@ -4580,7 +4724,7 @@ Copiar
   <!-- ABA PÓS: Gestão e Negócios - 12x R$ 47,90 -->
   <div class="grupo-area" data-area="pos-gestao-negocios">
   <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
-    Gestão e Negócios – 12x R$ 47,90
+    Gestão e Negócios – 12x R$ 29,90
     <span class="grupo-arrow">▼</span>
   </button>
 
@@ -4593,20 +4737,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Agricultura e Manejo Sustentável',
            'Pós-graduação • Gestão e Negócios',
-           '5 meses • 360h • 12x R$ 47,90',
+           '5 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 5 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Agricultura e Manejo Sustentável</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Gestão e Negócios</span>
         <span class="tag duracao">5 meses • 360h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -4617,20 +4765,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Auditoria, Contabilidade e Perícia Contábil',
            'Pós-graduação • Gestão e Negócios',
-           '5 meses • 360h • 12x R$ 47,90',
+           '5 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 5 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Auditoria, Contabilidade e Perícia Contábil</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Gestão e Negócios</span>
         <span class="tag duracao">5 meses • 360h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -4641,20 +4793,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Comunicação e Liderança: Gestão Estratégica',
            'Pós-graduação • Gestão e Negócios',
-           '3 meses • 360h • 12x R$ 47,90',
+           '3 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 3 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Comunicação e Liderança: Gestão Estratégica</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Gestão e Negócios</span>
         <span class="tag duracao">3 meses • 360h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -4665,20 +4821,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Comunicação e Mídias Digitais',
            'Pós-graduação • Gestão e Negócios',
-           '3 meses • 360h • 12x R$ 47,90',
+           '3 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 3 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Comunicação e Mídias Digitais</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Gestão e Negócios</span>
         <span class="tag duracao">3 meses • 360h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -4689,20 +4849,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Comércio Global 360: Marketing Internacional e Negócios Internacionais',
            'Pós-graduação • Gestão e Negócios',
-           '4 meses • 360h • 12x R$ 47,90',
+           '4 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 4 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Comércio Global 360: Marketing Internacional e Negócios Internacionais</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Gestão e Negócios</span>
         <span class="tag duracao">4 meses • 360h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -4713,20 +4877,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Controladoria e Custos',
            'Pós-graduação • Gestão e Negócios',
-           '5 meses • 360h • 12x R$ 47,90',
+           '5 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 5 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Controladoria e Custos</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Gestão e Negócios</span>
         <span class="tag duracao">5 meses • 360h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -4737,20 +4905,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Criação e Desenvolvimento de Produtos',
            'Pós-graduação • Gestão e Negócios',
-           '4 meses • 360h • 12x R$ 47,90',
+           '4 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 4 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Criação e Desenvolvimento de Produtos</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Gestão e Negócios</span>
         <span class="tag duracao">4 meses • 360h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -4761,20 +4933,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Desenvolvimento Pessoal e Gestão de Carreira',
            'Pós-graduação • Gestão e Negócios',
-           '4 meses • 360h • 12x R$ 47,90',
+           '4 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 4 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Desenvolvimento Pessoal e Gestão de Carreira</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Gestão e Negócios</span>
         <span class="tag duracao">4 meses • 360h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -4785,20 +4961,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Design Criativo',
            'Pós-graduação • Gestão e Negócios',
-           '5 meses • 400h • 12x R$ 47,90',
+           '5 meses • 400h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 5 meses.</li>
               <li>Carga horária: 400h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Design Criativo</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Gestão e Negócios</span>
         <span class="tag duracao">5 meses • 400h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -4809,20 +4989,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Empreendedorismo e Inovação',
        'Pós-graduação • Gestão e Negócios',
-       '3 meses • 360h • 12x R$ 47,90',
+       '3 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 3 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Empreendedorismo e Inovação</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">3 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -4833,20 +5017,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Estratégias Transformadoras em Políticas Públicas e Gestão Social',
        'Pós-graduação • Gestão e Negócios',
-       '4 meses • 380h • 12x R$ 47,90',
+       '4 meses • 380h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Estratégias Transformadoras em Políticas Públicas e Gestão Social</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -4857,20 +5045,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Finanças Integradas, Corporativas e Públicas',
        'Pós-graduação • Gestão e Negócios',
-       '5 meses • 360h • 12x R$ 47,90',
+       '5 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 5 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Finanças Integradas, Corporativas e Públicas</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">5 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -4881,20 +5073,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Future Thinking: Pensamento e Estudos do Futuro',
        'Pós-graduação • Gestão e Negócios',
-       '5 meses • 360h • 12x R$ 47,90',
+       '5 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 5 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Future Thinking: Pensamento e Estudos do Futuro</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">5 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -4905,20 +5101,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Gastronomia: Nutrição Humana e Educação Alimentar',
        'Pós-graduação • Gestão e Negócios',
-       '4 meses • 360h • 12x R$ 47,90',
+       '4 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Gastronomia: Nutrição Humana e Educação Alimentar</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">4 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -4929,20 +5129,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Gestão Comercial e Vendas',
        'Pós-graduação • Gestão e Negócios',
-       '5 meses • 360h • 12x R$ 47,90',
+       '5 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 5 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Gestão Comercial e Vendas</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">5 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -4953,20 +5157,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Gestão da Tecnologia da Informação',
        'Pós-graduação • Gestão e Negócios',
-       '5 meses • 360h • 12x R$ 47,90',
+       '5 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 5 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Gestão da Tecnologia da Informação</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">5 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -4977,20 +5185,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Gestão de Conflitos e Desenvolvimento Organizacional',
        'Pós-graduação • Gestão e Negócios',
-       '4 meses • 360h • 12x R$ 47,90',
+       '4 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Gestão de Conflitos e Desenvolvimento Organizacional</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">4 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5001,20 +5213,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Gestão de Cooperativas de Crédito',
        'Pós-graduação • Gestão e Negócios',
-       '5 meses • 360h • 12x R$ 47,90',
+       '5 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 5 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Gestão de Cooperativas de Crédito</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">5 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5025,20 +5241,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Gestão de Logística e Operações',
        'Pós-graduação • Gestão e Negócios',
-       '5 meses • 360h • 12x R$ 47,90',
+       '5 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 5 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Gestão de Logística e Operações</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">5 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5049,20 +5269,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Gestão de Pessoas e Desenvolvimento Humano',
        'Pós-graduação • Gestão e Negócios',
-       '5 meses • 480h • 12x R$ 47,90',
+       '5 meses • 480h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 5 meses.</li>
           <li>Carga horária: 480h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Gestão de Pessoas e Desenvolvimento Humano</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">5 meses • 480h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5073,20 +5297,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Gestão de Unidades de Conservação',
        'Pós-graduação • Gestão e Negócios',
-       '4 meses • 380h • 12x R$ 47,90',
+       '4 meses • 380h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Gestão de Unidades de Conservação</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5097,20 +5325,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Gestão do Agronegócio',
        'Pós-graduação • Gestão e Negócios',
-       '5 meses • 360h • 12x R$ 47,90',
+       '5 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 5 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Gestão do Agronegócio</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">5 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5121,20 +5353,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Gestão e Qualidade em Saúde Pública',
        'Pós-graduação • Gestão e Negócios',
-       '4 meses • 360h • 12x R$ 47,90',
+       '4 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Gestão e Qualidade em Saúde Pública</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">4 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5145,20 +5381,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Gestão Empresarial',
        'Pós-graduação • Gestão e Negócios',
-       '5 meses • 360h • 12x R$ 47,90',
+       '5 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 5 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Gestão Empresarial</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">5 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5169,20 +5409,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Gestão Estratégica de Pessoas',
        'Pós-graduação • Gestão e Negócios',
-       '5 meses • 360h • 12x R$ 47,90',
+       '5 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 5 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Gestão Estratégica de Pessoas</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">5 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5193,20 +5437,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Gestão Estratégica de Projetos',
        'Pós-graduação • Gestão e Negócios',
-       '5 meses • 360h • 12x R$ 47,90',
+       '5 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 5 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Gestão Estratégica de Projetos</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">5 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5217,20 +5465,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Gestão Financeira',
        'Pós-graduação • Gestão e Negócios',
-       '5 meses • 360h • 12x R$ 47,90',
+       '5 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 5 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Gestão Financeira</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">5 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5241,20 +5493,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Gestão Pública',
        'Pós-graduação • Gestão e Negócios',
-       '5 meses • 360h • 12x R$ 47,90',
+       '5 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 5 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Gestão Pública</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">5 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5265,20 +5521,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Liderança Corporativa',
        'Pós-graduação • Gestão e Negócios',
-       '4 meses • 380h • 12x R$ 47,90',
+       '4 meses • 380h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Liderança Corporativa</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5289,20 +5549,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Liderança de Projetos e Inovação Estratégica',
        'Pós-graduação • Gestão e Negócios',
-       '4 meses • 380h • 12x R$ 47,90',
+       '4 meses • 380h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Liderança de Projetos e Inovação Estratégica</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5313,20 +5577,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Marketing Digital',
        'Pós-graduação • Gestão e Negócios',
-       '5 meses • 360h • 12x R$ 47,90',
+       '5 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 5 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Marketing Digital</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">5 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5337,20 +5605,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Negócios Imobiliários',
        'Pós-graduação • Gestão e Negócios',
-       '5 meses • 360h • 12x R$ 47,90',
+       '5 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 5 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Negócios Imobiliários</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">5 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5361,20 +5633,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Planejamento Urbano e Cidades Sustentáveis',
        'Pós-graduação • Gestão e Negócios',
-       '4 meses • 360h • 12x R$ 47,90',
+       '4 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Planejamento Urbano e Cidades Sustentáveis</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">4 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5385,20 +5661,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Segurança e Eficiência na Produção: Gestão de Riscos',
        'Pós-graduação • Gestão e Negócios',
-       '4 meses • 360h • 12x R$ 47,90',
+       '4 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Segurança e Eficiência na Produção: Gestão de Riscos</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">4 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5409,20 +5689,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Serviços Sociais e Liderança: Projetos Sociais Sustentáveis',
        'Pós-graduação • Gestão e Negócios',
-       '3 meses • 360h • 12x R$ 47,90',
+       '3 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 3 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Serviços Sociais e Liderança: Projetos Sociais Sustentáveis</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">3 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5433,20 +5717,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Social Media: Protagonismo e Tendências nas Plataformas Digitais',
        'Pós-graduação • Gestão e Negócios',
-       '3 meses • 360h • 12x R$ 47,90',
+       '3 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 3 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Social Media: Protagonismo e Tendências nas Plataformas Digitais</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">3 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5457,20 +5745,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Storytelling e Narrativas para Redes Sociais',
        'Pós-graduação • Gestão e Negócios',
-       '3 meses • 360h • 12x R$ 47,90',
+       '3 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 3 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Storytelling e Narrativas para Redes Sociais</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">3 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5481,20 +5773,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Sustentabilidade Social e Políticas Públicas',
        'Pós-graduação • Gestão e Negócios',
-       '3 meses • 360h • 12x R$ 47,90',
+       '3 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 3 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Sustentabilidade Social e Políticas Públicas</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">3 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5505,20 +5801,24 @@ Copiar
      onclick="abrirModal(
        'Especialização Master em Marketing e Inteligência de Mercado',
        'Pós-graduação • Gestão e Negócios',
-       '3 meses • 360h • 12x R$ 47,90',
+       '3 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 3 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Master em Marketing e Inteligência de Mercado</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios</span>
     <span class="tag duracao">3 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5529,20 +5829,24 @@ Copiar
      onclick="abrirModal(
        'MBA em Gestão Ambiental e Futuro Sustentável',
        'Pós-graduação • Gestão e Negócios',
-       '4 meses • 360h • 12x R$ 47,90',
+       '4 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">MBA em Gestão Ambiental e Futuro Sustentável</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios • MBA</span>
     <span class="tag duracao">4 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5553,20 +5857,24 @@ Copiar
      onclick="abrirModal(
        'MBA em Gestão Avançada e Liderança Transformadora',
        'Pós-graduação • Gestão e Negócios',
-       '4 meses • 360h • 12x R$ 47,90',
+       '4 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">MBA em Gestão Avançada e Liderança Transformadora</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios • MBA</span>
     <span class="tag duracao">4 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5577,20 +5885,24 @@ Copiar
      onclick="abrirModal(
        'MBA em Gestão Contábil e Auditoria Avançada',
        'Pós-graduação • Gestão e Negócios',
-       '4 meses • 380h • 12x R$ 47,90',
+       '4 meses • 380h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">MBA em Gestão Contábil e Auditoria Avançada</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios • MBA</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5601,20 +5913,24 @@ Copiar
      onclick="abrirModal(
        'MBA em Gestão da Qualidade e Auditoria',
        'Pós-graduação • Gestão e Negócios',
-       '4 meses • 380h • 12x R$ 47,90',
+       '4 meses • 380h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">MBA em Gestão da Qualidade e Auditoria</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios • MBA</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5625,20 +5941,24 @@ Copiar
      onclick="abrirModal(
        'MBA em Gestão da Qualidade e Processos Industriais',
        'Pós-graduação • Gestão e Negócios',
-       '4 meses • 380h • 12x R$ 47,90',
+       '4 meses • 380h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">MBA em Gestão da Qualidade e Processos Industriais</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios • MBA</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5649,20 +5969,24 @@ Copiar
      onclick="abrirModal(
        'MBA em Gestão de Marcas e Produtos',
        'Pós-graduação • Gestão e Negócios',
-       '4 meses • 380h • 12x R$ 47,90',
+       '4 meses • 380h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">MBA em Gestão de Marcas e Produtos</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios • MBA</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5673,20 +5997,24 @@ Copiar
      onclick="abrirModal(
        'MBA em Gestão de Operações e Supply Chain',
        'Pós-graduação • Gestão e Negócios',
-       '4 meses • 380h • 12x R$ 47,90',
+       '4 meses • 380h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">MBA em Gestão de Operações e Supply Chain</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios • MBA</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5697,20 +6025,24 @@ Copiar
      onclick="abrirModal(
        'MBA em Gestão de Pessoas 5.0',
        'Pós-graduação • Gestão e Negócios',
-       '4 meses • 380h • 12x R$ 47,90',
+       '4 meses • 380h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">MBA em Gestão de Pessoas 5.0</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios • MBA</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5721,20 +6053,24 @@ Copiar
      onclick="abrirModal(
        'MBA em Gestão de Projetos e Inovação',
        'Pós-graduação • Gestão e Negócios',
-       '4 meses • 380h • 12x R$ 47,90',
+       '4 meses • 380h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">MBA em Gestão de Projetos e Inovação</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios • MBA</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5745,20 +6081,24 @@ Copiar
      onclick="abrirModal(
        'MBA em Gestão de Projetos e Processos',
        'Pós-graduação • Gestão e Negócios',
-       '4 meses • 380h • 12x R$ 47,90',
+       '4 meses • 380h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">MBA em Gestão de Projetos e Processos</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios • MBA</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5769,20 +6109,24 @@ Copiar
      onclick="abrirModal(
        'MBA em Gestão de Projetos em TI',
        'Pós-graduação • Gestão e Negócios',
-       '4 meses • 380h • 12x R$ 47,90',
+       '4 meses • 380h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">MBA em Gestão de Projetos em TI</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios • MBA</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5793,20 +6137,24 @@ Copiar
      onclick="abrirModal(
        'MBA em Gestão de Vendas e Marketing',
        'Pós-graduação • Gestão e Negócios',
-       '4 meses • 380h • 12x R$ 47,90',
+       '4 meses • 380h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">MBA em Gestão de Vendas e Marketing</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios • MBA</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5817,20 +6165,24 @@ Copiar
      onclick="abrirModal(
        'MBA em Gestão de Vendas e Negócios',
        'Pós-graduação • Gestão e Negócios • MBA',
-       '4 meses • 380h • 12x R$ 47,90',
+       '4 meses • 380h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">MBA em Gestão de Vendas e Negócios</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios • MBA</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5841,20 +6193,24 @@ Copiar
      onclick="abrirModal(
        'MBA em Gestão Estratégica de Comércio Exterior',
        'Pós-graduação • Gestão e Negócios • MBA',
-       '3 meses • 400h • 12x R$ 47,90',
+       '3 meses • 400h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 3 meses.</li>
           <li>Carga horária: 400h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">MBA em Gestão Estratégica de Comércio Exterior</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios • MBA</span>
     <span class="tag duracao">3 meses • 400h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5865,20 +6221,24 @@ Copiar
      onclick="abrirModal(
        'MBA em Gestão Estratégica de Custos',
        'Pós-graduação • Gestão e Negócios • MBA',
-       '4 meses • 380h • 12x R$ 47,90',
+       '4 meses • 380h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">MBA em Gestão Estratégica de Custos</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios • MBA</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5889,20 +6249,24 @@ Copiar
      onclick="abrirModal(
        'MBA em Gestão Estratégica e Marketing Digital',
        'Pós-graduação • Gestão e Negócios • MBA',
-       '4 meses • 380h • 12x R$ 47,90',
+       '4 meses • 380h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">MBA em Gestão Estratégica e Marketing Digital</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios • MBA</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5913,20 +6277,24 @@ Copiar
      onclick="abrirModal(
        'MBA em Marketing Digital e E-commerce',
        'Pós-graduação • Gestão e Negócios • MBA',
-       '4 meses • 380h • 12x R$ 47,90',
+       '4 meses • 380h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">MBA em Marketing Digital e E-commerce</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios • MBA</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5937,20 +6305,24 @@ Copiar
      onclick="abrirModal(
        'MBA em Marketing Digital e Negócios Disruptivos',
        'Pós-graduação • Gestão e Negócios • MBA',
-       '4 meses • 380h • 12x R$ 47,90',
+       '4 meses • 380h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">MBA em Marketing Digital e Negócios Disruptivos</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios • MBA</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5961,20 +6333,24 @@ Copiar
      onclick="abrirModal(
        'MBA em Marketing Imobiliário',
        'Pós-graduação • Gestão e Negócios • MBA',
-       '4 meses • 380h • 12x R$ 47,90',
+       '4 meses • 380h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 380h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">MBA em Marketing Imobiliário</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios • MBA</span>
     <span class="tag duracao">4 meses • 380h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -5985,20 +6361,24 @@ Copiar
      onclick="abrirModal(
        'MBA Executivo em Contabilidade e Finanças Corporativas',
        'Pós-graduação • Gestão e Negócios • MBA',
-       '4 meses • 360h • 12x R$ 47,90',
+       '4 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 47,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">MBA Executivo em Contabilidade e Finanças Corporativas</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Gestão e Negócios • MBA</span>
     <span class="tag duracao">4 meses • 360h</span>
-    <span class="tag valor">12x R$ 47,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 47,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -6008,7 +6388,7 @@ Copiar
   <!-- ABA PÓS: Engenharia e Arquitetura - 12x R$ 47,90 -->
   <div class="grupo-area" data-area="pos-engenharia-arquitetura">
   <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
-    Engenharia e Arquitetura – 12x R$ 47,90
+    Engenharia e Arquitetura – 12x R$ 29,90
     <span class="grupo-arrow">▼</span>
   </button>
 
@@ -6021,20 +6401,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Arquitetura e Urbanismo',
            'Pós-graduação • Engenharia e Arquitetura',
-           '6 meses • 400h • 12x R$ 47,90',
+           '6 meses • 400h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 6 meses.</li>
               <li>Carga horária: 400h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Arquitetura e Urbanismo</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Engenharia e Arquitetura</span>
         <span class="tag duracao">6 meses • 400h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -6045,20 +6429,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Construções Verdes: Sustentabilidade e Responsabilidade Ambiental',
            'Pós-graduação • Engenharia e Arquitetura',
-           '4 meses • 360h • 12x R$ 47,90',
+           '4 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 4 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Construções Verdes: Sustentabilidade e Responsabilidade Ambiental</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Engenharia e Arquitetura</span>
         <span class="tag duracao">4 meses • 360h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -6069,20 +6457,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Engenharia de Segurança do Trabalho',
            'Pós-graduação • Engenharia e Arquitetura',
-           '6 meses • 360h • 12x R$ 47,90',
+           '6 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 6 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Engenharia de Segurança do Trabalho</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Engenharia e Arquitetura</span>
         <span class="tag duracao">6 meses • 360h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -6093,20 +6485,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Engenharia de Segurança do Trabalho (750h)',
            'Pós-graduação • Engenharia e Arquitetura',
-           '6 meses • 750h • 12x R$ 47,90',
+           '6 meses • 750h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 6 meses.</li>
               <li>Carga horária: 750h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Engenharia de Segurança do Trabalho (750h)</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Engenharia e Arquitetura</span>
         <span class="tag duracao">6 meses • 750h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -6117,20 +6513,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Engenharia de Software',
            'Pós-graduação • Engenharia e Arquitetura',
-           '4 meses • 360h • 12x R$ 47,90',
+           '4 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 4 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Engenharia de Software</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Engenharia e Arquitetura</span>
         <span class="tag duracao">4 meses • 360h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -6141,20 +6541,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Engenharia de Software e Segurança da Informação',
            'Pós-graduação • Engenharia e Arquitetura',
-           '4 meses • 380h • 12x R$ 47,90',
+           '4 meses • 380h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 4 meses.</li>
               <li>Carga horária: 380h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Engenharia de Software e Segurança da Informação</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Engenharia e Arquitetura</span>
         <span class="tag duracao">4 meses • 380h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -6165,20 +6569,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Gerenciamento de Obras',
            'Pós-graduação • Engenharia e Arquitetura',
-           '6 meses • 360h • 12x R$ 47,90',
+           '6 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 6 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Gerenciamento de Obras</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Engenharia e Arquitetura</span>
         <span class="tag duracao">6 meses • 360h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -6189,20 +6597,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Química Ambiental',
            'Pós-graduação • Engenharia e Arquitetura',
-           '5 meses • 360h • 12x R$ 47,90',
+           '5 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 5 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Química Ambiental</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Engenharia e Arquitetura</span>
         <span class="tag duracao">5 meses • 360h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -6213,20 +6625,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Segurança Contra Incêndio e Pânico',
            'Pós-graduação • Engenharia e Arquitetura',
-           '6 meses • 360h • 12x R$ 47,90',
+           '6 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 6 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Segurança Contra Incêndio e Pânico</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Engenharia e Arquitetura</span>
         <span class="tag duracao">6 meses • 360h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -6237,20 +6653,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Solos e Nutrição de Plantas',
            'Pós-graduação • Engenharia e Arquitetura',
-           '4 meses • 360h • 12x R$ 47,90',
+           '4 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 4 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Solos e Nutrição de Plantas</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Engenharia e Arquitetura</span>
         <span class="tag duracao">4 meses • 360h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -6261,20 +6681,24 @@ Copiar
          onclick="abrirModal(
            'MBA em Gestão da Produção Industrial',
            'Pós-graduação • Engenharia e Arquitetura • MBA',
-           '6 meses • 400h • 12x R$ 47,90',
+           '6 meses • 400h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 6 meses.</li>
               <li>Carga horária: 400h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">MBA em Gestão da Produção Industrial</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Engenharia e Arquitetura • MBA</span>
         <span class="tag duracao">6 meses • 400h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -6284,7 +6708,7 @@ Copiar
   <!-- ABA PÓS: Direito - 12x R$ 47,90 -->
   <div class="grupo-area" data-area="pos-direito">
   <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
-    Direito – 12x R$ 47,90
+    Direito – 12x R$ 29,90
     <span class="grupo-arrow">▼</span>
   </button>
 
@@ -6297,20 +6721,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Direito Constitucional',
            'Pós-graduação • Direito',
-           '4 meses • 360h • 12x R$ 47,90',
+           '4 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 4 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Direito Constitucional</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Direito</span>
         <span class="tag duracao">4 meses • 360h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -6321,20 +6749,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Direito Constitucional e Prática Trabalhista',
            'Pós-graduação • Direito',
-           '5 meses • 400h • 12x R$ 47,90',
+           '5 meses • 400h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 5 meses.</li>
               <li>Carga horária: 400h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Direito Constitucional e Prática Trabalhista</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Direito</span>
         <span class="tag duracao">5 meses • 400h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -6345,20 +6777,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Direito do Trabalho e Previdenciário',
            'Pós-graduação • Direito',
-           '5 meses • 360h • 12x R$ 47,90',
+           '5 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 5 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Direito do Trabalho e Previdenciário</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Direito</span>
         <span class="tag duracao">5 meses • 360h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -6369,20 +6805,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Direito Penal',
            'Pós-graduação • Direito',
-           '3 meses • 360h • 12x R$ 47,90',
+           '3 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 3 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Direito Penal</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Direito</span>
         <span class="tag duracao">3 meses • 360h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -6393,20 +6833,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Direito Tributário e Direito Empresarial',
            'Pós-graduação • Direito',
-           '5 meses • 360h • 12x R$ 47,90',
+           '5 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 5 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Direito Tributário e Direito Empresarial</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Direito</span>
         <span class="tag duracao">5 meses • 360h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -6417,20 +6861,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Direito, Psicologia e Gestão de Conflitos Laborais',
            'Pós-graduação • Direito',
-           '5 meses • 400h • 12x R$ 47,90',
+           '5 meses • 400h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 5 meses.</li>
               <li>Carga horária: 400h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Direito, Psicologia e Gestão de Conflitos Laborais</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Direito</span>
         <span class="tag duracao">5 meses • 400h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -6441,20 +6889,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Saúde Ocupacional e Direito do Trabalho',
            'Pós-graduação • Direito',
-           '5 meses • 400h • 12x R$ 47,90',
+           '5 meses • 400h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 5 meses.</li>
               <li>Carga horária: 400h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Saúde Ocupacional e Direito do Trabalho</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Direito</span>
         <span class="tag duracao">5 meses • 400h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -6465,20 +6917,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Segurança Pública',
            'Pós-graduação • Direito',
-           '5 meses • 360h • 12x R$ 47,90',
+           '5 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 5 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 47,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Segurança Pública</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Direito</span>
         <span class="tag duracao">5 meses • 360h</span>
-        <span class="tag valor">12x R$ 47,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 47,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -6488,7 +6944,7 @@ Copiar
   <!-- ABA PÓS: Saúde e Bem-Estar - 12x R$ 57,90 -->
   <div class="grupo-area" data-area="pos-saude-bemestar">
   <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
-    Saúde e Bem-Estar – 12x R$ 57,90
+    Saúde e Bem-Estar – 12x R$ 29,90
     <span class="grupo-arrow">▼</span>
   </button>
 
@@ -6501,20 +6957,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Administração Hospitalar e Serviços de Saúde',
            'Pós-graduação • Saúde e Bem-Estar',
-           '5 meses • 360h • 12x R$ 57,90',
+           '5 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 5 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 57,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Administração Hospitalar e Serviços de Saúde</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
         <span class="tag duracao">5 meses • 360h</span>
-        <span class="tag valor">12x R$ 57,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 57,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -6525,20 +6985,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Auditoria em Saúde',
            'Pós-graduação • Saúde e Bem-Estar',
-           '5 meses • 360h • 12x R$ 57,90',
+           '5 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 5 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 57,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Auditoria em Saúde</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
         <span class="tag duracao">5 meses • 360h</span>
-        <span class="tag valor">12x R$ 57,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 57,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -6549,20 +7013,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Biociência Avançada: Tecnologias Biológicas',
            'Pós-graduação • Saúde e Bem-Estar',
-           '5 meses • 360h • 12x R$ 57,90',
+           '5 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 5 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 57,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Biociência Avançada: Tecnologias Biológicas</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
         <span class="tag duracao">5 meses • 360h</span>
-        <span class="tag valor">12x R$ 57,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 57,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -6573,20 +7041,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Cuidados Avançados: Pré e Pós-operatório em Estética Facial e Corporal',
            'Pós-graduação • Saúde e Bem-Estar',
-           '5 meses • 360h • 12x R$ 57,90',
+           '5 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 5 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 57,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Cuidados Avançados: Pré e Pós-operatório em Estética Facial e Corporal</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
         <span class="tag duracao">5 meses • 360h</span>
-        <span class="tag valor">12x R$ 57,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 57,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -6597,20 +7069,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Diagnóstico Avançado: Análises Clínicas e Laboratoriais',
            'Pós-graduação • Saúde e Bem-Estar',
-           '5 meses • 360h • 12x R$ 57,90',
+           '5 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 5 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 57,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Diagnóstico Avançado: Análises Clínicas e Laboratoriais</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
         <span class="tag duracao">5 meses • 360h</span>
-        <span class="tag valor">12x R$ 57,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 57,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -6621,20 +7097,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Enfermagem do Trabalho',
        'Pós-graduação • Saúde e Bem-Estar',
-       '5 meses • 360h • 12x R$ 57,90',
+       '5 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 5 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 57,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Enfermagem do Trabalho</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
     <span class="tag duracao">5 meses • 360h</span>
-    <span class="tag valor">12x R$ 57,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 57,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -6645,20 +7125,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Envelhecimento Saudável: Prevenção, Tratamento e Cuidado',
        'Pós-graduação • Saúde e Bem-Estar',
-       '3 meses • 360h • 12x R$ 57,90',
+       '3 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 3 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 57,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Envelhecimento Saudável: Prevenção, Tratamento e Cuidado</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
     <span class="tag duracao">3 meses • 360h</span>
-    <span class="tag valor">12x R$ 57,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 57,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -6669,20 +7153,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Gestão Hospitalar',
        'Pós-graduação • Saúde e Bem-Estar',
-       '5 meses • 360h • 12x R$ 57,90',
+       '5 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 5 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 57,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Gestão Hospitalar</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
     <span class="tag duracao">5 meses • 360h</span>
-    <span class="tag valor">12x R$ 57,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 57,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -6693,20 +7181,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Gestão Integrada: Segurança e Saúde Ocupacional no Ambiente Corporativo',
        'Pós-graduação • Saúde e Bem-Estar',
-       '4 meses • 360h • 12x R$ 57,90',
+       '4 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 57,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Gestão Integrada: Segurança e Saúde Ocupacional no Ambiente Corporativo</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
     <span class="tag duracao">4 meses • 360h</span>
-    <span class="tag valor">12x R$ 57,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 57,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -6717,20 +7209,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Iniciação e Treinamento em Lutas',
        'Pós-graduação • Saúde e Bem-Estar',
-       '4 meses • 360h • 12x R$ 57,90',
+       '4 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 57,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Iniciação e Treinamento em Lutas</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
     <span class="tag duracao">4 meses • 360h</span>
-    <span class="tag valor">12x R$ 57,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 57,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -6741,20 +7237,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Nutrição Clínica e Dietética',
        'Pós-graduação • Saúde e Bem-Estar',
-       '4 meses • 360h • 12x R$ 57,90',
+       '4 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 57,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Nutrição Clínica e Dietética</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
     <span class="tag duracao">4 meses • 360h</span>
-    <span class="tag valor">12x R$ 57,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 57,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -6765,20 +7265,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Personal Trainer',
        'Pós-graduação • Saúde e Bem-Estar',
-       '3 meses • 360h • 12x R$ 57,90',
+       '3 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 3 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 57,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Personal Trainer</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
     <span class="tag duracao">3 meses • 360h</span>
-    <span class="tag valor">12x R$ 57,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 57,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -6789,20 +7293,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Procedimentos Injetáveis',
        'Pós-graduação • Saúde e Bem-Estar',
-       '5 meses • 360h • 12x R$ 57,90',
+       '5 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 5 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: sim.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 57,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Procedimentos Injetáveis</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
     <span class="tag duracao">5 meses • 360h</span>
-    <span class="tag valor">12x R$ 57,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 57,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -6813,20 +7321,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Psicologia Clínica e Saúde Mental',
        'Pós-graduação • Saúde e Bem-Estar',
-       '5 meses • 400h • 12x R$ 57,90',
+       '5 meses • 400h • de 12x R$ 57,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 5 meses.</li>
           <li>Carga horária: 400h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 57,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Psicologia Clínica e Saúde Mental</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
     <span class="tag duracao">5 meses • 400h</span>
-    <span class="tag valor">12x R$ 57,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 57,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -6837,20 +7349,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Psicologia Organizacional',
        'Pós-graduação • Saúde e Bem-Estar',
-       '5 meses • 360h • 12x R$ 57,90',
+       '5 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 5 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 57,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Psicologia Organizacional</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
     <span class="tag duracao">5 meses • 360h</span>
-    <span class="tag valor">12x R$ 57,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 57,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -6861,20 +7377,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Saúde Ocupacional: Ginástica Laboral, Ergonomia e Performance no Ambiente de Trabalho',
        'Pós-graduação • Saúde e Bem-Estar',
-       '4 meses • 360h • 12x R$ 57,90',
+       '4 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 57,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Saúde Ocupacional: Ginástica Laboral, Ergonomia e Performance no Ambiente de Trabalho</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
     <span class="tag duracao">4 meses • 360h</span>
-    <span class="tag valor">12x R$ 57,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 57,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -6885,20 +7405,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Saúde Pública',
        'Pós-graduação • Saúde e Bem-Estar',
-       '5 meses • 360h • 12x R$ 57,90',
+       '5 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 5 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 57,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Saúde Pública</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
     <span class="tag duracao">5 meses • 360h</span>
-    <span class="tag valor">12x R$ 57,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 57,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -6909,20 +7433,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Serviço Social e Políticas Públicas com Ênfase em Saúde',
        'Pós-graduação • Saúde e Bem-Estar',
-       '3 meses • 360h • 12x R$ 57,90',
+       '3 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 3 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 57,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Serviço Social e Políticas Públicas com Ênfase em Saúde</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
     <span class="tag duracao">3 meses • 360h</span>
-    <span class="tag valor">12x R$ 57,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 57,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -6933,20 +7461,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Treinamento Resistido e Aeróbio',
        'Pós-graduação • Saúde e Bem-Estar',
-       '3 meses • 360h • 12x R$ 57,90',
+       '3 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 3 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 57,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Treinamento Resistido e Aeróbio</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
     <span class="tag duracao">3 meses • 360h</span>
-    <span class="tag valor">12x R$ 57,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 57,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -6957,20 +7489,24 @@ Copiar
      onclick="abrirModal(
        'Especialização em Zoologia',
        'Pós-graduação • Saúde e Bem-Estar',
-       '4 meses • 360h • 12x R$ 57,90',
+       '4 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Tempo de curso: 4 meses.</li>
           <li>Carga horária: 360h.</li>
           <li>Estágio obrigatório: não.</li>
           <li>Prática: não.</li>
-          <li>Pagamento: 12x R$ 57,90.</li>
+          <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
         </ul>`
      )">
   <div class="curso-nome">Zoologia</div>
   <div class="curso-tags">
     <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
     <span class="tag duracao">4 meses • 360h</span>
-    <span class="tag valor">12x R$ 57,90</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>12x R$ 57,90</s></span>
+    <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+    <span class="preco-limite">por tempo limitado</span>
   </div>
     </div>
 
@@ -6980,7 +7516,7 @@ Copiar
 <!-- ABA PÓS: Inovação (IA) - 12x R$ 57,90 -->
 <div class="grupo-area" data-area="pos-inovacao-ia">
   <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
-    Inovação (IA) – 12x R$ 57,90
+    Inovação (IA) – 12x R$ 29,90
     <span class="grupo-arrow">▼</span>
   </button>
 
@@ -6993,20 +7529,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Inteligência Artificial e Ciência de Dados',
            'Pós-graduação • Inovação (IA)',
-           '4 meses • 360h • 12x R$ 57,90',
+           '4 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 4 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 57,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Inteligência Artificial e Ciência de Dados</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Inovação (IA)</span>
         <span class="tag duracao">4 meses • 360h</span>
-        <span class="tag valor">12x R$ 57,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 57,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -7017,20 +7557,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Inteligência Artificial Generativa: Inovação, Automação e Produtividade',
            'Pós-graduação • Inovação (IA)',
-           '4 meses • 360h • 12x R$ 57,90',
+           '4 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 4 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 57,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Inteligência Artificial Generativa: Inovação, Automação e Produtividade</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Inovação (IA)</span>
         <span class="tag duracao">4 meses • 360h</span>
-        <span class="tag valor">12x R$ 57,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 57,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -7041,20 +7585,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Inteligência Artificial na Educação',
            'Pós-graduação • Inovação (IA)',
-           '4 meses • 360h • 12x R$ 57,90',
+           '4 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 4 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 57,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Inteligência Artificial na Educação</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Inovação (IA)</span>
         <span class="tag duracao">4 meses • 360h</span>
-        <span class="tag valor">12x R$ 57,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 57,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -7065,20 +7613,24 @@ Copiar
          onclick="abrirModal(
            'Especialização em Letramento Digital e Inteligência Artificial na Educação',
            'Pós-graduação • Inovação (IA)',
-           '4 meses • 360h • 12x R$ 57,90',
+           '4 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 4 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 57,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">Letramento Digital e Inteligência Artificial na Educação</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Inovação (IA)</span>
         <span class="tag duracao">4 meses • 360h</span>
-        <span class="tag valor">12x R$ 57,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 57,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -7089,20 +7641,24 @@ Copiar
          onclick="abrirModal(
            'MBA em Inbound Marketing com Ênfase em IA: Atração de Leads e Conversão',
            'Pós-graduação • Inovação (IA) • MBA',
-           '4 meses • 360h • 12x R$ 57,90',
+           '4 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 4 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 57,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">MBA em Inbound Marketing com Ênfase em IA: Atração de Leads e Conversão</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Inovação (IA) • MBA</span>
         <span class="tag duracao">4 meses • 360h</span>
-        <span class="tag valor">12x R$ 57,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 57,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -7113,20 +7669,24 @@ Copiar
          onclick="abrirModal(
            'MBA em Inteligência Artificial nos Negócios: IA e Business Intelligence',
            'Pós-graduação • Inovação (IA) • MBA',
-           '4 meses • 360h • 12x R$ 57,90',
+           '4 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 4 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 57,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">MBA em Inteligência Artificial nos Negócios: IA e Business Intelligence</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Inovação (IA) • MBA</span>
         <span class="tag duracao">4 meses • 360h</span>
-        <span class="tag valor">12x R$ 57,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 57,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -7137,20 +7697,24 @@ Copiar
          onclick="abrirModal(
            'MBA em Liderança para o Futuro: Transformação Digital e Inteligência Artificial',
            'Pós-graduação • Inovação (IA) • MBA',
-           '4 meses • 360h • 12x R$ 57,90',
+           '4 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 4 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 57,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">MBA em Liderança para o Futuro: Transformação Digital e Inteligência Artificial</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Inovação (IA) • MBA</span>
         <span class="tag duracao">4 meses • 360h</span>
-        <span class="tag valor">12x R$ 57,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 57,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -7161,20 +7725,24 @@ Copiar
          onclick="abrirModal(
            'MBA em Marketing Digital com Ênfase em Inteligência Artificial',
            'Pós-graduação • Inovação (IA) • MBA',
-           '4 meses • 360h • 12x R$ 57,90',
+           '4 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 4 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 57,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">MBA em Marketing Digital com Ênfase em Inteligência Artificial</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Inovação (IA) • MBA</span>
         <span class="tag duracao">4 meses • 360h</span>
-        <span class="tag valor">12x R$ 57,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 57,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -7185,20 +7753,24 @@ Copiar
          onclick="abrirModal(
            'MBA Executivo em Inteligência Artificial: Gestão Estratégica na Era da IA',
            'Pós-graduação • Inovação (IA) • MBA',
-           '4 meses • 360h • 12x R$ 57,90',
+           '4 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 4 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 57,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">MBA Executivo em Inteligência Artificial: Gestão Estratégica na Era da IA</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Inovação (IA) • MBA</span>
         <span class="tag duracao">4 meses • 360h</span>
-        <span class="tag valor">12x R$ 57,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 57,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -7209,20 +7781,24 @@ Copiar
          onclick="abrirModal(
            'MBA em Marketing de Influência e Produção de Conteúdos Digitais com Recursos de IA',
            'Pós-graduação • Inovação (IA) • MBA',
-           '4 meses • 360h • 12x R$ 57,90',
+           '4 meses • 360h • de 12x R$ 57,90 por 12x R$ 29,90',
            `<ul style='padding-left:1.2rem; margin-top:8px;'>
               <li>Tempo de curso: 4 meses.</li>
               <li>Carga horária: 360h.</li>
               <li>Estágio obrigatório: não.</li>
               <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 57,90.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
             </ul>`
          )">
       <div class="curso-nome">MBA em Marketing de Influência e Produção de Conteúdos Digitais com Recursos de IA</div>
       <div class="curso-tags">
         <span class="tag modalidade">Pós em Inovação (IA) • MBA</span>
         <span class="tag duracao">4 meses • 360h</span>
-        <span class="tag valor">12x R$ 57,90</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>12x R$ 57,90</s></span>
+        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
       </div>
     </div>
 
@@ -7245,9 +7821,9 @@ Copiar
     <!-- Preço da Fatecie Black (preenchido por abrirModal) -->
     <div class="modal-preco" id="modalPreco" hidden>
       <span class="modal-preco-rotulo">Preço Fatecie Black</span>
-      <span class="preco-por">por <strong id="modalPrecoPor"></strong>/mês</span>
-      <span class="preco-de">de <s id="modalPrecoDe"></s></span>
-      <span class="modal-preco-nota">Matrícula grátis · 1ª mensalidade em dezembro · com desconto de pontualidade</span>
+      <span class="preco-por">por <strong id="modalPrecoPor"></strong><span id="modalPrecoSufixo">/mês</span></span>
+      <span class="preco-de" id="modalPrecoDeLinha">de <s id="modalPrecoDe"></s></span>
+      <span class="modal-preco-nota" id="modalPrecoNota"></span>
     </div>
     <div class="modal-descricao" id="modalDescricao"></div>
 
@@ -7377,14 +7953,23 @@ Copiar
 
     document.getElementById('modalTitulo').textContent = titulo;
 
-    // Cursos da Fatecie Black chegam como '4 anos • de R$ 277,70 por R$ 212,90/mês'
-    var black = /^(.*?) • de (R\$ [\d.,]+) por (R\$ [\d.,]+)\/mês$/.exec(duracao);
+    // Preço da Fatecie Black, que chega no 3º parâmetro:
+    //   Graduação: '4 anos • de R$ 277,70 por R$ 212,90/mês'
+    //   Pós:       '6 meses • 360h • de 12x R$ 47,90 por 12x R$ 29,90'  (o "de" é opcional)
+    var grad = /^(.*?) • de (R\$ [\d.,]+) por (R\$ [\d.,]+)\/mês$/.exec(duracao);
+    var pos  = /^(.*?) • (?:de (12x R\$ [\d.,]+) )?por (12x R\$ [\d.,]+)$/.exec(duracao);
+    var black = grad || pos;
     var preco = document.getElementById('modalPreco');
     if (black) {
       document.getElementById('modalMeta').innerHTML =
         '<span>' + modalidade + '</span><span>' + black[1] + '</span>';
-      document.getElementById('modalPrecoDe').textContent = black[2];
+      document.getElementById('modalPrecoDe').textContent = black[2] || '';
+      document.getElementById('modalPrecoDeLinha').hidden = !black[2];
       document.getElementById('modalPrecoPor').textContent = black[3];
+      document.getElementById('modalPrecoSufixo').textContent = grad ? '/mês' : '';
+      document.getElementById('modalPrecoNota').textContent = grad
+        ? 'Matrícula grátis · 1ª mensalidade em dezembro · com desconto de pontualidade'
+        : 'Matrícula grátis · por tempo limitado';
       preco.hidden = false;
     } else {
       document.getElementById('modalMeta').innerHTML =
@@ -7394,7 +7979,7 @@ Copiar
     document.getElementById('modalDescricao').innerHTML = descricao;
 
     var texto = black
-      ? 'Olá! Vi a Fatecie Black e quero me matricular no curso de ' + titulo + ' (' + black[3] + '/mês).'
+      ? 'Olá! Vi a Fatecie Black e quero me matricular no curso de ' + titulo + ' (' + black[3] + (grad ? '/mês' : '') + ').'
       : 'Quero me matricular no curso de ' + titulo;
     var msg = encodeURIComponent(texto);
     document.getElementById('modalWpp').href =
