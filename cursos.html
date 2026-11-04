@@ -3,75 +3,175 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Conheça os cursos EAD da UniFatecie em Ipupiara, Barra do Mendes e Região: Graduações, Tecnólogos e Pós-Graduações com mensalidades acessíveis. Confira valores e detalhes de cada curso.">
-  <title>Graduação Unifatecie EAD – Polos Barra do Mendes e Ipupiara</title>
+  <meta name="description" content="Fatecie Black: Graduação EAD UniFatecie com até 33% de desconto na mensalidade, matrícula por R$ 1,00 e 1ª mensalidade só em dezembro. Polos Ipupiara e Barra do Mendes. Válido de 01 a 30 de novembro.">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://unifatecieipupiara.github.io/unifatecie-ead/cursos.html">
+  <meta property="og:title" content="Fatecie Black: Graduação EAD com até 33% OFF">
+  <meta property="og:description" content="Mensalidades a partir de R$ 45,00, matrícula por R$ 1,00 e 1ª mensalidade só em dezembro. Polos UniFatecie Ipupiara e Barra do Mendes.">
+  <meta property="og:image" content="https://unifatecieipupiara.github.io/unifatecie-ead/black-og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Fatecie Black – Graduação EAD com até 33% OFF | Polos Barra do Mendes e Ipupiara</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f4f4f5;
-      color: #111827;
-    }
+    /* ===== TEMA FATECIE BLACK =====
+       Laranja e preto da logo da campanha. Para voltar ao visual normal
+       depois da Black, troque estas cores. */
     :root {
-      --primary: #f97316;
-      --dark: #111111;
+      --primary: #fe5e00;        /* laranja da logo Fatecie Black */
+      --primary-hover: #ff7a26;
+      --bg: #0a0a0a;             /* fundo da página */
+      --surface: #141414;        /* caixas das áreas */
+      --surface-2: #1c1c1c;      /* cards de curso */
+      --border: #2c2c2c;
+      --text: #f4f4f5;
+      --muted: #a1a1aa;
+      --dark: #0a0a0a;
       --white: #ffffff;
       --light: #f4f4f5;
-      --gray: #6b7280;
+      --gray: #a1a1aa;
       --accent: #25D366;
       --radius: 12px;
+    }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
     }
 
     /* ===== HEADER ===== */
     header {
-      background: linear-gradient(135deg, #111111 45%, #18181b 100%);
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 45%, rgba(254,94,0,.28), transparent 70%),
+        #000;
       color: var(--white);
       text-align: center;
-      padding: 40px 20px 60px;
+      padding: 28px 16px 36px;
       position: relative;
       overflow: hidden;
     }
-    header::before {
-      content: '';
-      position: absolute;
-      top: -80px; right: -80px;
-      width: 300px; height: 300px;
-      background: rgba(249,115,22,0.15);
-      border-radius: 50%;
-    }
-    header::after {
-      content: '';
-      position: absolute;
-      bottom: -60px; left: -60px;
-      width: 220px; height: 220px;
-      background: rgba(255,255,255,0.04);
-      border-radius: 50%;
-    }
     .logo-img {
-      max-height: 70px;
+      max-height: 44px;
       width: auto;
       margin: 0 auto 14px;
       display: block;
       position: relative; z-index: 1;
     }
-    header h1 {
-      font-size: clamp(1.4rem, 3.5vw, 2.2rem);
-      font-weight: 800;
-      line-height: 1.25;
-      margin-bottom: 10px;
+    .black-logo {
+      display: block;
+      width: min(440px, 86vw);
+      height: auto;
+      margin: 0 auto 18px;
       position: relative; z-index: 1;
+      filter: drop-shadow(0 10px 30px rgba(254,94,0,.25));
+    }
+    header h1 {
+      font-size: clamp(1.4rem, 4.2vw, 2.3rem);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 8px;
+      position: relative; z-index: 1;
+    }
+    header h1 .destaque {
+      color: var(--primary);
+      white-space: nowrap;
     }
     header p {
       font-size: 1rem;
-      opacity: .85;
+      color: #d4d4d8;
       max-width: 620px;
-      margin: 0 auto 28px;
+      margin: 0 auto 22px;
       position: relative; z-index: 1;
     }
 
-    /* ===== WAVE ===== */
-    .wave { display: block; width: 100%; background: #111111; margin-bottom: -2px; }
+    /* Benefícios da campanha */
+    .beneficios {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      max-width: 760px;
+      margin: 0 auto 24px;
+      position: relative; z-index: 1;
+    }
+    .beneficios li {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(254,94,0,.45);
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: .9rem;
+      color: #e4e4e7;
+    }
+    .beneficios strong { color: var(--primary); }
+
+    /* Contagem regressiva */
+    .contagem {
+      position: relative; z-index: 1;
+    }
+    .contagem[hidden] { display: none; }
+    .contagem-rotulo {
+      display: block;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .contagem-blocos {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+    .contagem-blocos > span {
+      min-width: 64px;
+      background: #111;
+      border: 1px solid var(--border);
+      border-bottom: 3px solid var(--primary);
+      border-radius: 10px;
+      padding: 8px 6px 6px;
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+    }
+    .contagem-blocos b {
+      display: block;
+      font-size: 1.6rem;
+      line-height: 1.1;
+      color: var(--white);
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0;
+    }
+
+    /* ===== FAIXA DE OFERTA (letreiro) ===== */
+    .faixa-oferta {
+      background: var(--primary);
+      color: #000;
+      overflow: hidden;
+      white-space: nowrap;
+      font-weight: 900;
+      font-size: .9rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 10px 0;
+    }
+    .faixa-oferta-trilho {
+      display: inline-flex;
+      animation: letreiro 28s linear infinite;
+    }
+    .faixa-oferta-trilho span { padding-right: 2.5em; }
+    @keyframes letreiro {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .faixa-oferta-trilho { animation: none; }
+    }
 
     /* ===== BOTÕES CTA ===== */
     .cta-group {
@@ -157,6 +257,7 @@
 
     .faixa-pos-graduacao {
       background-color: #000; /* Cor de fundo preta */
+      border: 1px solid var(--primary);
       color: #fff; /* Cor do texto branca */
       padding: 15px 20px; /* Espaçamento interno */
       text-align: center; /* Centraliza o texto */
@@ -181,7 +282,7 @@
       text-align: center;
       font-size: clamp(1.3rem, 3vw, 1.9rem);
       font-weight: 800;
-      color: var(--dark);
+      color: var(--text);
       margin-bottom: 8px;
     }
     .filtros-sub {
@@ -223,6 +324,40 @@
       transform: translateY(-2px);
     }
 
+    .tab-selo {
+      display: inline-block;
+      margin-left: 6px;
+      padding: 2px 7px;
+      border-radius: 6px;
+      background: #000;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      font-size: .66rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      vertical-align: 2px;
+    }
+
+    /* Aviso da Black no topo da aba Graduação */
+    .faixa-black {
+      background: linear-gradient(90deg, rgba(254,94,0,.18), rgba(254,94,0,.04));
+      border: 1px solid rgba(254,94,0,.5);
+      border-left: 5px solid var(--primary);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 24px;
+      color: #e4e4e7;
+      font-size: .95rem;
+      line-height: 1.5;
+    }
+    .faixa-black strong { color: var(--primary); }
+    .faixa-black small {
+      display: block;
+      margin-top: 6px;
+      font-size: .78rem;
+      color: var(--muted);
+    }
+
     /* Filtro por área */
     .area-filtros {
       display: flex;
@@ -234,9 +369,9 @@
     .area-btn {
       padding: 7px 16px;
       border-radius: 50px;
-      border: 1.5px solid #d1d5db;
-      background: var(--white);
-      color: #374151;
+      border: 1.5px solid var(--border);
+      background: var(--surface-2);
+      color: #d4d4d8;
       font-size: .82rem;
       font-weight: 600;
       cursor: pointer;
@@ -245,7 +380,7 @@
     }
     .area-btn:hover, .area-btn.ativo {
       border-color: var(--primary);
-      background: #fff7ed;
+      background: rgba(254,94,0,.12);
       color: var(--primary);
     }
 
@@ -258,14 +393,15 @@
     .busca-wrapper input {
       width: 100%;
       padding: 12px 16px 12px 42px;
-      border: 1.5px solid #d1d5db;
+      border: 1.5px solid var(--border);
       border-radius: 50px;
-      font-size: .95rem;
-      color: var(--dark);
-      background: var(--white);
+      font-size: 1rem;
+      color: var(--text);
+      background: var(--surface-2);
       font-family: inherit;
       transition: border-color .2s;
     }
+    .busca-wrapper input::placeholder { color: var(--muted); }
     .busca-wrapper input:focus {
       outline: none;
       border-color: var(--primary);
@@ -294,7 +430,7 @@
     .grupo-titulo {
       font-size: 1rem;
       font-weight: 800;
-      color: var(--white);
+      color: #000;
       background: var(--primary);
       text-transform: uppercase;
       letter-spacing: .06em;
@@ -311,7 +447,7 @@
       font-family: inherit;
       transition: background .2s;
     }
-    .grupo-titulo:hover { background: #ea580c; }
+    .grupo-titulo:hover { background: var(--primary-hover); }
     .grupo-titulo[aria-expanded="true"] { border-radius: 8px 8px 0 0; }
 
 /* Seta rotaciona quando aberto */
@@ -326,12 +462,12 @@
 
 /* Corpo do grupo com animação */
     .grupo-body {
-      border: 1px solid #fed7aa;
+      border: 1px solid rgba(254,94,0,.35);
       border-top: none;
       border-radius: 0 0 8px 8px;
       padding: 16px;
       margin-bottom: 0;
-      background: var(--white);
+      background: var(--surface);
     }
 
     .cursos-grid {
@@ -341,12 +477,12 @@
     }
 
     .curso-card {
-      background: var(--white);
+      background: var(--surface-2);
       border-radius: 10px;
-      padding: 10px;
-      border: 1px solid #e5e7eb;
+      padding: 12px;
+      border: 1px solid var(--border);
       border-left: 4px solid var(--primary);
-      box-shadow: 0 2px 8px rgba(0,0,0,.04);
+      box-shadow: 0 2px 8px rgba(0,0,0,.3);
       transition: transform .15s, box-shadow .15s;
       display: flex;
       flex-direction: column;
@@ -354,14 +490,15 @@
     }
     .curso-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 6px 18px rgba(0,0,0,.09);
+      border-color: rgba(254,94,0,.6);
+      box-shadow: 0 8px 22px rgba(254,94,0,.14);
     }
     .curso-card.oculto { display: none; }
 
     .curso-nome {
       font-weight: 700;
-      font-size: .95rem;
-      color: var(--dark);
+      font-size: .98rem;
+      color: var(--text);
       line-height: 1.3;
     }
     .curso-tags {
@@ -375,17 +512,54 @@
       font-weight: 600;
       padding: 3px 8px;
       border-radius: 50px;
-      background: #f3f4f6;
-      color: #374151;
+      background: #262626;
+      color: #d4d4d8;
     }
-    .tag.modalidade { background: #eff6ff; color: #1d4ed8; }
-    .tag.duracao    { background: #f0fdf4; color: #15803d; }
-    .tag.valor      { background: #fff7ed; color: #c2410c; font-weight: 700; }
+    .tag.modalidade { background: rgba(96,165,250,.14); color: #93c5fd; }
+    .tag.duracao    { background: rgba(74,222,128,.12); color: #86efac; }
+    .tag.valor      { background: rgba(254,94,0,.16); color: #ffb27a; font-weight: 700; }
+
+    /* Preço da Black no card: de / por / % de desconto */
+    .preco-black {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 2px 8px;
+      margin-top: 4px;
+      padding-top: 8px;
+      border-top: 1px dashed #333;
+    }
+    .preco-de {
+      flex-basis: 100%;
+      font-size: .78rem;
+      color: var(--muted);
+    }
+    .preco-de s { text-decoration-color: #ef4444; text-decoration-thickness: 2px; }
+    .preco-por {
+      font-size: .82rem;
+      color: #d4d4d8;
+    }
+    .preco-por strong {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--primary);
+      letter-spacing: -.01em;
+    }
+    .selo-off {
+      margin-left: auto;
+      align-self: center;
+      background: var(--primary);
+      color: #000;
+      font-size: .74rem;
+      font-weight: 900;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
 
     .tag.grade-link {
-      background: #fef3c7;
-      color: #92400e;
-      border: 1px solid #fbbf24;
+      background: rgba(251,191,36,.14);
+      color: #fcd34d;
+      border: 1px solid #b45309;
       cursor: pointer;
       text-decoration: none;
     }
@@ -418,7 +592,7 @@ Copiar
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.55);
+  background: rgba(0,0,0,0.75);
   z-index: 1000;
   align-items: center;
   justify-content: center;
@@ -428,7 +602,10 @@ Copiar
   display: flex;
 }
 .modal-box {
-  background: #fff;
+  background: #161616;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--primary);
   border-radius: 16px;
   padding: 28px 24px 24px;
   max-width: 480px;
@@ -446,16 +623,16 @@ Copiar
   background: none;
   border: none;
   cursor: pointer;
-  color: #6b7280;
+  color: var(--muted);
   line-height: 1;
 }
 .modal-fechar:hover {
-  color: #111827;
+  color: var(--white);
 }
 .modal-titulo {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--white);
   margin-bottom: 6px;
   padding-right: 24px;
   line-height: 1.4;
@@ -467,16 +644,44 @@ Copiar
   margin-bottom: 16px;
 }
 .modal-meta span {
-  background: #f3f4f6;
-  color: #374151;
+  background: #262626;
+  color: #e4e4e7;
   font-size: 0.8rem;
   font-weight: 600;
   border-radius: 999px;
   padding: 4px 12px;
 }
+.modal-preco {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 10px;
+  background: rgba(254,94,0,.1);
+  border: 1px solid rgba(254,94,0,.5);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+}
+.modal-preco[hidden] { display: none; }
+.modal-preco-rotulo {
+  flex-basis: 100%;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+.modal-preco .preco-por strong { font-size: 1.6rem; }
+.modal-preco .preco-de { flex-basis: auto; font-size: .85rem; }
+.modal-preco-nota {
+  flex-basis: 100%;
+  font-size: .75rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
 .modal-descricao {
   font-size: 0.92rem;
-  color: #374151;
+  color: #d4d4d8;
   line-height: 1.65;
   margin-bottom: 20px;
   white-space: pre-line;
@@ -531,7 +736,7 @@ Copiar
   padding: 10px 26px;
   border-radius: 999px;
   border: 2px solid var(--primary);
-  background: #fff7ed;
+  background: transparent;
   color: var(--primary);
   font-weight: 700;
   font-size: .95rem;
@@ -546,14 +751,15 @@ Copiar
 
 .btn-voltar:hover {
   background: var(--primary);
-  color: #111827;
+  color: #000;
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(0,0,0,.12);
 }
 
     /* ===== FOOTER ===== */
     footer {
-      background: #18181b;
+      background: #000;
+      border-top: 1px solid #1f1f1f;
       color: rgba(229,231,235,.8);
       text-align: center;
       padding: 28px 20px;
@@ -578,14 +784,32 @@ Copiar
 <!-- ===== HEADER ===== -->
 <header>
   <img src="logo.png" alt="Unifatecie EAD" class="logo-img"/>
-  <h1>Cursos de Graduação e Pós-Graduação<br>
-    <span style="color:#f97316;">EAD Unifatecie</span>
-  </h1>
+  <img src="black-fatecie.png" alt="Fatecie Black" class="black-logo" width="880" height="442"/>
+  <h1>Graduação EAD com até <span class="destaque">33% OFF</span></h1>
+  <p>Cursos de Graduação e Pós-Graduação EAD UniFatecie · Polos Ipupiara e Barra do Mendes</p>
+  <ul class="beneficios">
+    <li><strong>Matrícula</strong> por R$ 1,00</li>
+    <li><strong>1ª mensalidade</strong> só em dezembro</li>
+    <li><strong>Válido</strong> de 01 a 30 de novembro</li>
+  </ul>
+  <div class="contagem" id="contagem" hidden>
+    <span class="contagem-rotulo">A Fatecie Black termina em</span>
+    <div class="contagem-blocos" role="timer" aria-live="off">
+      <span><b id="cdDias">00</b>dias</span>
+      <span><b id="cdHoras">00</b>horas</span>
+      <span><b id="cdMin">00</b>min</span>
+      <span><b id="cdSeg">00</b>seg</span>
+    </div>
+  </div>
 </header>
 
-<svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" height="50" xmlns="http://www.w3.org/2000/svg">
-  <path d="M0,40 C360,80 1080,0 1440,40 L1440,0 L0,0 Z" fill="#111111"/>
-</svg>
+<!-- Letreiro da campanha -->
+<div class="faixa-oferta" aria-hidden="true">
+  <div class="faixa-oferta-trilho">
+    <span>Fatecie Black ★ Até 33% OFF ★ Matrícula R$ 1,00 ★ 1ª mensalidade em dezembro ★ Fatecie Black ★ Até 33% OFF ★ Matrícula R$ 1,00 ★ 1ª mensalidade em dezembro ★</span>
+    <span>Fatecie Black ★ Até 33% OFF ★ Matrícula R$ 1,00 ★ 1ª mensalidade em dezembro ★ Fatecie Black ★ Até 33% OFF ★ Matrícula R$ 1,00 ★ 1ª mensalidade em dezembro ★</span>
+  </div>
+</div>
 
     
 <!-- ===== FILTROS ===== -->
@@ -599,7 +823,7 @@ Copiar
   <button class="tab-btn ativo"
           data-tab="graduacao"
           onclick="mudarTab('graduacao')">
-    🎓 Graduação
+    🎓 Graduação <span class="tab-selo">BLACK</span>
   </button>
 
   <button class="tab-btn"
@@ -627,6 +851,13 @@ Copiar
 
 <div class="tab-content" data-tab="graduacao">
 
+<!-- AVISO FATECIE BLACK -->
+<div class="faixa-black">
+  🔥 <strong>Fatecie Black:</strong> mensalidades da Graduação com até <strong>33% de desconto</strong>,
+  a partir de <strong>R$ 45,00/mês</strong>. Toque em uma área para ver os cursos.
+  <small>Valores com desconto de pontualidade, para pagamento até o vencimento. Condição válida para matrículas de 01 a 30 de novembro de 2026.</small>
+</div>
+
 <!-- SAÚDE -->
 <div class="grupo-area" data-area="saude">
   <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
@@ -641,7 +872,7 @@ Copiar
          onclick="abrirModal(
            'Biomedicina',
            'Bacharelado',
-           '4 anos • R$ 277,70/mês',
+           '4 anos • de R$ 277,70 por R$ 212,90/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Tem Estágio Obrigatório.</li>\
            <li>Tem TCC.</li>\
@@ -657,7 +888,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Bacharelado</span>
         <span class="tag duracao">4 anos</span>
-        <span class="tag valor">R$ 277,70/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 277,70</s></span>
+        <span class="preco-por">por <strong>R$ 212,90</strong>/mês</span>
+        <span class="selo-off">-23%</span>
       </div>
     </div>
 
@@ -667,7 +902,7 @@ Copiar
          onclick="abrirModal(
            'Farmácia',
            'Bacharelado',
-           '4 anos • R$ 277,70/mês',
+           '4 anos • de R$ 277,70 por R$ 212,90/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Tem Estágio Obrigatório.</li>\
            <li>Tem TCC.</li>\
@@ -683,7 +918,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Bacharelado</span>
         <span class="tag duracao">4 anos</span>
-        <span class="tag valor">R$ 277,70/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 277,70</s></span>
+        <span class="preco-por">por <strong>R$ 212,90</strong>/mês</span>
+        <span class="selo-off">-23%</span>
       </div>
     </div>
 
@@ -693,7 +932,7 @@ Copiar
          onclick="abrirModal(
            'Fisioterapia',
            'Bacharelado',
-           '4 anos • R$ 277,70/mês',
+           '4 anos • de R$ 277,70 por R$ 212,90/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Tem Estágio Obrigatório.</li>\
            <li>Tem TCC.</li>\
@@ -709,7 +948,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Bacharelado</span>
         <span class="tag duracao">4 anos</span>
-        <span class="tag valor">R$ 277,70/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 277,70</s></span>
+        <span class="preco-por">por <strong>R$ 212,90</strong>/mês</span>
+        <span class="selo-off">-23%</span>
       </div>
     </div>
 
@@ -719,7 +962,7 @@ Copiar
          onclick="abrirModal(
            'Fonoaudiologia',
            'Bacharelado',
-           '4 anos • R$ 299,00/mês',
+           '4 anos • de R$ 299,00 por R$ 229,23/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Tem Estágio Obrigatório.</li>\
            <li>Tem TCC.</li>\
@@ -735,7 +978,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Bacharelado</span>
         <span class="tag duracao">4 anos</span>
-        <span class="tag valor">R$ 299,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 299,00</s></span>
+        <span class="preco-por">por <strong>R$ 229,23</strong>/mês</span>
+        <span class="selo-off">-23%</span>
       </div>
     </div>
 
@@ -745,7 +992,7 @@ Copiar
          onclick="abrirModal(
            'Nutrição',
            'Bacharelado',
-           '4 anos • R$ 277,70/mês',
+           '4 anos • de R$ 277,70 por R$ 212,90/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Tem Estágio Obrigatório.</li>\
            <li>Tem TCC.</li>\
@@ -761,7 +1008,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Bacharelado</span>
         <span class="tag duracao">4 anos</span>
-        <span class="tag valor">R$ 277,70/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 277,70</s></span>
+        <span class="preco-por">por <strong>R$ 212,90</strong>/mês</span>
+        <span class="selo-off">-23%</span>
       </div>
     </div>
 
@@ -771,7 +1022,7 @@ Copiar
          onclick="abrirModal(
            'Podologia',
            'Tecnólogo',
-           '2,5 anos • R$ 277,70/mês',
+           '2,5 anos • de R$ 277,70 por R$ 212,90/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -783,7 +1034,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Tecnólogo</span>
         <span class="tag duracao">2,5 anos</span>
-        <span class="tag valor">R$ 277,70/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 277,70</s></span>
+        <span class="preco-por">por <strong>R$ 212,90</strong>/mês</span>
+        <span class="selo-off">-23%</span>
       </div>
     </div>
 
@@ -793,7 +1048,7 @@ Copiar
          onclick="abrirModal(
            'Radiologia',
            'Tecnólogo',
-           '3 anos • R$ 299,00/mês',
+           '3 anos • de R$ 299,00 por R$ 229,23/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -809,7 +1064,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Tecnólogo</span>
         <span class="tag duracao">3 anos</span>
-        <span class="tag valor">R$ 299,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 299,00</s></span>
+        <span class="preco-por">por <strong>R$ 229,23</strong>/mês</span>
+        <span class="selo-off">-23%</span>
       </div>
     </div>
 
@@ -819,7 +1078,7 @@ Copiar
          onclick="abrirModal(
            'Terapia Ocupacional',
            'Bacharelado',
-           '4 anos • R$ 299,00/mês',
+           '4 anos • de R$ 299,00 por R$ 229,23/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Tem Estágio Obrigatório.</li>\
            <li>Tem TCC.</li>\
@@ -835,7 +1094,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Bacharelado</span>
         <span class="tag duracao">4 anos</span>
-        <span class="tag valor">R$ 299,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 299,00</s></span>
+        <span class="preco-por">por <strong>R$ 229,23</strong>/mês</span>
+        <span class="selo-off">-23%</span>
       </div>
     </div>
 
@@ -845,7 +1108,7 @@ Copiar
          onclick="abrirModal(
            'Estética e Cosmética',
            'Tecnólogo',
-           '2,5 anos • R$ 149,70/mês',
+           '2,5 anos • de R$ 149,70 por R$ 99,80/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -857,7 +1120,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Tecnólogo</span>
         <span class="tag duracao">2,5 anos</span>
-        <span class="tag valor">R$ 149,70/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 149,70</s></span>
+        <span class="preco-por">por <strong>R$ 99,80</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -867,7 +1134,7 @@ Copiar
          onclick="abrirModal(
            'Terapias Integrativas e Complementares',
            'Tecnólogo',
-           '2,5 anos • R$ 149,70/mês',
+           '2,5 anos • de R$ 149,70 por R$ 99,80/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -879,7 +1146,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Tecnólogo</span>
         <span class="tag duracao">2,5 anos</span>
-        <span class="tag valor">R$ 149,70/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 149,70</s></span>
+        <span class="preco-por">por <strong>R$ 99,80</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -889,7 +1160,7 @@ Copiar
          onclick="abrirModal(
            'Agente Comunitário',
            'Tecnólogo',
-           '2,5 anos • R$ 149,70/mês',
+           '2,5 anos • de R$ 149,70 por R$ 99,80/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -901,7 +1172,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Tecnólogo</span>
         <span class="tag duracao">2,5 anos</span>
-        <span class="tag valor">R$ 149,70/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 149,70</s></span>
+        <span class="preco-por">por <strong>R$ 99,80</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -911,7 +1186,7 @@ Copiar
          onclick="abrirModal(
            'Psicopedagogia',
            'Bacharelado',
-           '4 anos • R$ 99,00/mês',
+           '4 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Tem Estágio Obrigatório.</li>\
            <li>Tem TCC.</li>\
@@ -923,7 +1198,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Bacharelado</span>
         <span class="tag duracao">4 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -945,14 +1224,18 @@ Copiar
          onclick="abrirModal(
            'Pedagogia',
            'Licenciatura',
-           '4 anos • R$ 99,00/mês',
+           '4 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Tem Estágio Obrigatório.</li><li>Tem TCC.</li><li>Tem prova presencial no Polo mais próximo ao aluno 4x por ano.</li><li>Pode ter reajuste anual na mensalidade.</li></ul>'
          )">
       <div class="curso-nome">Pedagogia</div>
       <div class="curso-tags">
         <span class="tag modalidade">Licenciatura</span>
         <span class="tag duracao">4 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -962,14 +1245,18 @@ Copiar
          onclick="abrirModal(
            'Educação Especial',
            'Licenciatura',
-           '4 anos • R$ 99,00/mês',
+           '4 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Tem Estágio Obrigatório.</li><li>Tem TCC.</li><li>Tem prova presencial no Polo mais próximo ao aluno 4x por ano.</li><li>Pode ter reajuste anual na mensalidade.</li></ul>'
          )">
       <div class="curso-nome">Educação Especial</div>
       <div class="curso-tags">
         <span class="tag modalidade">Licenciatura</span>
         <span class="tag duracao">4 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -979,14 +1266,18 @@ Copiar
          onclick="abrirModal(
            'Educação Física – Licenciatura',
            'Licenciatura',
-           '4 anos • R$ 99,00/mês',
+           '4 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Tem Estágio Obrigatório.</li><li>Tem TCC.</li><li>Tem prova presencial no Polo mais próximo ao aluno 4x por ano.</li><li>Pode ter reajuste anual na mensalidade.</li></ul>'
          )">
       <div class="curso-nome">Educação Física – Licenciatura</div>
       <div class="curso-tags">
         <span class="tag modalidade">Licenciatura</span>
         <span class="tag duracao">4 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -996,14 +1287,18 @@ Copiar
          onclick="abrirModal(
            'Letras (Português/Inglês)',
            'Licenciatura',
-           '4 anos • R$ 99,00/mês',
+           '4 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Tem Estágio Obrigatório.</li><li>Tem TCC.</li><li>Tem prova presencial no Polo mais próximo ao aluno 4x por ano.</li><li>Pode ter reajuste anual na mensalidade.</li></ul>'
          )">
       <div class="curso-nome">Letras (Português/Inglês)</div>
       <div class="curso-tags">
         <span class="tag modalidade">Licenciatura</span>
         <span class="tag duracao">4 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1013,14 +1308,18 @@ Copiar
          onclick="abrirModal(
            'Letras (Português/Libras)',
            'Licenciatura',
-           '4 anos • R$ 99,00/mês',
+           '4 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Tem Estágio Obrigatório.</li><li>Tem TCC.</li><li>Tem prova presencial no Polo mais próximo ao aluno 4x por ano.</li><li>Pode ter reajuste anual na mensalidade.</li></ul>'
          )">
       <div class="curso-nome">Letras (Português/Libras)</div>
       <div class="curso-tags">
         <span class="tag modalidade">Licenciatura</span>
         <span class="tag duracao">4 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1030,14 +1329,18 @@ Copiar
          onclick="abrirModal(
            'História',
            'Licenciatura',
-           '4 anos • R$ 99,00/mês',
+           '4 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Tem Estágio Obrigatório.</li><li>Tem TCC.</li><li>Tem prova presencial no Polo mais próximo ao aluno 4x por ano.</li><li>Pode ter reajuste anual na mensalidade.</li></ul>'
          )">
       <div class="curso-nome">História</div>
       <div class="curso-tags">
         <span class="tag modalidade">Licenciatura</span>
         <span class="tag duracao">4 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1047,14 +1350,18 @@ Copiar
          onclick="abrirModal(
            'Geografia',
            'Licenciatura',
-           '4 anos • R$ 99,00/mês',
+           '4 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Tem Estágio Obrigatório.</li><li>Tem TCC.</li><li>Tem prova presencial no Polo mais próximo ao aluno 4x por ano.</li><li>Pode ter reajuste anual na mensalidade.</li></ul>'
          )">
       <div class="curso-nome">Geografia</div>
       <div class="curso-tags">
         <span class="tag modalidade">Licenciatura</span>
         <span class="tag duracao">4 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1064,14 +1371,18 @@ Copiar
          onclick="abrirModal(
            'Matemática',
            'Licenciatura',
-           '4 anos • R$ 99,00/mês',
+           '4 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Tem Estágio Obrigatório.</li><li>Tem TCC.</li><li>Tem prova presencial no Polo mais próximo ao aluno 4x por ano.</li><li>Pode ter reajuste anual na mensalidade.</li></ul>'
          )">
       <div class="curso-nome">Matemática</div>
       <div class="curso-tags">
         <span class="tag modalidade">Licenciatura</span>
         <span class="tag duracao">4 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1081,14 +1392,18 @@ Copiar
          onclick="abrirModal(
            'Filosofia',
            'Licenciatura',
-           '4 anos • R$ 99,00/mês',
+           '4 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Tem Estágio Obrigatório.</li><li>Tem TCC.</li><li>Tem prova presencial no Polo mais próximo ao aluno 4x por ano.</li><li>Pode ter reajuste anual na mensalidade.</li></ul>'
          )">
       <div class="curso-nome">Filosofia</div>
       <div class="curso-tags">
         <span class="tag modalidade">Licenciatura</span>
         <span class="tag duracao">4 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1098,14 +1413,18 @@ Copiar
          onclick="abrirModal(
            'Sociologia',
            'Licenciatura',
-           '4 anos • R$ 99,00/mês',
+           '4 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Tem Estágio Obrigatório.</li><li>Tem TCC.</li><li>Tem prova presencial no Polo mais próximo ao aluno 4x por ano.</li><li>Pode ter reajuste anual na mensalidade.</li></ul>'
          )">
       <div class="curso-nome">Sociologia</div>
       <div class="curso-tags">
         <span class="tag modalidade">Licenciatura</span>
         <span class="tag duracao">4 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1115,14 +1434,18 @@ Copiar
          onclick="abrirModal(
            'Ciências Biológicas – Licenciatura',
            'Licenciatura',
-           '4 anos • R$ 99,00/mês',
+           '4 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Tem Estágio Obrigatório.</li><li>Tem TCC.</li><li>Tem prova presencial no Polo mais próximo ao aluno 4x por ano.</li><li>Pode ter reajuste anual na mensalidade.</li></ul>'
          )">
       <div class="curso-nome">Ciências Biológicas – Licenciatura</div>
       <div class="curso-tags">
         <span class="tag modalidade">Licenciatura</span>
         <span class="tag duracao">4 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1132,14 +1455,18 @@ Copiar
          onclick="abrirModal(
            'Artes',
            'Licenciatura',
-           '4 anos • R$ 99,00/mês',
+           '4 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Tem Estágio Obrigatório.</li><li>Tem TCC.</li><li>Tem prova presencial no Polo mais próximo ao aluno 4x por ano.</li><li>Pode ter reajuste anual na mensalidade.</li></ul>'
          )">
       <div class="curso-nome">Artes</div>
       <div class="curso-tags">
         <span class="tag modalidade">Licenciatura</span>
         <span class="tag duracao">4 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1149,14 +1476,18 @@ Copiar
          onclick="abrirModal(
            'Música',
            'Licenciatura',
-           '4 anos • R$ 99,00/mês',
+           '4 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Tem Estágio Obrigatório.</li><li>Tem TCC.</li><li>Tem prova presencial no Polo mais próximo ao aluno 4x por ano.</li><li>Pode ter reajuste anual na mensalidade.</li></ul>'
          )">
       <div class="curso-nome">Música</div>
       <div class="curso-tags">
         <span class="tag modalidade">Licenciatura</span>
         <span class="tag duracao">4 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1167,7 +1498,7 @@ Copiar
          onclick="abrirModal(
            'Educação Física – Bacharelado',
            'Bacharelado',
-           '4 anos • R$ 99,00/mês',
+           '4 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Tem Estágio Obrigatório.</li>\
            <li>Tem TCC.</li>\
@@ -1183,7 +1514,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Bacharelado</span>
         <span class="tag duracao">4 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1193,7 +1528,7 @@ Copiar
          onclick="abrirModal(
            'Ciências Biológicas – Bacharelado',
            'Bacharelado',
-           '4 anos • R$ 99,00/mês',
+           '4 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Tem Estágio Obrigatório.</li>\
            <li>Tem TCC.</li>\
@@ -1205,7 +1540,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Bacharelado</span>
         <span class="tag duracao">4 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1216,7 +1555,7 @@ Copiar
          onclick="abrirModal(
            'Processos Escolares',
            'Tecnólogo',
-           '2 anos • R$ 89,70/mês',
+           '2 anos • de R$ 89,70 por R$ 59,80/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1228,7 +1567,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Tecnólogo</span>
         <span class="tag duracao">2 anos</span>
-        <span class="tag valor">R$ 89,70/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 89,70</s></span>
+        <span class="preco-por">por <strong>R$ 59,80</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1249,7 +1592,7 @@ Copiar
          onclick="abrirModal(
            'Administração',
            'Bacharelado',
-           '3 anos • R$ 99,00/mês',
+           '3 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1261,7 +1604,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Bacharelado</span>
         <span class="tag duracao">3 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1271,7 +1618,7 @@ Copiar
          onclick="abrirModal(
            'Ciências Contábeis',
            'Bacharelado',
-           '3 anos • R$ 99,00/mês',
+           '3 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1283,7 +1630,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Bacharelado</span>
         <span class="tag duracao">3 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1293,7 +1644,7 @@ Copiar
          onclick="abrirModal(
            'Ciências Econômicas',
            'Bacharelado',
-           '3 anos • R$ 89,70/mês',
+           '3 anos • de R$ 89,70 por R$ 59,80/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1305,7 +1656,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Bacharelado</span>
         <span class="tag duracao">3 anos</span>
-        <span class="tag valor">R$ 89,70/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 89,70</s></span>
+        <span class="preco-por">por <strong>R$ 59,80</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1315,7 +1670,7 @@ Copiar
          onclick="abrirModal(
            'Gestão Financeira',
            'Tecnólogo',
-           '1,5 anos • R$ 99,00/mês',
+           '1,5 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1327,7 +1682,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Tecnólogo</span>
         <span class="tag duracao">1,5 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1337,7 +1696,7 @@ Copiar
          onclick="abrirModal(
            'Gestão de Recursos Humanos',
            'Tecnólogo',
-           '1,5 anos • R$ 99,00/mês',
+           '1,5 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1349,7 +1708,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Tecnólogo</span>
         <span class="tag duracao">1,5 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1359,7 +1722,7 @@ Copiar
          onclick="abrirModal(
            'Gestão Comercial',
            'Tecnólogo',
-           '1,5 anos • R$ 99,00/mês',
+           '1,5 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1371,7 +1734,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Tecnólogo</span>
         <span class="tag duracao">1,5 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1381,7 +1748,7 @@ Copiar
          onclick="abrirModal(
            'Gestão Pública',
            'Tecnólogo',
-           '1,5 anos • R$ 99,00/mês',
+           '1,5 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1393,7 +1760,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Tecnólogo</span>
         <span class="tag duracao">1,5 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1403,7 +1774,7 @@ Copiar
          onclick="abrirModal(
            'Gestão Hospitalar',
            'Tecnólogo',
-           '3 anos • R$ 99,00/mês',
+           '3 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1415,7 +1786,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Tecnólogo</span>
         <span class="tag duracao">3 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1425,7 +1800,7 @@ Copiar
          onclick="abrirModal(
            'Gestão do Agronegócio',
            'Tecnólogo',
-           '2,5 anos • R$ 99,00/mês',
+           '2,5 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1437,7 +1812,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Tecnólogo</span>
         <span class="tag duracao">2,5 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1447,7 +1826,7 @@ Copiar
          onclick="abrirModal(
            'Gestão da Qualidade',
            'Tecnólogo',
-           '1,5 anos • R$ 99,00/mês',
+           '1,5 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1459,7 +1838,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Tecnólogo</span>
         <span class="tag duracao">1,5 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1469,7 +1852,7 @@ Copiar
          onclick="abrirModal(
            'Gestão da Produção Industrial',
            'Tecnólogo',
-           '2,5 anos • R$ 99,00/mês',
+           '2,5 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1481,7 +1864,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Tecnólogo</span>
         <span class="tag duracao">2,5 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1491,7 +1878,7 @@ Copiar
          onclick="abrirModal(
            'Processos Gerenciais',
            'Tecnólogo',
-           '1,5 anos • R$ 99,00/mês',
+           '1,5 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1503,7 +1890,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Tecnólogo</span>
         <span class="tag duracao">1,5 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1513,7 +1904,7 @@ Copiar
          onclick="abrirModal(
            'Comércio Exterior',
            'Tecnólogo',
-           '1,5 anos • R$ 99,00/mês',
+           '1,5 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1525,7 +1916,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Tecnólogo</span>
         <span class="tag duracao">1,5 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1535,7 +1930,7 @@ Copiar
          onclick="abrirModal(
            'Logística',
            'Tecnólogo',
-           '1,5 anos • R$ 99,00/mês',
+           '1,5 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1547,7 +1942,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Tecnólogo</span>
         <span class="tag duracao">1,5 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1557,7 +1956,7 @@ Copiar
          onclick="abrirModal(
            'Marketing',
            'Tecnólogo',
-           '1,5 anos • R$ 99,00/mês',
+           '1,5 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1569,7 +1968,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Tecnólogo</span>
         <span class="tag duracao">1,5 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1579,7 +1982,7 @@ Copiar
          onclick="abrirModal(
            'Negócios Imobiliários',
            'Tecnólogo',
-           '1,5 anos • R$ 99,00/mês',
+           '1,5 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1591,7 +1994,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Tecnólogo</span>
         <span class="tag duracao">1,5 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1601,7 +2008,7 @@ Copiar
          onclick="abrirModal(
            'Secretariado',
            'Tecnólogo',
-           '1,5 anos • R$ 99,00/mês',
+           '1,5 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1613,7 +2020,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Tecnólogo</span>
         <span class="tag duracao">1,5 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1623,7 +2034,7 @@ Copiar
          onclick="abrirModal(
            'Hotelaria',
            'Tecnólogo',
-           '1,5 anos • R$ 99,00/mês',
+           '1,5 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1635,7 +2046,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Tecnólogo</span>
         <span class="tag duracao">1,5 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1645,7 +2060,7 @@ Copiar
          onclick="abrirModal(
            'Serviço Social',
            'Bacharelado',
-           '4 anos • R$ 99,00/mês',
+           '4 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Tem Estágio Obrigatório.</li>\
            <li>Tem TCC.</li>\
@@ -1657,7 +2072,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Bacharelado</span>
         <span class="tag duracao">4 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1667,7 +2086,7 @@ Copiar
          onclick="abrirModal(
            'Gestão Ambiental',
            'Tecnólogo',
-           '2 anos • R$ 99,00/mês',
+           '2 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1679,7 +2098,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Tecnólogo</span>
         <span class="tag duracao">2 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1689,7 +2112,7 @@ Copiar
          onclick="abrirModal(
            'Teologia',
            'Bacharelado',
-           '3 anos • R$ 89,70/mês',
+           '3 anos • de R$ 89,70 por R$ 59,80/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Tem Estágio Obrigatório.</li>\
            <li>Tem TCC.</li>\
@@ -1701,7 +2124,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Bacharelado</span>
         <span class="tag duracao">3 anos</span>
-        <span class="tag valor">R$ 89,70/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 89,70</s></span>
+        <span class="preco-por">por <strong>R$ 59,80</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1722,7 +2149,7 @@ Copiar
          onclick="abrirModal(
            'Análise e Desenvolvimento de Sistemas',
            'Tecnólogo',
-           '2 anos • R$ 99,00/mês',
+           '2 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1734,7 +2161,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Tecnólogo</span>
         <span class="tag duracao">2 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1745,7 +2176,7 @@ Copiar
      onclick="abrirModal(
        'Inteligência Artificial e Machine Learning',
        'Graduação • Tecnólogo em Tecnologia',
-       '2 anos • R$ 99,00/mês',
+       '2 anos • de R$ 99,00 por R$ 66,00/mês',
        `<ul style='padding-left:1.2rem; margin-top:8px;'>
           <li>Duração: 2 anos (24 mensalidades).</li>
           <li>Prática em laboratório: não.</li>
@@ -1759,7 +2190,11 @@ Copiar
   <div class="curso-tags">
     <span class="tag modalidade">Graduação • Tecnólogo</span>
     <span class="tag duracao">2 anos</span>
-    <span class="tag valor">R$ 99,00/mês</span>
+  </div>
+  <div class="preco-black">
+    <span class="preco-de">de <s>R$ 99,00</s></span>
+    <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+    <span class="selo-off">-33%</span>
   </div>
     </div>
 
@@ -1769,7 +2204,7 @@ Copiar
          onclick="abrirModal(
            'Segurança da Informação',
            'Tecnólogo',
-           '2 anos • R$ 99,00/mês',
+           '2 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1781,7 +2216,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Tecnólogo</span>
         <span class="tag duracao">2 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1791,7 +2230,7 @@ Copiar
          onclick="abrirModal(
            'Sistemas para Internet',
            'Tecnólogo',
-           '2 anos • R$ 99,00/mês',
+           '2 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1803,7 +2242,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Tecnólogo</span>
         <span class="tag duracao">2 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1813,7 +2256,7 @@ Copiar
          onclick="abrirModal(
            'Sistemas de Informação',
            'Bacharelado',
-           '4 anos • R$ 99,00/mês',
+           '4 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1825,7 +2268,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Bacharelado</span>
         <span class="tag duracao">4 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1835,7 +2282,7 @@ Copiar
          onclick="abrirModal(
            'Ciência do Futuro',
            'Tecnólogo',
-           '1,5 anos • R$ 99,00/mês',
+           '1,5 anos • de R$ 99,00 por R$ 66,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1847,7 +2294,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Tecnólogo</span>
         <span class="tag duracao">1,5 anos</span>
-        <span class="tag valor">R$ 99,00/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 99,00</s></span>
+        <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1857,7 +2308,7 @@ Copiar
          onclick="abrirModal(
            'Jogos Digitais',
            'Tecnólogo',
-           '2 anos • R$ 67,50/mês',
+           '2 anos • de R$ 67,50 por R$ 45,00/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1869,7 +2320,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Tecnólogo</span>
         <span class="tag duracao">2 anos</span>
-        <span class="tag valor">R$ 67,50/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 67,50</s></span>
+        <span class="preco-por">por <strong>R$ 45,00</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1879,7 +2334,7 @@ Copiar
          onclick="abrirModal(
            'Engenharia de Software',
            'Bacharelado',
-           '4 anos • R$ 149,70/mês',
+           '4 anos • de R$ 149,70 por R$ 99,80/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1891,7 +2346,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Bacharelado</span>
         <span class="tag duracao">4 anos</span>
-        <span class="tag valor">R$ 149,70/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 149,70</s></span>
+        <span class="preco-por">por <strong>R$ 99,80</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1901,7 +2360,7 @@ Copiar
          onclick="abrirModal(
            'Engenharia da Computação',
            'Bacharelado',
-           '4 anos • R$ 239,70/mês',
+           '4 anos • de R$ 239,70 por R$ 159,80/mês',
            '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;>\
            <li>Não tem Estágio Obrigatório.</li>\
            <li>Não tem TCC.</li>\
@@ -1913,7 +2372,11 @@ Copiar
       <div class="curso-tags">
         <span class="tag modalidade">Bacharelado</span>
         <span class="tag duracao">4 anos</span>
-        <span class="tag valor">R$ 239,70/mês</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-de">de <s>R$ 239,70</s></span>
+        <span class="preco-por">por <strong>R$ 159,80</strong>/mês</span>
+        <span class="selo-off">-33%</span>
       </div>
     </div>
 
@@ -1932,7 +2395,11 @@ Copiar
           <div class="curso-tags">
             <span class="tag modalidade">Bacharelado</span>
             <span class="tag duracao">5 anos</span>
-            <span class="tag valor">R$ 239,70/mês</span>
+          </div>
+          <div class="preco-black">
+            <span class="preco-de">de <s>R$ 239,70</s></span>
+            <span class="preco-por">por <strong>R$ 159,80</strong>/mês</span>
+            <span class="selo-off">-33%</span>
           </div>
         </div>
         <div class="curso-card" data-area="engenharia" data-tab="graduacao">
@@ -1940,7 +2407,11 @@ Copiar
           <div class="curso-tags">
             <span class="tag modalidade">Bacharelado</span>
             <span class="tag duracao">5 anos</span>
-            <span class="tag valor">R$ 239,70/mês</span>
+          </div>
+          <div class="preco-black">
+            <span class="preco-de">de <s>R$ 239,70</s></span>
+            <span class="preco-por">por <strong>R$ 159,80</strong>/mês</span>
+            <span class="selo-off">-33%</span>
           </div>
         </div>
         <div class="curso-card" data-area="engenharia" data-tab="graduacao">
@@ -1948,7 +2419,11 @@ Copiar
           <div class="curso-tags">
             <span class="tag modalidade">Bacharelado</span>
             <span class="tag duracao">5 anos</span>
-            <span class="tag valor">R$ 239,70/mês</span>
+          </div>
+          <div class="preco-black">
+            <span class="preco-de">de <s>R$ 239,70</s></span>
+            <span class="preco-por">por <strong>R$ 159,80</strong>/mês</span>
+            <span class="selo-off">-33%</span>
           </div>
         </div>
         <div class="curso-card" data-area="engenharia" data-tab="graduacao">
@@ -1956,7 +2431,11 @@ Copiar
           <div class="curso-tags">
             <span class="tag modalidade">Bacharelado</span>
             <span class="tag duracao">5 anos</span>
-            <span class="tag valor">R$ 239,70/mês</span>
+          </div>
+          <div class="preco-black">
+            <span class="preco-de">de <s>R$ 239,70</s></span>
+            <span class="preco-por">por <strong>R$ 159,80</strong>/mês</span>
+            <span class="selo-off">-33%</span>
           </div>
         </div>
         <div class="curso-card" data-area="engenharia" data-tab="graduacao">
@@ -1964,7 +2443,11 @@ Copiar
           <div class="curso-tags">
             <span class="tag modalidade">Bacharelado</span>
             <span class="tag duracao">5 anos</span>
-            <span class="tag valor">R$ 149,70/mês</span>
+          </div>
+          <div class="preco-black">
+            <span class="preco-de">de <s>R$ 149,70</s></span>
+            <span class="preco-por">por <strong>R$ 99,80</strong>/mês</span>
+            <span class="selo-off">-33%</span>
           </div>
         </div>
         <div class="curso-card" data-area="engenharia" data-tab="graduacao">
@@ -1972,7 +2455,11 @@ Copiar
           <div class="curso-tags">
             <span class="tag modalidade">Bacharelado</span>
             <span class="tag duracao">5 anos</span>
-            <span class="tag valor">R$ 149,70/mês</span>
+          </div>
+          <div class="preco-black">
+            <span class="preco-de">de <s>R$ 149,70</s></span>
+            <span class="preco-por">por <strong>R$ 99,80</strong>/mês</span>
+            <span class="selo-off">-33%</span>
           </div>
         </div>
         <div class="curso-card" data-area="engenharia" data-tab="graduacao">
@@ -1980,7 +2467,11 @@ Copiar
           <div class="curso-tags">
             <span class="tag modalidade">Bacharelado</span>
             <span class="tag duracao">5 anos</span>
-            <span class="tag valor">R$ 239,70/mês</span>
+          </div>
+          <div class="preco-black">
+            <span class="preco-de">de <s>R$ 239,70</s></span>
+            <span class="preco-por">por <strong>R$ 159,80</strong>/mês</span>
+            <span class="selo-off">-33%</span>
           </div>
         </div>
         <div class="curso-card" data-area="engenharia" data-tab="graduacao">
@@ -1988,7 +2479,11 @@ Copiar
           <div class="curso-tags">
             <span class="tag modalidade">Tecnólogo</span>
             <span class="tag duracao">2,5 anos</span>
-            <span class="tag valor">R$ 99,00/mês</span>
+          </div>
+          <div class="preco-black">
+            <span class="preco-de">de <s>R$ 99,00</s></span>
+            <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+            <span class="selo-off">-33%</span>
           </div>
         </div>
         <div class="curso-card" data-area="engenharia" data-tab="graduacao">
@@ -1996,7 +2491,11 @@ Copiar
           <div class="curso-tags">
             <span class="tag modalidade">Tecnólogo</span>
             <span class="tag duracao">3 anos</span>
-            <span class="tag valor">R$ 99,00/mês</span>
+          </div>
+          <div class="preco-black">
+            <span class="preco-de">de <s>R$ 99,00</s></span>
+            <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+            <span class="selo-off">-33%</span>
           </div>
         </div>
         <div class="curso-card" data-area="engenharia" data-tab="graduacao">
@@ -2004,7 +2503,11 @@ Copiar
           <div class="curso-tags">
             <span class="tag modalidade">Bacharelado</span>
             <span class="tag duracao">3,5 anos</span>
-            <span class="tag valor">R$ 99,00/mês</span>
+          </div>
+          <div class="preco-black">
+            <span class="preco-de">de <s>R$ 99,00</s></span>
+            <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+            <span class="selo-off">-33%</span>
           </div>
         </div>
       </div>
@@ -2022,7 +2525,11 @@ Copiar
           <div class="curso-tags">
             <span class="tag modalidade">Bacharelado</span>
             <span class="tag duracao">4 anos</span>
-            <span class="tag valor">R$ 99,00/mês</span>
+          </div>
+          <div class="preco-black">
+            <span class="preco-de">de <s>R$ 99,00</s></span>
+            <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+            <span class="selo-off">-33%</span>
           </div>
         </div>
         <div class="curso-card" data-area="comunicacao" data-tab="graduacao">
@@ -2030,7 +2537,11 @@ Copiar
           <div class="curso-tags">
             <span class="tag modalidade">Bacharelado</span>
             <span class="tag duracao">4 anos</span>
-            <span class="tag valor">R$ 99,00/mês</span>
+          </div>
+          <div class="preco-black">
+            <span class="preco-de">de <s>R$ 99,00</s></span>
+            <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+            <span class="selo-off">-33%</span>
           </div>
         </div>
         <div class="curso-card" data-area="comunicacao" data-tab="graduacao">
@@ -2038,7 +2549,11 @@ Copiar
           <div class="curso-tags">
             <span class="tag modalidade">Tecnólogo</span>
             <span class="tag duracao">1,5 anos</span>
-            <span class="tag valor">R$ 99,00/mês</span>
+          </div>
+          <div class="preco-black">
+            <span class="preco-de">de <s>R$ 99,00</s></span>
+            <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+            <span class="selo-off">-33%</span>
           </div>
         </div>
         <div class="curso-card" data-area="comunicacao" data-tab="graduacao">
@@ -2046,7 +2561,11 @@ Copiar
           <div class="curso-tags">
             <span class="tag modalidade">Tecnólogo</span>
             <span class="tag duracao">1,5 anos</span>
-            <span class="tag valor">R$ 99,00/mês</span>
+          </div>
+          <div class="preco-black">
+            <span class="preco-de">de <s>R$ 99,00</s></span>
+            <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+            <span class="selo-off">-33%</span>
           </div>
         </div>
         <div class="curso-card" data-area="comunicacao" data-tab="graduacao">
@@ -2054,7 +2573,11 @@ Copiar
           <div class="curso-tags">
             <span class="tag modalidade">Tecnólogo</span>
             <span class="tag duracao">1,5 anos</span>
-            <span class="tag valor">R$ 99,00/mês</span>
+          </div>
+          <div class="preco-black">
+            <span class="preco-de">de <s>R$ 99,00</s></span>
+            <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+            <span class="selo-off">-33%</span>
           </div>
         </div>
         <div class="curso-card" data-area="comunicacao" data-tab="graduacao">
@@ -2062,7 +2585,11 @@ Copiar
           <div class="curso-tags">
             <span class="tag modalidade">Tecnólogo</span>
             <span class="tag duracao">1,5 anos</span>
-            <span class="tag valor">R$ 67,50/mês</span>
+          </div>
+          <div class="preco-black">
+            <span class="preco-de">de <s>R$ 67,50</s></span>
+            <span class="preco-por">por <strong>R$ 45,00</strong>/mês</span>
+            <span class="selo-off">-33%</span>
           </div>
         </div>
         <div class="curso-card" data-area="comunicacao" data-tab="graduacao">
@@ -2070,7 +2597,11 @@ Copiar
           <div class="curso-tags">
             <span class="tag modalidade">Tecnólogo</span>
             <span class="tag duracao">1,5 anos</span>
-            <span class="tag valor">R$ 67,50/mês</span>
+          </div>
+          <div class="preco-black">
+            <span class="preco-de">de <s>R$ 67,50</s></span>
+            <span class="preco-por">por <strong>R$ 45,00</strong>/mês</span>
+            <span class="selo-off">-33%</span>
           </div>
         </div>
         <div class="curso-card" data-area="comunicacao" data-tab="graduacao">
@@ -2078,7 +2609,11 @@ Copiar
           <div class="curso-tags">
             <span class="tag modalidade">Bacharelado</span>
             <span class="tag duracao">3 anos</span>
-            <span class="tag valor">R$ 99,00/mês</span>
+          </div>
+          <div class="preco-black">
+            <span class="preco-de">de <s>R$ 99,00</s></span>
+            <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+            <span class="selo-off">-33%</span>
           </div>
         </div>
         <div class="curso-card" data-area="comunicacao" data-tab="graduacao">
@@ -2086,7 +2621,11 @@ Copiar
           <div class="curso-tags">
             <span class="tag modalidade">Tecnólogo</span>
             <span class="tag duracao">1,5 anos</span>
-            <span class="tag valor">R$ 99,00/mês</span>
+          </div>
+          <div class="preco-black">
+            <span class="preco-de">de <s>R$ 99,00</s></span>
+            <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+            <span class="selo-off">-33%</span>
           </div>
         </div>
       </div>
@@ -2104,7 +2643,11 @@ Copiar
           <div class="curso-tags">
             <span class="tag modalidade">Bacharelado</span>
             <span class="tag duracao">3 anos</span>
-            <span class="tag valor">R$ 99,00/mês</span>
+          </div>
+          <div class="preco-black">
+            <span class="preco-de">de <s>R$ 99,00</s></span>
+            <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+            <span class="selo-off">-33%</span>
           </div>
         </div>
         <div class="curso-card" data-area="outras" data-tab="graduacao">
@@ -2112,7 +2655,11 @@ Copiar
           <div class="curso-tags">
             <span class="tag modalidade">Tecnólogo</span>
             <span class="tag duracao">3 anos</span>
-            <span class="tag valor">R$ 99,00/mês</span>
+          </div>
+          <div class="preco-black">
+            <span class="preco-de">de <s>R$ 99,00</s></span>
+            <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+            <span class="selo-off">-33%</span>
           </div>
         </div>
         <div class="curso-card" data-area="outras" data-tab="graduacao">
@@ -2120,7 +2667,11 @@ Copiar
           <div class="curso-tags">
             <span class="tag modalidade">Tecnólogo</span>
             <span class="tag duracao">1,5 anos</span>
-            <span class="tag valor">R$ 99,00/mês</span>
+          </div>
+          <div class="preco-black">
+            <span class="preco-de">de <s>R$ 99,00</s></span>
+            <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+            <span class="selo-off">-33%</span>
           </div>
         </div>
         <div class="curso-card" data-area="outras" data-tab="graduacao">
@@ -2128,7 +2679,11 @@ Copiar
           <div class="curso-tags">
             <span class="tag modalidade">Tecnólogo</span>
             <span class="tag duracao">1,5 anos</span>
-            <span class="tag valor">R$ 99,00/mês</span>
+          </div>
+          <div class="preco-black">
+            <span class="preco-de">de <s>R$ 99,00</s></span>
+            <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
+            <span class="selo-off">-33%</span>
           </div>
         </div>
         <div class="curso-card" data-area="outras" data-tab="graduacao">
@@ -2136,7 +2691,11 @@ Copiar
           <div class="curso-tags">
             <span class="tag modalidade">Bacharelado</span>
             <span class="tag duracao">4 anos</span>
-            <span class="tag valor">R$ 239,70/mês</span>
+          </div>
+          <div class="preco-black">
+            <span class="preco-de">de <s>R$ 239,70</s></span>
+            <span class="preco-por">por <strong>R$ 159,80</strong>/mês</span>
+            <span class="selo-off">-33%</span>
           </div>
         </div>
       </div>
@@ -7614,6 +8173,13 @@ Copiar
     <button class="modal-fechar" onclick="fecharModal()">✕</button>
     <div class="modal-titulo" id="modalTitulo"></div>
     <div class="modal-meta" id="modalMeta"></div>
+    <!-- Preço da Fatecie Black (preenchido por abrirModal) -->
+    <div class="modal-preco" id="modalPreco" hidden>
+      <span class="modal-preco-rotulo">Preço Fatecie Black</span>
+      <span class="preco-por">por <strong id="modalPrecoPor"></strong>/mês</span>
+      <span class="preco-de">de <s id="modalPrecoDe"></s></span>
+      <span class="modal-preco-nota">Matrícula por R$ 1,00 · 1ª mensalidade em dezembro · com desconto de pontualidade</span>
+    </div>
     <div class="modal-descricao" id="modalDescricao"></div>
 
     <!-- NOVO: Div para a Grade Curricular -->
@@ -7736,11 +8302,27 @@ Copiar
     document.getElementById('modalWpp').style.display = '';
 
     document.getElementById('modalTitulo').textContent = titulo;
-    document.getElementById('modalMeta').innerHTML =
-      '<span>' + modalidade + '</span><span>' + duracao + '</span>';
+
+    // Cursos da Fatecie Black chegam como '4 anos • de R$ 277,70 por R$ 212,90/mês'
+    var black = /^(.*?) • de (R\$ [\d.,]+) por (R\$ [\d.,]+)\/mês$/.exec(duracao);
+    var preco = document.getElementById('modalPreco');
+    if (black) {
+      document.getElementById('modalMeta').innerHTML =
+        '<span>' + modalidade + '</span><span>' + black[1] + '</span>';
+      document.getElementById('modalPrecoDe').textContent = black[2];
+      document.getElementById('modalPrecoPor').textContent = black[3];
+      preco.hidden = false;
+    } else {
+      document.getElementById('modalMeta').innerHTML =
+        '<span>' + modalidade + '</span><span>' + duracao + '</span>';
+      preco.hidden = true;
+    }
     document.getElementById('modalDescricao').innerHTML = descricao;
 
-    var msg = encodeURIComponent('Quero me matricular no curso de ' + titulo);
+    var texto = black
+      ? 'Olá! Vi a Fatecie Black e quero me matricular no curso de ' + titulo + ' (' + black[3] + '/mês).'
+      : 'Quero me matricular no curso de ' + titulo;
+    var msg = encodeURIComponent(texto);
     document.getElementById('modalWpp').href =
       'https://wa.me/5574981270882?text=' + msg;
 
@@ -7754,6 +8336,7 @@ Copiar
     document.getElementById('modalMeta').style.display = 'none';
     document.getElementById('modalDescricao').style.display = 'none';
     document.getElementById('modalWpp').style.display = 'none';
+    document.getElementById('modalPreco').hidden = true;
 
     // Mostra e preenche a grade curricular
     document.getElementById('modalTitulo').textContent = 'Grade Curricular: ' + titulo;
@@ -7796,7 +8379,37 @@ Copiar
 
     // Garante que a aba inicial esteja ativa e visível
     mudarTab(tabAtual); // Chama mudarTab para a aba inicial
+
+    iniciarContagem();
   });
+
+  // ── Contagem regressiva da Fatecie Black ────────────────────
+  // Fim da campanha: 30/11/2026 às 23:59:59 (horário da Bahia, UTC-3).
+  // Depois dessa data a contagem some sozinha.
+  var FIM_BLACK = new Date('2026-11-30T23:59:59-03:00').getTime();
+
+  function iniciarContagem() {
+    var caixa = document.getElementById('contagem');
+    if (!caixa) return;
+    var dois = function (n) { return String(n).padStart(2, '0'); };
+    var timer;
+    function atualizar() {
+      var falta = FIM_BLACK - Date.now();
+      if (falta <= 0) {
+        caixa.hidden = true;
+        clearInterval(timer);
+        return;
+      }
+      var seg = Math.floor(falta / 1000);
+      document.getElementById('cdDias').textContent  = dois(Math.floor(seg / 86400));
+      document.getElementById('cdHoras').textContent = dois(Math.floor(seg % 86400 / 3600));
+      document.getElementById('cdMin').textContent   = dois(Math.floor(seg % 3600 / 60));
+      document.getElementById('cdSeg').textContent   = dois(seg % 60);
+      caixa.hidden = false;
+    }
+    atualizar();
+    timer = setInterval(atualizar, 1000);
+  }
 </script>
     
 <!-- ===== FOOTER ===== -->
