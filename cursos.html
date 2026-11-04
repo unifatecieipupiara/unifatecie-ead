@@ -358,6 +358,169 @@
       color: var(--muted);
     }
 
+    /* ===== 2ª GRADUAÇÃO: COMBO, INFORMAÇÕES E CONTATO ===== */
+    .combo-black {
+      background:
+        radial-gradient(ellipse 70% 90% at 50% 0%, rgba(254,94,0,.25), transparent 70%),
+        #0f0f0f;
+      border: 2px solid var(--primary);
+      border-radius: 16px;
+      padding: 22px 16px 20px;
+      margin-bottom: 24px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(254,94,0,.12);
+    }
+    .combo-selo {
+      display: inline-block;
+      background: var(--primary);
+      color: #000;
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+    .combo-titulo {
+      font-size: clamp(1.25rem, 3.6vw, 1.7rem);
+      font-weight: 900;
+      line-height: 1.2;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .combo-itens {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: stretch;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .combo-item {
+      flex: 1 1 200px;
+      max-width: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 12px;
+    }
+    .combo-rotulo {
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .combo-preco {
+      font-size: .88rem;
+      color: #d4d4d8;
+    }
+    .combo-preco strong {
+      display: block;
+      font-size: 1.7rem;
+      font-weight: 900;
+      line-height: 1.15;
+      color: var(--primary);
+    }
+    .combo-obs { font-size: .8rem; color: var(--muted); }
+    .sem-quebra { white-space: nowrap; }
+    .combo-mais {
+      align-self: center;
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--primary);
+    }
+    .combo-nota {
+      max-width: 560px;
+      margin: 0 auto 16px;
+      font-size: .9rem;
+      line-height: 1.5;
+      color: #d4d4d8;
+    }
+    .combo-nota strong { color: var(--primary); }
+    @media (max-width: 640px) {
+      .combo-itens { flex-direction: column; align-items: center; gap: 4px; }
+      .combo-item { flex: none; width: 100%; max-width: 340px; }
+    }
+    .btn-wpp-card {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #25d366;
+      color: #04140a;
+      font-size: .95rem;
+      font-weight: 800;
+      padding: 12px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background .2s, transform .2s;
+    }
+    .btn-wpp-card:hover { background: #3ee07a; transform: translateY(-2px); }
+
+    .info-card {
+      grid-column: 1 / -1;
+      background: #0f0f0f;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-bottom: 8px;
+      font-size: .88rem;
+      line-height: 1.8;
+      color: #d4d4d8;
+    }
+    .info-card strong { color: var(--white); }
+    .info-card-linha {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px 24px;
+      margin-bottom: 8px;
+    }
+    .info-card s { color: var(--muted); text-decoration-color: #ef4444; }
+    .info-card-preco { color: var(--primary); font-weight: 900; }
+    .info-card p { margin: 0 0 4px; }
+    .info-card-aviso { font-weight: 600; color: #fcd34d; }
+
+    .outras-segunda {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px 18px;
+      background: var(--surface-2);
+      border: 1px dashed rgba(254,94,0,.6);
+      border-radius: 14px;
+      padding: 18px;
+      margin: 24px 0 8px;
+    }
+    .outras-segunda-num {
+      flex: none;
+      display: grid;
+      place-items: center;
+      width: 64px; height: 64px;
+      border-radius: 14px;
+      background: var(--primary);
+      color: #000;
+      font-size: 1.3rem;
+      font-weight: 900;
+    }
+    .outras-segunda-texto { flex: 1 1 180px; }
+    .outras-segunda-texto h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .outras-segunda-texto p {
+      font-size: .9rem;
+      line-height: 1.5;
+      color: #d4d4d8;
+    }
+    .outras-segunda-texto strong { color: var(--primary); }
+
     /* Filtro por área */
     .area-filtros {
       display: flex;
@@ -766,7 +929,7 @@ Copiar
       font-size: .85rem;
     }
     footer strong { color: var(--primary); }
-    footer a { color: var(--primary); text-decoration: none; }
+    footer a { color: var(--primary); text-decoration: none; white-space: nowrap; }
     footer .back-link {
       display: inline-block;
       margin-bottom: 14px;
@@ -829,7 +992,7 @@ Copiar
   <button class="tab-btn"
           data-tab="segunda"
           onclick="mudarTab('segunda')">
-    2ª Graduação
+    2ª Graduação <span class="tab-selo">BLACK</span>
   </button>
 
   <button class="tab-btn"
@@ -3058,8 +3221,29 @@ Copiar
 <!-- ABA 2ª GRADUAÇÃO -->
 <div class="tab-content" data-tab="segunda" style="display:none;">
 
+  <!-- COMBO FATECIE BLACK: 2ª LICENCIATURA + PÓS -->
+  <div class="combo-black">
+    <span class="combo-selo">COMBO FATECIE BLACK</span>
+    <h3 class="combo-titulo">2ª Licenciatura + <span class="sem-quebra">Pós-Graduação</span></h3>
+    <div class="combo-itens">
+      <div class="combo-item">
+        <span class="combo-rotulo">2ª Licenciatura</span>
+        <span class="combo-preco"><strong>R$ 66,00</strong>por mês</span>
+        <span class="combo-obs">11 cursos · mínimo de 1 ano</span>
+      </div>
+      <span class="combo-mais" aria-hidden="true">+</span>
+      <div class="combo-item">
+        <span class="combo-rotulo">Pós-Graduação</span>
+        <span class="combo-preco"><strong>12x R$ 17,98</strong>com 40% de desconto</span>
+        <span class="combo-obs">especializações EAD</span>
+      </div>
+    </div>
+    <p class="combo-nota"><strong>Matrícula grátis</strong> nos dois cursos. Faça sua 2ª Licenciatura e comece também uma Pós-Graduação com 40% de desconto nas mensalidades.</p>
+    <a class="btn-wpp-card" href="https://wa.me/5574981270882?text=Ol%C3%A1%21%20Vi%20a%20Fatecie%20Black%20e%20quero%20o%20Combo%202%C2%AA%20Licenciatura%20%2B%20P%C3%B3s-Gradua%C3%A7%C3%A3o%20com%2040%25%20de%20desconto." target="_blank" rel="noopener">📲 Quero o combo</a>
+  </div>
+
   <!-- 2ª LICENCIATURA -->
-  <div class="grupo-area" data-area="segunda-licenciatura">
+  <div class="grupo-area" data-area="segunda-licenciatura" data-aberto-padrao="true">
     <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
       2ª Licenciatura
       <span class="grupo-arrow">▼</span>
@@ -3067,17 +3251,18 @@ Copiar
     <div class="cursos-grid grupo-body" style="display:none;">
 
       <!-- CARD DE INFORMAÇÕES GERAIS -->
-      <div class="info-card" style="grid-column: 1 / -1; background:#f9fafb; border:1px solid #e5e7eb; border-radius:12px; padding:16px 20px; margin-bottom:8px; font-size:0.88rem; color:#374151; line-height:1.8;">
-        <div style="display:flex; flex-wrap:wrap; gap:10px 24px; margin-bottom:10px;">
+      <div class="info-card">
+        <div class="info-card-linha">
           <span><strong>Duração:</strong> Mínimo de 1 ano</span>
           <span><strong>Aula no Polo:</strong> Não</span>
           <span><strong>Estágio:</strong> Sim</span>
           <span><strong>TCC:</strong> Não</span>
           <span><strong>Matrícula:</strong> Grátis</span>
-          <span><strong>Mensalidade:</strong> R$ 99,00</span>
+          <span><strong>Mensalidade:</strong> <s>R$ 99,00</s> <b class="info-card-preco">R$ 66,00</b> na Fatecie Black</span>
+          <span><strong>1ª mensalidade:</strong> Dezembro</span>
         </div>
-        <p style="margin:0 0 4px;">💡 Valor com desconto de pontualidade (pagamento até o vencimento). Pode haver reajuste anual ao longo do curso.</p>
-        <p style="margin:0; font-weight:600;">⚠️ Pré-requisito: portador de diploma de licenciatura (conforme regulamento).</p>
+        <p>💡 Valor com desconto de pontualidade (pagamento até o vencimento). Pode haver reajuste anual ao longo do curso.</p>
+        <p class="info-card-aviso">⚠️ Pré-requisito: portador de diploma de licenciatura (conforme regulamento).</p>
       </div>
 
       <!-- CURSOS SEGUNDA GRADUAÇÃO -->
@@ -3087,14 +3272,17 @@ Copiar
            onclick="abrirModal(
              'Sociologia – 2ª Licenciatura',
              '2ª Licenciatura',
-             'Mín. 1 ano • R$ 99,00/mês',
+             'Mín. 1 ano • de R$ 99,00 por R$ 66,00/mês',
              '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Duração mínima de 1 ano.</li><li>Tem Estágio Obrigatório.</li><li>Não tem TCC.</li><li>Não tem aula presencial no Polo.</li><li>Matrícula grátis.</li><li>Pode haver reajuste anual na mensalidade.</li><li>Pré-requisito: portador de diploma de licenciatura (conforme regulamento).</li></ul>'
            )">
         <div class="curso-nome">Sociologia</div>
         <div class="curso-tags">
           <span class="tag modalidade">2ª Licenciatura</span>
           <span class="tag duracao">Mín. 1 ano</span>
-          <span class="tag valor">R$ 99,00/mês</span>
+        </div>
+        <div class="preco-black">
+          <span class="preco-de">de <s>R$ 99,00</s></span>
+          <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
         </div>
       </div>
 
@@ -3104,14 +3292,17 @@ Copiar
            onclick="abrirModal(
              'Pedagogia – 2ª Licenciatura',
              '2ª Licenciatura',
-             'Mín. 1 ano • R$ 99,00/mês',
+             'Mín. 1 ano • de R$ 99,00 por R$ 66,00/mês',
              '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Duração mínima de 1 ano.</li><li>Tem Estágio Obrigatório.</li><li>Não tem TCC.</li><li>Não tem aula presencial no Polo.</li><li>Matrícula grátis.</li><li>Pode haver reajuste anual na mensalidade.</li><li>Pré-requisito: portador de diploma de licenciatura (conforme regulamento).</li></ul>'
            )">
         <div class="curso-nome">Pedagogia</div>
         <div class="curso-tags">
           <span class="tag modalidade">2ª Licenciatura</span>
           <span class="tag duracao">Mín. 1 ano</span>
-          <span class="tag valor">R$ 99,00/mês</span>
+        </div>
+        <div class="preco-black">
+          <span class="preco-de">de <s>R$ 99,00</s></span>
+          <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
         </div>
       </div>
 
@@ -3121,14 +3312,17 @@ Copiar
            onclick="abrirModal(
              'Matemática – 2ª Licenciatura',
              '2ª Licenciatura',
-             'Mín. 1 ano • R$ 99,00/mês',
+             'Mín. 1 ano • de R$ 99,00 por R$ 66,00/mês',
              '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Duração mínima de 1 ano.</li><li>Tem Estágio Obrigatório.</li><li>Não tem TCC.</li><li>Não tem aula presencial no Polo.</li><li>Matrícula grátis.</li><li>Pode haver reajuste anual na mensalidade.</li><li>Pré-requisito: portador de diploma de licenciatura (conforme regulamento).</li></ul>'
            )">
         <div class="curso-nome">Matemática</div>
         <div class="curso-tags">
           <span class="tag modalidade">2ª Licenciatura</span>
           <span class="tag duracao">Mín. 1 ano</span>
-          <span class="tag valor">R$ 99,00/mês</span>
+        </div>
+        <div class="preco-black">
+          <span class="preco-de">de <s>R$ 99,00</s></span>
+          <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
         </div>
       </div>
 
@@ -3138,14 +3332,17 @@ Copiar
            onclick="abrirModal(
              'Letras – Português e Inglês – 2ª Licenciatura',
              '2ª Licenciatura',
-             'Mín. 1 ano • R$ 99,00/mês',
+             'Mín. 1 ano • de R$ 99,00 por R$ 66,00/mês',
              '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Duração mínima de 1 ano.</li><li>Tem Estágio Obrigatório.</li><li>Não tem TCC.</li><li>Não tem aula presencial no Polo.</li><li>Matrícula grátis.</li><li>Pode haver reajuste anual na mensalidade.</li><li>Pré-requisito: portador de diploma de licenciatura (conforme regulamento).</li></ul>'
            )">
         <div class="curso-nome">Letras – Português e Inglês</div>
         <div class="curso-tags">
           <span class="tag modalidade">2ª Licenciatura</span>
           <span class="tag duracao">Mín. 1 ano</span>
-          <span class="tag valor">R$ 99,00/mês</span>
+        </div>
+        <div class="preco-black">
+          <span class="preco-de">de <s>R$ 99,00</s></span>
+          <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
         </div>
       </div>
 
@@ -3155,14 +3352,17 @@ Copiar
            onclick="abrirModal(
              'Letras – Português e Libras – 2ª Licenciatura',
              '2ª Licenciatura',
-             'Mín. 1 ano • R$ 99,00/mês',
+             'Mín. 1 ano • de R$ 99,00 por R$ 66,00/mês',
              '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Duração mínima de 1 ano.</li><li>Tem Estágio Obrigatório.</li><li>Não tem TCC.</li><li>Não tem aula presencial no Polo.</li><li>Matrícula grátis.</li><li>Pode haver reajuste anual na mensalidade.</li><li>Pré-requisito: portador de diploma de licenciatura (conforme regulamento).</li></ul>'
            )">
         <div class="curso-nome">Letras – Português e Libras</div>
         <div class="curso-tags">
           <span class="tag modalidade">2ª Licenciatura</span>
           <span class="tag duracao">Mín. 1 ano</span>
-          <span class="tag valor">R$ 99,00/mês</span>
+        </div>
+        <div class="preco-black">
+          <span class="preco-de">de <s>R$ 99,00</s></span>
+          <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
         </div>
       </div>
 
@@ -3172,14 +3372,17 @@ Copiar
            onclick="abrirModal(
              'História – 2ª Licenciatura',
              '2ª Licenciatura',
-             'Mín. 1 ano • R$ 99,00/mês',
+             'Mín. 1 ano • de R$ 99,00 por R$ 66,00/mês',
              '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Duração mínima de 1 ano.</li><li>Tem Estágio Obrigatório.</li><li>Não tem TCC.</li><li>Não tem aula presencial no Polo.</li><li>Matrícula grátis.</li><li>Pode haver reajuste anual na mensalidade.</li><li>Pré-requisito: portador de diploma de licenciatura (conforme regulamento).</li></ul>'
            )">
         <div class="curso-nome">História</div>
         <div class="curso-tags">
           <span class="tag modalidade">2ª Licenciatura</span>
           <span class="tag duracao">Mín. 1 ano</span>
-          <span class="tag valor">R$ 99,00/mês</span>
+        </div>
+        <div class="preco-black">
+          <span class="preco-de">de <s>R$ 99,00</s></span>
+          <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
         </div>
       </div>
 
@@ -3189,14 +3392,17 @@ Copiar
            onclick="abrirModal(
              'Geografia – 2ª Licenciatura',
              '2ª Licenciatura',
-             'Mín. 1 ano • R$ 99,00/mês',
+             'Mín. 1 ano • de R$ 99,00 por R$ 66,00/mês',
              '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Duração mínima de 1 ano.</li><li>Tem Estágio Obrigatório.</li><li>Não tem TCC.</li><li>Não tem aula presencial no Polo.</li><li>Matrícula grátis.</li><li>Pode haver reajuste anual na mensalidade.</li><li>Pré-requisito: portador de diploma de licenciatura (conforme regulamento).</li></ul>'
            )">
         <div class="curso-nome">Geografia</div>
         <div class="curso-tags">
           <span class="tag modalidade">2ª Licenciatura</span>
           <span class="tag duracao">Mín. 1 ano</span>
-          <span class="tag valor">R$ 99,00/mês</span>
+        </div>
+        <div class="preco-black">
+          <span class="preco-de">de <s>R$ 99,00</s></span>
+          <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
         </div>
       </div>
 
@@ -3206,14 +3412,17 @@ Copiar
            onclick="abrirModal(
              'Filosofia – 2ª Licenciatura',
              '2ª Licenciatura',
-             'Mín. 1 ano • R$ 99,00/mês',
+             'Mín. 1 ano • de R$ 99,00 por R$ 66,00/mês',
              '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Duração mínima de 1 ano.</li><li>Tem Estágio Obrigatório.</li><li>Não tem TCC.</li><li>Não tem aula presencial no Polo.</li><li>Matrícula grátis.</li><li>Pode haver reajuste anual na mensalidade.</li><li>Pré-requisito: portador de diploma de licenciatura (conforme regulamento).</li></ul>'
            )">
         <div class="curso-nome">Filosofia</div>
         <div class="curso-tags">
           <span class="tag modalidade">2ª Licenciatura</span>
           <span class="tag duracao">Mín. 1 ano</span>
-          <span class="tag valor">R$ 99,00/mês</span>
+        </div>
+        <div class="preco-black">
+          <span class="preco-de">de <s>R$ 99,00</s></span>
+          <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
         </div>
       </div>
 
@@ -3223,14 +3432,17 @@ Copiar
            onclick="abrirModal(
              'Ciências Biológicas – 2ª Licenciatura',
              '2ª Licenciatura',
-             'Mín. 1 ano • R$ 99,00/mês',
+             'Mín. 1 ano • de R$ 99,00 por R$ 66,00/mês',
              '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Duração mínima de 1 ano.</li><li>Tem Estágio Obrigatório.</li><li>Não tem TCC.</li><li>Não tem aula presencial no Polo.</li><li>Matrícula grátis.</li><li>Pode haver reajuste anual na mensalidade.</li><li>Pré-requisito: portador de diploma de licenciatura (conforme regulamento).</li></ul>'
            )">
         <div class="curso-nome">Ciências Biológicas</div>
         <div class="curso-tags">
           <span class="tag modalidade">2ª Licenciatura</span>
           <span class="tag duracao">Mín. 1 ano</span>
-          <span class="tag valor">R$ 99,00/mês</span>
+        </div>
+        <div class="preco-black">
+          <span class="preco-de">de <s>R$ 99,00</s></span>
+          <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
         </div>
       </div>
 
@@ -3240,14 +3452,17 @@ Copiar
            onclick="abrirModal(
              'Artes – 2ª Licenciatura',
              '2ª Licenciatura',
-             'Mín. 1 ano • R$ 99,00/mês',
+             'Mín. 1 ano • de R$ 99,00 por R$ 66,00/mês',
              '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Duração mínima de 1 ano.</li><li>Tem Estágio Obrigatório.</li><li>Não tem TCC.</li><li>Não tem aula presencial no Polo.</li><li>Matrícula grátis.</li><li>Pode haver reajuste anual na mensalidade.</li><li>Pré-requisito: portador de diploma de licenciatura (conforme regulamento).</li></ul>'
            )">
         <div class="curso-nome">Artes</div>
         <div class="curso-tags">
           <span class="tag modalidade">2ª Licenciatura</span>
           <span class="tag duracao">Mín. 1 ano</span>
-          <span class="tag valor">R$ 99,00/mês</span>
+        </div>
+        <div class="preco-black">
+          <span class="preco-de">de <s>R$ 99,00</s></span>
+          <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
         </div>
       </div>
 
@@ -3257,1527 +3472,31 @@ Copiar
            onclick="abrirModal(
              'Educação Especial – 2ª Licenciatura',
              '2ª Licenciatura',
-             'Mín. 1 ano • R$ 99,00/mês',
+             'Mín. 1 ano • de R$ 99,00 por R$ 66,00/mês',
              '<ul style=&quot;padding-left:1.2rem; margin-top:8px;&quot;><li>Duração mínima de 1 ano.</li><li>Tem Estágio Obrigatório.</li><li>Não tem TCC.</li><li>Não tem aula presencial no Polo.</li><li>Matrícula grátis.</li><li>Pode haver reajuste anual na mensalidade.</li><li>Pré-requisito: portador de diploma de licenciatura (conforme regulamento).</li></ul>'
            )">
         <div class="curso-nome">Educação Especial</div>
         <div class="curso-tags">
           <span class="tag modalidade">2ª Licenciatura</span>
           <span class="tag duracao">Mín. 1 ano</span>
-          <span class="tag valor">R$ 99,00/mês</span>
+        </div>
+        <div class="preco-black">
+          <span class="preco-de">de <s>R$ 99,00</s></span>
+          <span class="preco-por">por <strong>R$ 66,00</strong>/mês</span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 2ª GRADUAÇÃO – NEGÓCIOS / GESTÃO / EMPRESARIAL / CONTABILIDADE -->
-<div class="grupo-area" data-area="segunda-negocios">
-  <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
-    Negócios, Gestão e Empresarial
-    <span class="grupo-arrow">▼</span>
-  </button>
-
-  <div class="cursos-grid grupo-body" style="display:none;">
-
-    <!-- CARD DE INFORMAÇÕES GERAIS -->
-    <div class="info-card"
-         style="grid-column:1/-1;background:#f9fafb;border:1px solid #e5e7eb;border-radius:12px;
-                padding:16px 20px;margin-bottom:8px;font-size:0.88rem;color:#374151;line-height:1.8;">
-      <div style="display:flex;flex-wrap:wrap;gap:10px 24px;margin-bottom:10px;">
-        <span><strong>Duração:</strong> de 6 meses a 2 anos (conforme o curso de origem)</span>
-        <span><strong>Matrícula:</strong> Grátis</span>
-      </div>
-      <p style="margin:0 0 4px;">
-        💡 Valores com desconto de pontualidade (pagamento até o vencimento). Pode haver reajuste anual.
-      </p>
-      <p style="margin:0;font-weight:600;">
-        ⚠️ Pré-requisito: portador de diploma de curso superior, conforme regulamento da 2ª Graduação.
-      </p>
+  <!-- OUTRAS 2ª GRADUAÇÕES: CONTATO -->
+  <div class="outras-segunda">
+    <span class="outras-segunda-num">+50</span>
+    <div class="outras-segunda-texto">
+      <h3>Outras opções de 2ª Graduação</h3>
+      <p>Temos <strong>mais de 50 cursos</strong> de 2ª Graduação, mas as opções dependem da sua 1ª graduação. Fale com a gente e confira quais cursos você pode fazer.</p>
     </div>
-
-    <!-- Ciências Econômicas – 2ª Graduação -->
-    <div class="curso-card"
-          data-area="segunda-negocios"
-          data-tab="segunda"
-          onclick="abrirModal(
-            'Ciências Econômicas – 2ª Graduação',
-            '2ª Graduação • Bacharelado',
-            'Mín. 1 ano • R$ 89,70/mês',
-          `<ul style='padding-left:1.2rem; margin-top:8px;'>
-            <li>Duração mínima: 1 ano.</li>
-            <li>Prática em laboratório: não.</li>
-            <li>Aula no Polo: não.</li>
-            <li>Estágio obrigatório (ESTG): não.</li>
-            <li>TCC: sim.</li>
-            <li>Forma de pagamento: 12 mensalidades.</li>
-            <li>Pode haver reajuste anual na mensalidade.</li>
-          </ul>`
-      )">
-      <div class="curso-nome">Ciências Econômicas</div>
-      <div class="curso-tags">
-        <span class="tag modalidade">2ª Graduação • Bacharelado</span>
-        <span class="tag duracao">Mín. 1 ano</span>
-        <span class="tag valor">R$ 89,70/mês</span>
-      </div>
-    </div>
-
-    <!-- Administração – 2ª Graduação (Negócios) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Administração – 2ª Graduação',
-       '2ª Graduação • Bacharelado',
-       'Mín. 1 ano • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 1 ano.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Administração</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Bacharelado</span>
-    <span class="tag duracao">Mín. 1 ano</span>
-    <span class="tag valor">R$ 99,00/mês</span>
+    <a class="btn-wpp-card" href="https://wa.me/5574981270882?text=Ol%C3%A1%21%20Vi%20a%20Fatecie%20Black%20e%20quero%20conferir%20as%20op%C3%A7%C3%B5es%20de%202%C2%AA%20Gradua%C3%A7%C3%A3o.%20Minha%201%C2%AA%20gradua%C3%A7%C3%A3o%20%C3%A9%3A%20" target="_blank" rel="noopener">📲 Consultar minhas opções</a>
   </div>
-    </div>
-
-    <!-- Ciências Contábeis – 2ª Graduação (Negócios) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Ciências Contábeis – 2ª Graduação',
-       '2ª Graduação • Bacharelado',
-       'Mín. 1 ano • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 1 ano.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Ciências Contábeis</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Bacharelado</span>
-    <span class="tag duracao">Mín. 1 ano</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Comércio Exterior – 2ª Graduação (Negócios) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Comércio Exterior – 2ª Graduação',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 6 meses • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 6 meses.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Comércio Exterior</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 6 meses</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Gestão Ambiental – 2ª Graduação (mín. 1 ano) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Gestão Ambiental – 2ª Graduação (mín. 1 ano)',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 1 ano • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 1 ano.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Gestão Ambiental (mín. 1 ano)</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 1 ano</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Gestão Ambiental – 2ª Graduação (mín. 6 meses) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Gestão Ambiental – 2ª Graduação (mín. 6 meses)',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 6 meses • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 6 meses.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Gestão Ambiental (mín. 6 meses)</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 6 meses</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Gestão Comercial – 2ª Graduação (mín. 1 ano) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Gestão Comercial – 2ª Graduação (mín. 1 ano)',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 1 ano • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 1 ano.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Gestão Comercial (mín. 1 ano)</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 1 ano</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Gestão Comercial – 2ª Graduação (mín. 6 meses) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Gestão Comercial – 2ª Graduação (mín. 6 meses)',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 6 meses • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 6 meses.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Gestão Comercial (mín. 6 meses)</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 6 meses</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Gestão da Qualidade – 2ª Graduação (mín. 6 meses) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Gestão da Qualidade – 2ª Graduação',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 6 meses • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 6 meses.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Gestão da Qualidade</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 6 meses</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Gestão de Produção Industrial – 2ª Graduação (mín. 1 ano) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Gestão de Produção Industrial – 2ª Graduação (mín. 1 ano)',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 1 ano • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 1 ano.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Gestão de Produção Industrial (mín. 1 ano)</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 1 ano</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Gestão de Produção Industrial – 2ª Graduação (mín. 6 meses) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Gestão de Produção Industrial – 2ª Graduação (mín. 6 meses)',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 6 meses • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 6 meses.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Gestão de Produção Industrial (mín. 6 meses)</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 6 meses</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Gestão de Recursos Humanos – 2ª Graduação (mín. 6 meses) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Gestão de Recursos Humanos – 2ª Graduação',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 6 meses • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 6 meses.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Gestão de Recursos Humanos</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 6 meses</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Gestão de Segurança Privada – 2ª Graduação (mín. 6 meses) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Gestão de Segurança Privada – 2ª Graduação',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 6 meses • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 6 meses.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Gestão de Segurança Privada</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 6 meses</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Gestão do Agronegócio – 2ª Graduação (mín. 1 ano) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Gestão do Agronegócio – 2ª Graduação',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 1 ano • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 1 ano.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Gestão do Agronegócio</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 1 ano</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Gestão Financeira – 2ª Graduação (mín. 1 ano) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Gestão Financeira – 2ª Graduação (mín. 1 ano)',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 1 ano • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 1 ano.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Gestão Financeira (mín. 1 ano)</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 1 ano</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Gestão Financeira – 2ª Graduação (mín. 6 meses) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Gestão Financeira – 2ª Graduação (mín. 6 meses)',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 6 meses • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 6 meses.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Gestão Financeira (mín. 6 meses)</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 6 meses</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Gestão Pública – 2ª Graduação (mín. 1 ano) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Gestão Pública – 2ª Graduação (mín. 1 ano)',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 1 ano • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 1 ano.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Gestão Pública (mín. 1 ano)</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 1 ano</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Gestão Pública – 2ª Graduação (mín. 6 meses) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Gestão Pública – 2ª Graduação (mín. 6 meses)',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 6 meses • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 6 meses.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Gestão Pública (mín. 6 meses)</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 6 meses</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Logística – 2ª Graduação (mín. 6 meses) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Logística – 2ª Graduação',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 6 meses • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 6 meses.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Logística</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 6 meses</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Marketing – 2ª Graduação (mín. 6 meses) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Marketing – 2ª Graduação',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 6 meses • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 6 meses.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Marketing</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 6 meses</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Negócios Imobiliários – 2ª Graduação (mín. 6 meses) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Negócios Imobiliários – 2ª Graduação',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 6 meses • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 6 meses.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Negócios Imobiliários</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 6 meses</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Processos Gerenciais – 2ª Graduação (mín. 1 ano) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Processos Gerenciais – 2ª Graduação (mín. 1 ano)',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 1 ano • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 1 ano.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Processos Gerenciais (mín. 1 ano)</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 1 ano</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Processos Gerenciais – 2ª Graduação (mín. 6 meses) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Processos Gerenciais – 2ª Graduação (mín. 6 meses)',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 6 meses • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 6 meses.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Processos Gerenciais (mín. 6 meses)</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 6 meses</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Publicidade e Propaganda – 2ª Graduação (mín. 1 ano) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Publicidade e Propaganda – 2ª Graduação',
-       '2ª Graduação • Bacharelado',
-       'Mín. 1 ano • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 1 ano.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: sim.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Publicidade e Propaganda</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Bacharelado</span>
-    <span class="tag duracao">Mín. 1 ano</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Secretariado – 2ª Graduação (mín. 6 meses) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Secretariado – 2ª Graduação',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 6 meses • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 6 meses.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Secretariado</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 6 meses</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Segurança do Trabalho – 2ª Graduação (mín. 1 ano) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Segurança do Trabalho – 2ª Graduação',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 1 ano • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 1 ano.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Segurança do Trabalho</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 1 ano</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Segurança Pública – 2ª Graduação (mín. 6 meses) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Segurança Pública – 2ª Graduação',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 6 meses • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 6 meses.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Segurança Pública</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 6 meses</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Sistemas de Informação – 2ª Graduação (mín. 1 ano) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Sistemas de Informação – 2ª Graduação',
-       '2ª Graduação • Bacharelado',
-       'Mín. 1 ano • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 1 ano.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Sistemas de Informação</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Bacharelado</span>
-    <span class="tag duracao">Mín. 1 ano</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Sistemas para Internet – 2ª Graduação (Bacharelado, mín. 1 ano) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Sistemas para Internet – 2ª Graduação (Bacharelado)',
-       '2ª Graduação • Bacharelado',
-       'Mín. 1 ano • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 1 ano.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Sistemas para Internet (Bacharelado)</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Bacharelado</span>
-    <span class="tag duracao">Mín. 1 ano</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Sistemas para Internet – 2ª Graduação (Tecnólogo, mín. 6 meses) -->
-    <div class="curso-card"
-     data-area="segunda-negocios"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Sistemas para Internet – 2ª Graduação (Tecnólogo)',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 6 meses • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 6 meses.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Sistemas para Internet (Tecnólogo)</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 6 meses</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- 2ª GRADUAÇÃO – OUTROS CURSOS -->
-<div class="grupo-area" data-area="segunda-outros">
-  <button class="grupo-titulo" onclick="toggleArea(this)" aria-expanded="false">
-    Outras 2ª Graduações
-    <span class="grupo-arrow">▼</span>
-  </button>
-
-  <div class="cursos-grid grupo-body" style="display:none;">
-
-    <div class="info-card"
-         style="grid-column:1/-1;background:#f9fafb;border:1px solid #e5e7eb;border-radius:12px;
-                padding:16px 20px;margin-bottom:8px;font-size:0.88rem;color:#374151;line-height:1.8;">
-      <div style="display:flex;flex-wrap:wrap;gap:10px 24px;margin-bottom:10px;">
-        <span><strong>Duração:</strong> de 6 meses a 2 anos (conforme o curso de origem)</span>
-        <span><strong>Matrícula:</strong> Grátis</span>
-      </div>
-      <p style="margin:0 0 4px;">💡 Valores com desconto de pontualidade. Pode haver reajuste anual.</p>
-      <p style="margin:0;font-weight:600;">
-        ⚠️ Pré-requisito: portador de diploma de curso superior, conforme regulamento da 2ª Graduação.
-      </p>
-    </div>
-
-    <!-- Design de Produto – 2ª Graduação -->
-    <div class="curso-card"
-     data-area="segunda-outros"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Design de Produto – 2ª Graduação',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 6 meses • R$ 67,50/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 6 meses.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório: não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Design de Produto</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 6 meses</span>
-    <span class="tag valor">R$ 67,50/mês</span>
-  </div>
-    </div>
-
-    <!-- Jogos Digitais – 2ª Graduação -->
-    <div class="curso-card"
-     data-area="segunda-outros"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Jogos Digitais – 2ª Graduação',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 6 meses • R$ 67,50/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 6 meses.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório: não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Jogos Digitais</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 6 meses</span>
-    <span class="tag valor">R$ 67,50/mês</span>
-  </div>
-    </div>
-
-    <!-- Produção Publicitária – 2ª Graduação -->
-    <div class="curso-card"
-     data-area="segunda-outros"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Produção Publicitária – 2ª Graduação',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 6 meses • R$ 67,50/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 6 meses.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório: não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Produção Publicitária</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 6 meses</span>
-    <span class="tag valor">R$ 67,50/mês</span>
-  </div>
-    </div>
-
-    <!-- Segurança no Trânsito – 2ª Graduação -->
-    <div class="curso-card"
-     data-area="segunda-outros"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Segurança no Trânsito – 2ª Graduação',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 6 meses • R$ 67,50/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 6 meses.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório: não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Segurança no Trânsito</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 6 meses</span>
-    <span class="tag valor">R$ 67,50/mês</span>
-  </div>
-    </div>
-
-    <!-- Processos Escolares – 2ª Graduação -->
-    <div class="curso-card"
-     data-area="segunda-outros"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Processos Escolares – 2ª Graduação',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 6 meses • R$ 89,70/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 6 meses.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Processos Escolares</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 6 meses</span>
-    <span class="tag valor">R$ 89,70/mês</span>
-  </div>
-    </div>
-
-    <!-- Teologia – 2ª Graduação -->
-    <div class="curso-card"
-     data-area="segunda-outros"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Teologia – 2ª Graduação',
-       '2ª Graduação • Bacharelado',
-       'Mín. 1 ano • R$ 89,70/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 1 ano.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): sim.</li>
-          <li>TCC: sim.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Teologia</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Bacharelado</span>
-    <span class="tag duracao">Mín. 1 ano</span>
-    <span class="tag valor">R$ 89,70/mês</span>
-  </div>
-    </div>
-
-    <!-- Artes Visuais – 2ª Graduação -->
-    <div class="curso-card"
-     data-area="segunda-outros"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Artes Visuais – 2ª Graduação',
-       '2ª Graduação • Bacharelado',
-       'Mín. 1 ano • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 1 ano.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: sim.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Artes Visuais</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Bacharelado</span>
-    <span class="tag duracao">Mín. 1 ano</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Análise e Desenvolvimento de Sistemas – 2ª Graduação (Bacharelado) -->
-    <div class="curso-card"
-     data-area="segunda-outros"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Análise e Desenvolvimento de Sistemas – 2ª Graduação (Bacharelado)',
-       '2ª Graduação • Bacharelado',
-       'Mín. 1 ano • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 1 ano.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Análise e Desenvolvimento de Sistemas (Bacharelado)</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Bacharelado</span>
-    <span class="tag duracao">Mín. 1 ano</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Análise e Desenvolvimento de Sistemas – 2ª Graduação (Tecnólogo) -->
-    <div class="curso-card"
-     data-area="segunda-outros"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Análise e Desenvolvimento de Sistemas – 2ª Graduação (Tecnólogo)',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 6 meses • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 6 meses.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Análise e Desenvolvimento de Sistemas (Tecnólogo)</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 6 meses</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Biblioteconomia – 2ª Graduação -->
-    <div class="curso-card"
-     data-area="segunda-outros"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Biblioteconomia – 2ª Graduação',
-       '2ª Graduação • Bacharelado',
-       'Mín. 1 ano • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 1 ano.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: sim.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Biblioteconomia</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Bacharelado</span>
-    <span class="tag duracao">Mín. 1 ano</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Design de Interiores – 2ª Graduação -->
-    <div class="curso-card"
-     data-area="segunda-outros"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Design de Interiores – 2ª Graduação',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 6 meses • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 6 meses.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Design de Interiores</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 6 meses</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Design Gráfico – 2ª Graduação -->
-    <div class="curso-card"
-     data-area="segunda-outros"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Design Gráfico – 2ª Graduação',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 6 meses • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 6 meses.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Design Gráfico</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 6 meses</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-    
-    <!-- Gastronomia – 2ª Graduação -->
-    <div class="curso-card"
-     data-area="segunda-outros"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Gastronomia – 2ª Graduação (mín. 1 ano)',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 1 ano • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 1 ano.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Gastronomia (mín. 1 ano)</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 1 ano</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Gastronomia – 2ª Graduação (mín. 6 meses) -->
-    <div class="curso-card"
-     data-area="segunda-outros"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Gastronomia – 2ª Graduação (mín. 6 meses)',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 6 meses • R$ 99,00/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 6 meses.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): não.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Gastronomia (mín. 6 meses)</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 6 meses</span>
-    <span class="tag valor">R$ 99,00/mês</span>
-  </div>
-    </div>
-
-    <!-- Estética e Cosmética – 2ª Graduação -->
-    <div class="curso-card"
-     data-area="segunda-outros"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Estética e Cosmética – 2ª Graduação',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 6 meses • R$ 149,70/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 6 meses.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): sim.</li>
-          <li>TCC: não.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Estética e Cosmética</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 6 meses</span>
-    <span class="tag valor">R$ 149,70/mês</span>
-  </div>
-    </div>
-
-    <!-- Engenharia de Produção – 2ª Graduação -->
-    <div class="curso-card"
-     data-area="segunda-outros"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Engenharia de Produção – 2ª Graduação',
-       '2ª Graduação • Bacharelado',
-       'Mín. 1 ano • R$ 149,70/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 1 ano.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): sim.</li>
-          <li>TCC: sim.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Engenharia de Produção</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Bacharelado</span>
-    <span class="tag duracao">Mín. 1 ano</span>
-    <span class="tag valor">R$ 149,70/mês</span>
-  </div>
-    </div>
-
-    <!-- Engenharia Ambiental e Sanitária – 2ª Graduação -->
-    <div class="curso-card"
-     data-area="segunda-outros"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Engenharia Ambiental e Sanitária – 2ª Graduação',
-       '2ª Graduação • Bacharelado',
-       'Mín. 2 anos • R$ 149,70/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 2 anos.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): sim.</li>
-          <li>TCC: sim.</li>
-          <li>Forma de pagamento: 24 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Engenharia Ambiental e Sanitária</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Bacharelado</span>
-    <span class="tag duracao">Mín. 2 anos</span>
-    <span class="tag valor">R$ 149,70/mês</span>
-  </div>
-    </div>
-
-    <!-- Engenharia de Software – 2ª Graduação -->
-    <div class="curso-card"
-     data-area="segunda-outros"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Engenharia de Software – 2ª Graduação',
-       '2ª Graduação • Bacharelado',
-       'Mín. 1 ano • R$ 149,70/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 1 ano.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): sim.</li>
-          <li>TCC: sim.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Engenharia de Software</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Bacharelado</span>
-    <span class="tag duracao">Mín. 1 ano</span>
-    <span class="tag valor">R$ 149,70/mês</span>
-  </div>
-    </div>
-
-    <!-- Terapias Integrativas e Complementares – 2ª Graduação -->
-    <div class="curso-card"
-     data-area="segunda-outros"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Terapias Integrativas e Complementares – 2ª Graduação',
-       '2ª Graduação • Tecnólogo',
-       'Mín. 6 meses • R$ 149,70/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 6 meses.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): sim.</li>
-          <li>TCC: sim.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Terapias Integrativas e Complementares</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Tecnólogo</span>
-    <span class="tag duracao">Mín. 6 meses</span>
-    <span class="tag valor">R$ 149,70/mês</span>
-  </div>
-    </div>
-
-    <!-- Arquitetura e Urbanismo – 2ª Graduação -->
-    <div class="curso-card"
-     data-area="segunda-outros"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Arquitetura e Urbanismo – 2ª Graduação',
-       '2ª Graduação • Bacharelado',
-       'Mín. 2 anos • R$ 239,70/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 2 anos.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): sim.</li>
-          <li>TCC: sim.</li>
-          <li>Forma de pagamento: 24 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Arquitetura e Urbanismo</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Bacharelado</span>
-    <span class="tag duracao">Mín. 2 anos</span>
-    <span class="tag valor">R$ 239,70/mês</span>
-  </div>
-    </div>
-
-    <!-- Engenharia Agronômica – 2ª Graduação -->
-    <div class="curso-card"
-     data-area="segunda-outros"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Engenharia Agronômica – 2ª Graduação',
-       '2ª Graduação • Bacharelado',
-       'Mín. 2 anos • R$ 239,70/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 2 anos.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): sim.</li>
-          <li>TCC: sim.</li>
-          <li>Forma de pagamento: 24 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Engenharia Agronômica</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Bacharelado</span>
-    <span class="tag duracao">Mín. 2 anos</span>
-    <span class="tag valor">R$ 239,70/mês</span>
-  </div>
-    </div>
-
-    <!-- Engenharia Civil – 2ª Graduação -->
-    <div class="curso-card"
-     data-area="segunda-outros"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Engenharia Civil – 2ª Graduação',
-       '2ª Graduação • Bacharelado',
-       'Mín. 2 anos • R$ 239,70/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 2 anos.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): sim.</li>
-          <li>TCC: sim.</li>
-          <li>Forma de pagamento: 24 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Engenharia Civil</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Bacharelado</span>
-    <span class="tag duracao">Mín. 2 anos</span>
-    <span class="tag valor">R$ 239,70/mês</span>
-  </div>
-    </div>
-
-    <!-- Engenharia da Computação – 2ª Graduação (mín. 2 anos) -->
-    <div class="curso-card"
-     data-area="segunda-outros"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Engenharia da Computação – 2ª Graduação (mín. 2 anos)',
-       '2ª Graduação • Bacharelado',
-       'Mín. 2 anos • R$ 239,70/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 2 anos.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): sim.</li>
-          <li>TCC: sim.</li>
-          <li>Forma de pagamento: 24 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Engenharia da Computação (mín. 2 anos)</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Bacharelado</span>
-    <span class="tag duracao">Mín. 2 anos</span>
-    <span class="tag valor">R$ 239,70/mês</span>
-  </div>
-    </div>
-
-    <!-- Engenharia da Computação – 2ª Graduação (mín. 1 ano) -->
-    <div class="curso-card"
-     data-area="segunda-outros"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Engenharia da Computação – 2ª Graduação (mín. 1 ano)',
-       '2ª Graduação • Bacharelado',
-       'Mín. 1 ano • R$ 239,70/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 1 ano.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): sim.</li>
-          <li>TCC: sim.</li>
-          <li>Forma de pagamento: 12 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Engenharia da Computação (mín. 1 ano)</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Bacharelado</span>
-    <span class="tag duracao">Mín. 1 ano</span>
-    <span class="tag valor">R$ 239,70/mês</span>
-  </div>
-    </div>
-
-    <!-- Engenharia Elétrica – 2ª Graduação -->
-    <div class="curso-card"
-     data-area="segunda-outros"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Engenharia Elétrica – 2ª Graduação',
-       '2ª Graduação • Bacharelado',
-       'Mín. 2 anos • R$ 239,70/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 2 anos.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): sim.</li>
-          <li>TCC: sim.</li>
-          <li>Forma de pagamento: 24 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Engenharia Elétrica</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Bacharelado</span>
-    <span class="tag duracao">Mín. 2 anos</span>
-    <span class="tag valor">R$ 239,70/mês</span>
-  </div>
-    </div>
-
-    <!-- Engenharia Mecânica – 2ª Graduação -->
-    <div class="curso-card"
-     data-area="segunda-outros"
-     data-tab="segunda"
-     onclick="abrirModal(
-       'Engenharia Mecânica – 2ª Graduação',
-       '2ª Graduação • Bacharelado',
-       'Mín. 2 anos • R$ 239,70/mês',
-       `<ul style='padding-left:1.2rem; margin-top:8px;'>
-          <li>Duração mínima: 2 anos.</li>
-          <li>Prática em laboratório: não.</li>
-          <li>Aula no Polo: não.</li>
-          <li>Estágio obrigatório (ESTG): sim.</li>
-          <li>TCC: sim.</li>
-          <li>Forma de pagamento: 24 mensalidades.</li>
-          <li>Pode haver reajuste anual na mensalidade.</li>
-        </ul>`
-     )">
-  <div class="curso-nome">Engenharia Mecânica</div>
-  <div class="curso-tags">
-    <span class="tag modalidade">2ª Graduação • Bacharelado</span>
-    <span class="tag duracao">Mín. 2 anos</span>
-    <span class="tag valor">R$ 239,70/mês</span>
-  </div>
-    </div>
-
-  </div>
-</div>
 
 </div>
 
@@ -8510,9 +7229,12 @@ Copiar
   </div>
 </div>
 
+</div><!-- /aba Pós-Graduação -->
+
   <div class="vazio" id="semResultado">Nenhum curso encontrado para esta busca.</div>
 
 </div><!-- /cursos-container -->
+</div><!-- /filtros-section -->
     
 <!-- MODAL DE CURSO -->
 <div class="modal-overlay" id="modalCurso" onclick="fecharModalFora(event)">
@@ -8575,14 +7297,20 @@ Copiar
       tabContentToShow.style.display = ''; // Ou 'block' ou 'grid' dependendo do seu layout
     }
 
-    // Fecha todos os grupos (accordions) ao trocar de tab
-    document.querySelectorAll('.grupo-titulo').forEach(b => {
-      b.setAttribute('aria-expanded', 'false');
-      const body = b.nextElementSibling;
-      if (body) body.style.display = 'none';
-    });
+    // Volta os grupos (accordions) ao estado inicial ao trocar de tab
+    document.querySelectorAll('.grupo-titulo').forEach(estadoInicial);
 
     filtrarBusca(); // Mantém a função de busca se ela existir
+  }
+
+  // Estado inicial de um grupo: fechado, a não ser que a área tenha
+  // data-aberto-padrao="true" (ex.: 2ª Licenciatura, único grupo da aba).
+  function estadoInicial(btn) {
+    const area = btn.closest('.grupo-area');
+    const abrir = !!(area && area.dataset.abertoPadrao === 'true');
+    btn.setAttribute('aria-expanded', abrir ? 'true' : 'false');
+    const body = btn.nextElementSibling;
+    if (body) body.style.display = abrir ? 'grid' : 'none';
   }
 
   // ── Busca por nome ──────────────────────────────────────────
@@ -8626,9 +7354,8 @@ Copiar
           if (btn)  btn.setAttribute('aria-expanded', 'false');
           if (body) body.style.display = 'none';
         }
-      } else { // Se não houver busca, garante que os grupos voltem ao estado inicial (fechados)
-        if (btn)  btn.setAttribute('aria-expanded', 'false');
-        if (body) body.style.display = 'none';
+      } else { // Se não houver busca, garante que os grupos voltem ao estado inicial
+        if (btn) estadoInicial(btn);
       }
 
       if (temNoGrupo) temAlgum = true;
