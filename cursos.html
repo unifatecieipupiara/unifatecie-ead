@@ -727,6 +727,9 @@
       border-radius: 6px;
     }
 
+    .tag.lancamento { background: var(--primary); color: #000; font-weight: 800; }
+    .tag.em-breve   { background: rgba(252,211,77,.12); color: #fcd34d; border: 1px solid rgba(252,211,77,.45); font-weight: 700; }
+
     .tag.grade-link {
       background: rgba(251,191,36,.14);
       color: #fcd34d;
@@ -858,7 +861,8 @@ Copiar
   margin-bottom: 20px;
   white-space: pre-line;
 }
-.modal-descricao ul { white-space: normal; } /* evita linhas em branco entre os itens */
+.modal-descricao ul { white-space: normal; }
+.modal-resumo { white-space: normal; font-size: .95rem; color: var(--white); margin-bottom: 4px; } /* evita linhas em branco entre os itens */
 .modal-btn-wpp {
   display: flex;
   align-items: center;
@@ -3529,6 +3533,315 @@ Copiar
     </button>
     <div class="cursos-grid grupo-body" style="display:none;">
 
+    <!-- ===== LANÇAMENTOS FATECIE BLACK (11) ===== -->
+    <!-- LANÇAMENTO nov./2026: Libras, Surdez e Educação Bilíngue -->
+    <div class="curso-card"
+         data-area="pos-educacao"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Libras, Surdez e Educação Bilíngue',
+           'Pós-graduação • Educação',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Libras e educação bilíngue para uma escola mais acessível.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: nov./2026.</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Libras, Surdez e Educação Bilíngue</div>
+      <div class="curso-tags">
+        <span class="tag lancamento">Lançamento nov./2026</span>
+        <span class="tag modalidade">Pós em Educação</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO dez./2026: ABA Aplicada ao Contexto Escolar -->
+    <div class="curso-card"
+         data-area="pos-educacao"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em ABA Aplicada ao Contexto Escolar',
+           'Pós-graduação • Educação',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>ABA aplicada à realidade da escola e da inclusão.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: dez./2026 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">ABA Aplicada ao Contexto Escolar</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · dez./2026</span>
+        <span class="tag modalidade">Pós em Educação</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO dez./2026: Altas Habilidades, Superdotação e Dupla Excepcionalidade -->
+    <div class="curso-card"
+         data-area="pos-educacao"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Altas Habilidades, Superdotação e Dupla Excepcionalidade',
+           'Pós-graduação • Educação',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Potencial elevado também exige estratégias educacionais específicas.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: dez./2026 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Altas Habilidades, Superdotação e Dupla Excepcionalidade</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · dez./2026</span>
+        <span class="tag modalidade">Pós em Educação</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO dez./2026: Educação Especial e Deficiência Intelectual e Múltipla -->
+    <div class="curso-card"
+         data-area="pos-educacao"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Educação Especial e Deficiência Intelectual e Múltipla',
+           'Pós-graduação • Educação',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Práticas pedagógicas para ampliar participação e aprendizagem.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: dez./2026 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Educação Especial e Deficiência Intelectual e Múltipla</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · dez./2026</span>
+        <span class="tag modalidade">Pós em Educação</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO dez./2026: Educação para as Relações Étnico-Raciais e Diversidade -->
+    <div class="curso-card"
+         data-area="pos-educacao"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Educação para as Relações Étnico-Raciais e Diversidade',
+           'Pós-graduação • Educação',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Educação que reconhece diversidade e enfrenta desigualdades.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: dez./2026 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Educação para as Relações Étnico-Raciais e Diversidade</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · dez./2026</span>
+        <span class="tag modalidade">Pós em Educação</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO dez./2026: Neurodiversidade e Práticas Pedagógicas Inclusivas -->
+    <div class="curso-card"
+         data-area="pos-educacao"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Neurodiversidade e Práticas Pedagógicas Inclusivas',
+           'Pós-graduação • Educação',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Transforme neurodiversidade em práticas pedagógicas inclusivas.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: dez./2026 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Neurodiversidade e Práticas Pedagógicas Inclusivas</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · dez./2026</span>
+        <span class="tag modalidade">Pós em Educação</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO dez./2026: Orientação Educacional e Mediação Escolar -->
+    <div class="curso-card"
+         data-area="pos-educacao"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Orientação Educacional e Mediação Escolar',
+           'Pós-graduação • Educação',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Mediação e orientação para relações escolares mais saudáveis.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: dez./2026 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Orientação Educacional e Mediação Escolar</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · dez./2026</span>
+        <span class="tag modalidade">Pós em Educação</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO jan./2027: Gestão de Polos e Operações da Educação a Distância -->
+    <div class="curso-card"
+         data-area="pos-educacao"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Gestão de Polos e Operações da Educação a Distância',
+           'Pós-graduação • Educação',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Gestão de polos EAD orientada por operação, experiência e resultados.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: jan./2027 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Gestão de Polos e Operações da Educação a Distância</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · jan./2027</span>
+        <span class="tag modalidade">Pós em Educação</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO jan./2027: MBA em Regulação, Avaliação e Gestão Estratégica do Ensino Superior -->
+    <div class="curso-card"
+         data-area="pos-educacao"
+         data-tab="pos"
+         onclick="abrirModal(
+           'MBA em Regulação, Avaliação e Gestão Estratégica do Ensino Superior',
+           'Pós-graduação • Educação • MBA',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Regulação e avaliação transformadas em gestão estratégica da IES.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: jan./2027 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">MBA em Regulação, Avaliação e Gestão Estratégica do Ensino Superior</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · jan./2027</span>
+        <span class="tag modalidade">Pós em Educação • MBA</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO jan./2027: Supervisão Escolar e Coordenação Pedagógica -->
+    <div class="curso-card"
+         data-area="pos-educacao"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Supervisão Escolar e Coordenação Pedagógica',
+           'Pós-graduação • Educação',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Liderança pedagógica para fortalecer professores e aprendizagem.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: jan./2027 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Supervisão Escolar e Coordenação Pedagógica</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · jan./2027</span>
+        <span class="tag modalidade">Pós em Educação</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO jan./2027: Inspeção Escolar, Legislação e Regularização Educacional -->
+    <div class="curso-card"
+         data-area="pos-educacao"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Inspeção Escolar, Legislação e Regularização Educacional',
+           'Pós-graduação • Educação',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Conformidade acadêmica para instituições educacionais mais seguras.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: jan./2027 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Inspeção Escolar, Legislação e Regularização Educacional</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · jan./2027</span>
+        <span class="tag modalidade">Pós em Educação</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
       <!-- EDUCAÇÃO (lista completa do anexo, incluindo Educação Física como subárea de Educação) -->
         <!-- Alfabetização e Letramento -->
         <div class="curso-card"
@@ -4729,6 +5042,203 @@ Copiar
   </button>
 
   <div class="cursos-grid grupo-body" style="display:none;">
+
+    <!-- ===== LANÇAMENTOS FATECIE BLACK (7) ===== -->
+    <!-- LANÇAMENTO nov./2026: Engenharia de Vendas Digitais: CRM, Automação e Inteligência Comercial -->
+    <div class="curso-card"
+         data-area="pos-gestao-negocios"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Engenharia de Vendas Digitais: CRM, Automação e Inteligência Comercial',
+           'Pós-graduação • Gestão e Negócios',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Dados, CRM e automação para vender com mais inteligência.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: nov./2026.</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Engenharia de Vendas Digitais: CRM, Automação e Inteligência Comercial</div>
+      <div class="curso-tags">
+        <span class="tag lancamento">Lançamento nov./2026</span>
+        <span class="tag modalidade">Pós em Gestão e Negócios</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO nov./2026: Gestão da Produção Agropecuária e Cadeias de Suprimentos -->
+    <div class="curso-card"
+         data-area="pos-gestao-negocios"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Gestão da Produção Agropecuária e Cadeias de Suprimentos',
+           'Pós-graduação • Gestão e Negócios',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Produção, logística e gestão conectadas em toda a cadeia do agro.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: nov./2026.</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Gestão da Produção Agropecuária e Cadeias de Suprimentos</div>
+      <div class="curso-tags">
+        <span class="tag lancamento">Lançamento nov./2026</span>
+        <span class="tag modalidade">Pós em Gestão e Negócios</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO nov./2026: Gestão de Custos, Finanças e Comercialização no Agronegócio -->
+    <div class="curso-card"
+         data-area="pos-gestao-negocios"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Gestão de Custos, Finanças e Comercialização no Agronegócio',
+           'Pós-graduação • Gestão e Negócios',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Custos, finanças e mercado para decisões melhores no agronegócio.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: nov./2026.</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Gestão de Custos, Finanças e Comercialização no Agronegócio</div>
+      <div class="curso-tags">
+        <span class="tag lancamento">Lançamento nov./2026</span>
+        <span class="tag modalidade">Pós em Gestão e Negócios</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO nov./2026: Marketing de Performance, Gestão de Tráfego e Conversão -->
+    <div class="curso-card"
+         data-area="pos-gestao-negocios"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Marketing de Performance, Gestão de Tráfego e Conversão',
+           'Pós-graduação • Gestão e Negócios',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Transforme tráfego e dados em conversão mensurável.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: nov./2026.</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Marketing de Performance, Gestão de Tráfego e Conversão</div>
+      <div class="curso-tags">
+        <span class="tag lancamento">Lançamento nov./2026</span>
+        <span class="tag modalidade">Pós em Gestão e Negócios</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO jan./2027: Auditoria, Controles Internos e Prevenção de Fraudes -->
+    <div class="curso-card"
+         data-area="pos-gestao-negocios"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Auditoria, Controles Internos e Prevenção de Fraudes',
+           'Pós-graduação • Gestão e Negócios',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Controles mais fortes para prevenir riscos, erros e fraudes.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: jan./2027 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Auditoria, Controles Internos e Prevenção de Fraudes</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · jan./2027</span>
+        <span class="tag modalidade">Pós em Gestão e Negócios</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO jan./2027: Compliance, Governança Corporativa e Gestão de Riscos -->
+    <div class="curso-card"
+         data-area="pos-gestao-negocios"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Compliance, Governança Corporativa e Gestão de Riscos',
+           'Pós-graduação • Gestão e Negócios',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Compliance, governança e riscos integrados à estratégia do negócio.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: jan./2027 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Compliance, Governança Corporativa e Gestão de Riscos</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · jan./2027</span>
+        <span class="tag modalidade">Pós em Gestão e Negócios</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO jan./2027: Compliance, Integridade e Proteção de Dados -->
+    <div class="curso-card"
+         data-area="pos-gestao-negocios"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Compliance, Integridade e Proteção de Dados',
+           'Pós-graduação • Gestão e Negócios',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Integridade, privacidade e segurança para organizações digitais.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: jan./2027 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Compliance, Integridade e Proteção de Dados</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · jan./2027</span>
+        <span class="tag modalidade">Pós em Gestão e Negócios</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
 
     <!-- Agricultura e Manejo Sustentável -->
     <div class="curso-card"
@@ -6394,6 +6904,175 @@ Copiar
 
   <div class="cursos-grid grupo-body" style="display:none;">
 
+    <!-- ===== LANÇAMENTOS FATECIE BLACK (6) ===== -->
+    <!-- LANÇAMENTO nov./2026: Agricultura de Precisão e Tecnologias no Agronegócio -->
+    <div class="curso-card"
+         data-area="pos-engenharia-arquitetura"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Agricultura de Precisão e Tecnologias no Agronegócio',
+           'Pós-graduação • Engenharia e Arquitetura',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Dados e tecnologia para decisões mais precisas no campo.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: nov./2026.</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Agricultura de Precisão e Tecnologias no Agronegócio</div>
+      <div class="curso-tags">
+        <span class="tag lancamento">Lançamento nov./2026</span>
+        <span class="tag modalidade">Pós em Engenharia e Arquitetura</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO nov./2026: Fitossanidade e Manejo Integrado de Culturas -->
+    <div class="curso-card"
+         data-area="pos-engenharia-arquitetura"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Fitossanidade e Manejo Integrado de Culturas',
+           'Pós-graduação • Engenharia e Arquitetura',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Proteção de culturas com manejo integrado e visão tecnológica.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: nov./2026.</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Fitossanidade e Manejo Integrado de Culturas</div>
+      <div class="curso-tags">
+        <span class="tag lancamento">Lançamento nov./2026</span>
+        <span class="tag modalidade">Pós em Engenharia e Arquitetura</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO nov./2026: Lean Construction, Produtividade e Gestão de Obras -->
+    <div class="curso-card"
+         data-area="pos-engenharia-arquitetura"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Lean Construction, Produtividade e Gestão de Obras',
+           'Pós-graduação • Engenharia e Arquitetura',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Mais produtividade e menos desperdício na gestão de obras.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: nov./2026.</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Lean Construction, Produtividade e Gestão de Obras</div>
+      <div class="curso-tags">
+        <span class="tag lancamento">Lançamento nov./2026</span>
+        <span class="tag modalidade">Pós em Engenharia e Arquitetura</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO nov./2026: Orçamento, Custos e Planejamento de Obras -->
+    <div class="curso-card"
+         data-area="pos-engenharia-arquitetura"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Orçamento, Custos e Planejamento de Obras',
+           'Pós-graduação • Engenharia e Arquitetura',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Orçamento e planejamento para obras com mais controle e previsibilidade.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: nov./2026.</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Orçamento, Custos e Planejamento de Obras</div>
+      <div class="curso-tags">
+        <span class="tag lancamento">Lançamento nov./2026</span>
+        <span class="tag modalidade">Pós em Engenharia e Arquitetura</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO nov./2026: Gestão, Fiscalização e Contratos de Obras Públicas -->
+    <div class="curso-card"
+         data-area="pos-engenharia-arquitetura"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Gestão, Fiscalização e Contratos de Obras Públicas',
+           'Pós-graduação • Engenharia e Arquitetura',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Gestão técnica e contratual para obras públicas mais seguras.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: nov./2026.</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Gestão, Fiscalização e Contratos de Obras Públicas</div>
+      <div class="curso-tags">
+        <span class="tag lancamento">Lançamento nov./2026</span>
+        <span class="tag modalidade">Pós em Engenharia e Arquitetura</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO dez./2026: BIM e Gestão da Informação da Construção -->
+    <div class="curso-card"
+         data-area="pos-engenharia-arquitetura"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em BIM e Gestão da Informação da Construção',
+           'Pós-graduação • Engenharia e Arquitetura',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>BIM como processo de integração, informação e gestão da construção.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: dez./2026 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">BIM e Gestão da Informação da Construção</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · dez./2026</span>
+        <span class="tag modalidade">Pós em Engenharia e Arquitetura</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
     <!-- Arquitetura e Urbanismo -->
     <div class="curso-card"
          data-area="pos-engenharia-arquitetura"
@@ -6478,33 +7157,6 @@ Copiar
       </div>
     </div>
 
-    <!-- Engenharia de Segurança do Trabalho (750h) -->
-    <div class="curso-card"
-         data-area="pos-engenharia-arquitetura"
-         data-tab="pos"
-         onclick="abrirModal(
-           'Especialização em Engenharia de Segurança do Trabalho (750h)',
-           'Pós-graduação • Engenharia e Arquitetura',
-           '6 meses • 750h • de 12x R$ 47,90 por 12x R$ 29,90',
-           `<ul style='padding-left:1.2rem; margin-top:8px;'>
-              <li>Tempo de curso: 6 meses.</li>
-              <li>Carga horária: 750h.</li>
-              <li>Estágio obrigatório: não.</li>
-              <li>Prática: não.</li>
-              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
-            </ul>`
-         )">
-      <div class="curso-nome">Engenharia de Segurança do Trabalho (750h)</div>
-      <div class="curso-tags">
-        <span class="tag modalidade">Pós em Engenharia e Arquitetura</span>
-        <span class="tag duracao">6 meses • 750h</span>
-      </div>
-      <div class="preco-black">
-        <span class="preco-de">de <s>12x R$ 47,90</s></span>
-        <span class="preco-por">por <strong>12x R$ 29,90</strong></span>
-        <span class="preco-limite">por tempo limitado</span>
-      </div>
-    </div>
 
     <!-- Engenharia de Software -->
     <div class="curso-card"
@@ -6713,6 +7365,175 @@ Copiar
   </button>
 
   <div class="cursos-grid grupo-body" style="display:none;">
+
+    <!-- ===== LANÇAMENTOS FATECIE BLACK (6) ===== -->
+    <!-- LANÇAMENTO dez./2026: Ciências Forenses e Perícia Jurídica -->
+    <div class="curso-card"
+         data-area="pos-direito"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Ciências Forenses e Perícia Jurídica',
+           'Pós-graduação • Direito',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Conhecimento técnico para compreender provas, investigação e perícia.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: dez./2026 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Ciências Forenses e Perícia Jurídica</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · dez./2026</span>
+        <span class="tag modalidade">Pós em Direito</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO dez./2026: Direito Digital, Inteligência Artificial e Proteção de Dados -->
+    <div class="curso-card"
+         data-area="pos-direito"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Direito Digital, Inteligência Artificial e Proteção de Dados',
+           'Pós-graduação • Direito',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Direito preparado para IA, dados e novas relações digitais.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: dez./2026 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Direito Digital, Inteligência Artificial e Proteção de Dados</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · dez./2026</span>
+        <span class="tag modalidade">Pós em Direito</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO dez./2026: Direito Imobiliário e Condominial -->
+    <div class="curso-card"
+         data-area="pos-direito"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Direito Imobiliário e Condominial',
+           'Pós-graduação • Direito',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Segurança jurídica para relações imobiliárias e condominiais.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: dez./2026 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Direito Imobiliário e Condominial</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · dez./2026</span>
+        <span class="tag modalidade">Pós em Direito</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO jan./2027: Compras Públicas e Planejamento das Contratações -->
+    <div class="curso-card"
+         data-area="pos-direito"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Compras Públicas e Planejamento das Contratações',
+           'Pós-graduação • Direito',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Planejamento para contratações públicas mais eficientes e seguras.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: jan./2027 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Compras Públicas e Planejamento das Contratações</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · jan./2027</span>
+        <span class="tag modalidade">Pós em Direito</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO jan./2027: Gestão e Fiscalização de Contratos Públicos -->
+    <div class="curso-card"
+         data-area="pos-direito"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Gestão e Fiscalização de Contratos Públicos',
+           'Pós-graduação • Direito',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Fiscalização e gestão para contratos públicos melhor executados.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: jan./2027 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Gestão e Fiscalização de Contratos Públicos</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · jan./2027</span>
+        <span class="tag modalidade">Pós em Direito</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO jan./2027: Licitações e Contratos Administrativos -->
+    <div class="curso-card"
+         data-area="pos-direito"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Licitações e Contratos Administrativos',
+           'Pós-graduação • Direito',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Lei nº 14.133/2021 aplicada à rotina de licitações e contratos.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: jan./2027 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Licitações e Contratos Administrativos</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · jan./2027</span>
+        <span class="tag modalidade">Pós em Direito</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
 
     <!-- Direito Constitucional -->
     <div class="curso-card"
@@ -6949,6 +7770,427 @@ Copiar
   </button>
 
   <div class="cursos-grid grupo-body" style="display:none;">
+
+    <!-- ===== LANÇAMENTOS FATECIE BLACK (15) ===== -->
+    <!-- LANÇAMENTO nov./2026: Desenvolvimento Infantil e Transtornos do Neurodesenvolvimento -->
+    <div class="curso-card"
+         data-area="pos-saude-bemestar"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Desenvolvimento Infantil e Transtornos do Neurodesenvolvimento',
+           'Pós-graduação • Saúde e Bem-Estar',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Compreender o desenvolvimento para intervir com mais segurança e propósito.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: nov./2026.</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Desenvolvimento Infantil e Transtornos do Neurodesenvolvimento</div>
+      <div class="curso-tags">
+        <span class="tag lancamento">Lançamento nov./2026</span>
+        <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO nov./2026: Nutrição Materno-Infantil -->
+    <div class="curso-card"
+         data-area="pos-saude-bemestar"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Nutrição Materno-Infantil',
+           'Pós-graduação • Saúde e Bem-Estar',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Nutrição especializada para cuidar da saúde desde o início da vida.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: nov./2026.</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Nutrição Materno-Infantil</div>
+      <div class="curso-tags">
+        <span class="tag lancamento">Lançamento nov./2026</span>
+        <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO nov./2026: Nutrição no Envelhecimento e Longevidade -->
+    <div class="curso-card"
+         data-area="pos-saude-bemestar"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Nutrição no Envelhecimento e Longevidade',
+           'Pós-graduação • Saúde e Bem-Estar',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Nutrição para envelhecer com mais saúde, autonomia e qualidade de vida.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: nov./2026.</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Nutrição no Envelhecimento e Longevidade</div>
+      <div class="curso-tags">
+        <span class="tag lancamento">Lançamento nov./2026</span>
+        <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO dez./2026: Neurodesenvolvimento, Autismo e Intervenção Multiprofissional -->
+    <div class="curso-card"
+         data-area="pos-saude-bemestar"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Neurodesenvolvimento, Autismo e Intervenção Multiprofissional',
+           'Pós-graduação • Saúde e Bem-Estar',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Autismo e neurodesenvolvimento sob uma perspectiva multiprofissional.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: dez./2026 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Neurodesenvolvimento, Autismo e Intervenção Multiprofissional</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · dez./2026</span>
+        <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO dez./2026: Psicologia do Esporte e Performance -->
+    <div class="curso-card"
+         data-area="pos-saude-bemestar"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Psicologia do Esporte e Performance',
+           'Pós-graduação • Saúde e Bem-Estar',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Preparação mental e comportamento como parte da performance esportiva.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: dez./2026 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Psicologia do Esporte e Performance</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · dez./2026</span>
+        <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO dez./2026: Saúde Mental, Trabalho e Bem-Estar Organizacional -->
+    <div class="curso-card"
+         data-area="pos-saude-bemestar"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Saúde Mental, Trabalho e Bem-Estar Organizacional',
+           'Pós-graduação • Saúde e Bem-Estar',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Saúde mental e riscos psicossociais no centro da gestão de pessoas.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: dez./2026 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Saúde Mental, Trabalho e Bem-Estar Organizacional</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · dez./2026</span>
+        <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO dez./2026: Terapia Ocupacional Aplicada ao Transtorno do Espectro Autista -->
+    <div class="curso-card"
+         data-area="pos-saude-bemestar"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Terapia Ocupacional Aplicada ao Transtorno do Espectro Autista',
+           'Pós-graduação • Saúde e Bem-Estar',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Terapia Ocupacional aplicada à autonomia, participação e inclusão no TEA.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: dez./2026 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Terapia Ocupacional Aplicada ao Transtorno do Espectro Autista</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · dez./2026</span>
+        <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO jan./2027: Análise do Comportamento Aplicada — ABA -->
+    <div class="curso-card"
+         data-area="pos-saude-bemestar"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Análise do Comportamento Aplicada — ABA',
+           'Pós-graduação • Saúde e Bem-Estar',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>ABA com foco em programas de ensino, intervenção e ética profissional.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: jan./2027 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Análise do Comportamento Aplicada — ABA</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · jan./2027</span>
+        <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO jan./2027: Autismo e Intervenção Comportamental -->
+    <div class="curso-card"
+         data-area="pos-saude-bemestar"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Autismo e Intervenção Comportamental',
+           'Pós-graduação • Saúde e Bem-Estar',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Intervenção comportamental para ampliar habilidades e participação no TEA.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: jan./2027 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Autismo e Intervenção Comportamental</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · jan./2027</span>
+        <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO jan./2027: Fonoaudiologia Hospitalar e Disfagia -->
+    <div class="curso-card"
+         data-area="pos-saude-bemestar"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Fonoaudiologia Hospitalar e Disfagia',
+           'Pós-graduação • Saúde e Bem-Estar',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Fonoaudiologia hospitalar com foco em disfagia e reabilitação da deglutição.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: jan./2027 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Fonoaudiologia Hospitalar e Disfagia</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · jan./2027</span>
+        <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO jan./2027: Fonoaudiologia Neurofuncional -->
+    <div class="curso-card"
+         data-area="pos-saude-bemestar"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Fonoaudiologia Neurofuncional',
+           'Pós-graduação • Saúde e Bem-Estar',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Neuroreabilitação fonoaudiológica para comunicação e funcionalidade.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: jan./2027 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Fonoaudiologia Neurofuncional</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · jan./2027</span>
+        <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO jan./2027: Psicologia Existencial e Desenvolvimento Humano -->
+    <div class="curso-card"
+         data-area="pos-saude-bemestar"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Psicologia Existencial e Desenvolvimento Humano',
+           'Pós-graduação • Saúde e Bem-Estar',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Compreender a experiência humana para qualificar a prática psicológica.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: jan./2027 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Psicologia Existencial e Desenvolvimento Humano</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · jan./2027</span>
+        <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO jan./2027: Audiologia Clínica e Reabilitação Auditiva -->
+    <div class="curso-card"
+         data-area="pos-saude-bemestar"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Audiologia Clínica e Reabilitação Auditiva',
+           'Pós-graduação • Saúde e Bem-Estar',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Da avaliação ao cuidado: audiologia clínica e reabilitação auditiva.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: jan./2027 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Audiologia Clínica e Reabilitação Auditiva</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · jan./2027</span>
+        <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO jan./2027: Fonoaudiologia da Linguagem e Desenvolvimento Infantil -->
+    <div class="curso-card"
+         data-area="pos-saude-bemestar"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Fonoaudiologia da Linguagem e Desenvolvimento Infantil',
+           'Pós-graduação • Saúde e Bem-Estar',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Linguagem e desenvolvimento infantil com intervenção baseada em evidências.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: jan./2027 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Fonoaudiologia da Linguagem e Desenvolvimento Infantil</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · jan./2027</span>
+        <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO jan./2027: Motricidade Orofacial e Distúrbios da Fala -->
+    <div class="curso-card"
+         data-area="pos-saude-bemestar"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Motricidade Orofacial e Distúrbios da Fala',
+           'Pós-graduação • Saúde e Bem-Estar',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Motricidade orofacial e fala com avaliação e intervenção especializada.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: jan./2027 (em breve).</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Motricidade Orofacial e Distúrbios da Fala</div>
+      <div class="curso-tags">
+        <span class="tag em-breve">Em breve · jan./2027</span>
+        <span class="tag modalidade">Pós em Saúde e Bem-Estar</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
 
     <!-- Administração Hospitalar e Serviços de Saúde -->
     <div class="curso-card"
@@ -7521,6 +8763,147 @@ Copiar
   </button>
 
   <div class="cursos-grid grupo-body" style="display:none;">
+
+    <!-- ===== LANÇAMENTOS FATECIE BLACK (5) ===== -->
+    <!-- LANÇAMENTO nov./2026: Arquitetura de Software e Desenvolvimento SaaS com IA -->
+    <div class="curso-card"
+         data-area="pos-inovacao-ia"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Arquitetura de Software e Desenvolvimento SaaS com IA',
+           'Pós-graduação • Inovação (IA)',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Arquitetura sólida para construir e escalar produtos SaaS.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: nov./2026.</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Arquitetura de Software e Desenvolvimento SaaS com IA</div>
+      <div class="curso-tags">
+        <span class="tag lancamento">Lançamento nov./2026</span>
+        <span class="tag modalidade">Pós em Inovação (IA)</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO nov./2026: Engenharia de Agentes de IA e Sistemas Inteligentes -->
+    <div class="curso-card"
+         data-area="pos-inovacao-ia"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Engenharia de Agentes de IA e Sistemas Inteligentes',
+           'Pós-graduação • Inovação (IA)',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Do uso da IA à construção de soluções inteligentes.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: nov./2026.</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Engenharia de Agentes de IA e Sistemas Inteligentes</div>
+      <div class="curso-tags">
+        <span class="tag lancamento">Lançamento nov./2026</span>
+        <span class="tag modalidade">Pós em Inovação (IA)</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO nov./2026: Gestão de Produtos Digitais e Product Management -->
+    <div class="curso-card"
+         data-area="pos-inovacao-ia"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Gestão de Produtos Digitais e Product Management',
+           'Pós-graduação • Inovação (IA)',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Transforme necessidades de mercado em produtos digitais que geram valor.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: nov./2026.</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Gestão de Produtos Digitais e Product Management</div>
+      <div class="curso-tags">
+        <span class="tag lancamento">Lançamento nov./2026</span>
+        <span class="tag modalidade">Pós em Inovação (IA)</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO nov./2026: UX/UI Design e Pesquisa de Experiência do Usuário -->
+    <div class="curso-card"
+         data-area="pos-inovacao-ia"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em UX/UI Design e Pesquisa de Experiência do Usuário',
+           'Pós-graduação • Inovação (IA)',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Projete experiências digitais a partir das necessidades reais do usuário.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: nov./2026.</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">UX/UI Design e Pesquisa de Experiência do Usuário</div>
+      <div class="curso-tags">
+        <span class="tag lancamento">Lançamento nov./2026</span>
+        <span class="tag modalidade">Pós em Inovação (IA)</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
+
+    <!-- LANÇAMENTO nov./2026: Cibersegurança e Defesa Digital -->
+    <div class="curso-card"
+         data-area="pos-inovacao-ia"
+         data-tab="pos"
+         onclick="abrirModal(
+           'Especialização em Cibersegurança e Defesa Digital',
+           'Pós-graduação • Inovação (IA)',
+           '3 meses • 360h • por 12x R$ 29,90',
+           `<p class='modal-resumo'>Proteja dados, sistemas e operações em um ambiente cada vez mais digital.</p><ul style='padding-left:1.2rem; margin-top:8px;'>
+              <li>Lançamento: nov./2026.</li>
+              <li>Tempo de curso: 3 meses.</li>
+              <li>Carga horária: 360h.</li>
+              <li>Modalidade: EAD.</li>
+              <li>Pagamento: 12x R$ 29,90 por tempo limitado (Fatecie Black).</li>
+            </ul>`
+         )">
+      <div class="curso-nome">Cibersegurança e Defesa Digital</div>
+      <div class="curso-tags">
+        <span class="tag lancamento">Lançamento nov./2026</span>
+        <span class="tag modalidade">Pós em Inovação (IA)</span>
+        <span class="tag duracao">3 meses • 360h</span>
+      </div>
+      <div class="preco-black">
+        <span class="preco-por"><strong>12x R$ 29,90</strong></span>
+        <span class="preco-limite">por tempo limitado</span>
+      </div>
+    </div>
 
     <!-- 1. Especialização em Inteligência Artificial e Ciência de Dados -->
     <div class="curso-card"
