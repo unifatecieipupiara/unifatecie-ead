@@ -294,6 +294,12 @@
     }
     .dot.ativo { background: var(--primary); transform: scale(1.25); }
 
+    .depoimento-iniciais {
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; font-weight: 800; color: var(--white);
+      background: var(--primary);
+    }
+
     .depoimento-cta { text-align: center; margin-top: 40px; }
     .btn-depoimento {
       display: inline-block;
@@ -308,6 +314,57 @@
     .btn-depoimento:hover {
       background: var(--primary); color: var(--white); transform: translateY(-2px);
     }
+    button.btn-depoimento { font-family: inherit; cursor: pointer; }
+
+    /* Janela "Deixe seu depoimento" */
+    .dlg-depoimento {
+      border: none; border-radius: 16px; padding: 0;
+      width: min(520px, calc(100% - 24px)); max-height: calc(100% - 24px);
+      box-shadow: 0 20px 60px rgba(0,0,0,.3); color: var(--dark);
+    }
+    .dlg-depoimento::backdrop { background: rgba(0,0,0,.6); }
+    .dep-form { padding: 26px 22px 22px; display: flex; flex-direction: column; gap: 12px; position: relative; }
+    .dep-form h3 { font-size: 1.3rem; padding-right: 30px; }
+    .dep-form .dep-sub { font-size: .9rem; color: var(--gray); line-height: 1.5; }
+    .dep-form label { display: flex; flex-direction: column; gap: 5px; font-size: .88rem; font-weight: 600; color: #374151; }
+    .dep-form input[type="text"], .dep-form select, .dep-form textarea {
+      font: inherit; font-weight: 400; font-size: 1rem;
+      padding: 10px 12px; border: 1.5px solid #d1d5db; border-radius: 10px;
+      background: var(--white); color: var(--dark); width: 100%;
+    }
+    .dep-form input:focus, .dep-form select:focus, .dep-form textarea:focus { outline: none; border-color: var(--primary); }
+    .dep-form textarea { resize: vertical; min-height: 120px; line-height: 1.5; }
+    .dep-contador { align-self: flex-end; font-size: .75rem; font-weight: 400; color: var(--gray); }
+    .dep-foto-campo { display: flex; align-items: center; gap: 14px; }
+    .dep-foto-previa {
+      width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex-shrink: 0;
+      border: 2px solid var(--primary); background: #e5e7eb;
+    }
+    .dep-foto-botao {
+      font: inherit; font-size: .9rem; font-weight: 700; cursor: pointer;
+      padding: 9px 16px; border-radius: 999px;
+      border: 1.5px solid var(--primary); background: #fff7ed; color: #c2410c;
+    }
+    .dep-foto-campo input[type="file"] { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+    .dep-form .dep-check { flex-direction: row; align-items: flex-start; gap: 10px; font-weight: 500; line-height: 1.45; }
+    .dep-form .dep-check input { width: 18px; height: 18px; margin-top: 2px; flex-shrink: 0; accent-color: var(--primary); }
+    .dep-isca { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .dep-erro { background: #fef2f2; color: #b91c1c; border-radius: 10px; padding: 10px 12px; font-size: .88rem; }
+    .dep-enviar {
+      font: inherit; font-size: 1rem; font-weight: 700; cursor: pointer;
+      padding: 13px 20px; border: none; border-radius: 999px;
+      background: var(--primary); color: var(--dark);
+    }
+    .dep-enviar:disabled { opacity: .6; cursor: wait; }
+    .dep-fechar {
+      position: absolute; top: 14px; right: 14px;
+      width: 36px; height: 36px; border-radius: 50%; border: none;
+      background: #f3f4f6; color: #374151; font-size: 1.1rem; cursor: pointer;
+    }
+    .dep-sucesso { padding: 34px 24px 28px; text-align: center; display: flex; flex-direction: column; gap: 12px; align-items: center; }
+    .dep-sucesso .dep-icone { font-size: 2.6rem; }
+    .dep-sucesso h3 { font-size: 1.3rem; }
+    .dep-sucesso p { color: var(--gray); line-height: 1.5; }
 
     /* ===== FORMULÁRIO ===== */
     #contato { background: #111111; }
@@ -720,13 +777,62 @@ Só tenho elogios a fazer a Unifatecie!</p>
     <div class="carrossel-dots" id="carrosselDots"></div>
 
     <div class="depoimento-cta">
-      <a href="https://forms.gle/4NXGkQh4NkaSrdU26"
-         target="_blank" rel="noopener" class="btn-depoimento">
+      <button type="button" class="btn-depoimento" id="btnAbrirDepoimento">
         Deixe seu depoimento
-      </a>
+      </button>
     </div>
   </div>
 </section>
+
+<!-- Janela "Deixe seu depoimento": envia para o Firestore como "pendente".
+     O depoimento só aparece no carrossel depois de aprovado no painel do polo. -->
+<dialog id="dlgDepoimento" class="dlg-depoimento" aria-labelledby="depTitulo">
+  <form id="formDepoimento" class="dep-form" novalidate>
+    <button type="button" class="dep-fechar" data-fechar-depoimento aria-label="Fechar">✕</button>
+    <h3 id="depTitulo">Deixe seu depoimento</h3>
+    <p class="dep-sub">Conte como está sendo estudar com a gente. Seu depoimento aparece no site depois de conferido pela equipe do polo.</p>
+    <label>Nome completo *
+      <input type="text" name="nome" required minlength="2" maxlength="80" autocomplete="name">
+    </label>
+    <label>Curso *
+      <input type="text" name="curso" required minlength="2" maxlength="120" placeholder="Ex.: Pedagogia, Pós em Neuropsicopedagogia">
+    </label>
+    <label>Polo *
+      <select name="polo" required>
+        <option value="">Selecione o seu polo</option>
+        <option value="ipupiara">Polo Ipupiara</option>
+        <option value="barra-do-mendes">Polo Barra do Mendes</option>
+      </select>
+    </label>
+    <label>Seu depoimento *
+      <textarea name="texto" required minlength="20" maxlength="1500" placeholder="Como está sendo a sua experiência na UniFatecie e no polo?"></textarea>
+      <span class="dep-contador" id="depContador">0 / 1500</span>
+    </label>
+    <div>
+      <span style="display:block;font-size:.88rem;font-weight:600;color:#374151;margin-bottom:6px;">Sua foto (opcional)</span>
+      <div class="dep-foto-campo">
+        <img class="dep-foto-previa" id="depFotoPrevia" alt="Prévia da sua foto" hidden>
+        <label class="dep-foto-botao" for="depFoto" id="depFotoRotulo">📷 Escolher foto</label>
+        <input type="file" id="depFoto" accept="image/*">
+      </div>
+    </div>
+    <div class="dep-isca" aria-hidden="true">
+      <label>Deixe em branco <input type="text" name="site" tabindex="-1" autocomplete="off"></label>
+    </div>
+    <label class="dep-check">
+      <input type="checkbox" name="autorizacao" required>
+      <span>Autorizo a publicação do meu depoimento, nome, curso e foto no site dos Polos UniFatecie.</span>
+    </label>
+    <p class="dep-erro" id="depErro" role="alert" hidden></p>
+    <button type="submit" class="dep-enviar" id="depEnviar">Enviar depoimento</button>
+  </form>
+  <div class="dep-sucesso" id="depSucesso" hidden>
+    <div class="dep-icone">🎉</div>
+    <h3>Obrigado pelo seu depoimento!</h3>
+    <p>Ele foi enviado para a equipe do polo e vai aparecer aqui no site depois de conferido.</p>
+    <button type="button" class="dep-enviar" data-fechar-depoimento>Fechar</button>
+  </div>
+</dialog>
 
 <!-- ===== FORMULÁRIO ===== -->
 <section id="contato">
@@ -808,20 +914,63 @@ Só tenho elogios a fazer a Unifatecie!</p>
   /* ===== CARROSSEL ===== */
   let atual = 0;
   const track  = document.getElementById('carrosselTrack');
-  const cards  = track.querySelectorAll('.depoimento-card');
-  const total  = cards.length;
   const dotsEl = document.getElementById('carrosselDots');
+  const cardsDoCarrossel = () => track.querySelectorAll('.depoimento-card');
 
-  cards.forEach((_, i) => {
-    const d = document.createElement('button');
-    d.classList.add('dot');
-    d.setAttribute('aria-label', `Depoimento ${i+1}`);
-    if(i === 0) d.classList.add('ativo');
-    d.addEventListener('click', () => irPara(i));
-    dotsEl.appendChild(d);
-  });
+  function montarDots() {
+    dotsEl.innerHTML = '';
+    cardsDoCarrossel().forEach((_, i) => {
+      const d = document.createElement('button');
+      d.classList.add('dot');
+      d.setAttribute('aria-label', `Depoimento ${i+1}`);
+      if(i === atual) d.classList.add('ativo');
+      d.addEventListener('click', () => irPara(i));
+      dotsEl.appendChild(d);
+    });
+  }
+  montarDots();
+
+  // Depoimentos aprovados no painel (Firestore) entram no começo do carrossel.
+  window.adicionarDepoimentos = function(lista) {
+    const frag = document.createDocumentFragment();
+    lista.forEach(dep => {
+      const card  = document.createElement('div');
+      card.className = 'depoimento-card';
+      const inner = document.createElement('div');
+      inner.className = 'depoimento-inner';
+      let foto;
+      if (typeof dep.foto === 'string' && dep.foto.startsWith('data:image/jpeg;base64,')) {
+        foto = document.createElement('img');
+        foto.className = 'depoimento-foto';
+        foto.src = dep.foto;
+        foto.alt = `Foto de ${dep.nome}`;
+      } else {
+        foto = document.createElement('div');
+        foto.className = 'depoimento-foto depoimento-iniciais';
+        foto.setAttribute('aria-hidden', 'true');
+        foto.textContent = String(dep.nome || '').trim().split(/\s+/).slice(0, 2).map(p => p[0]).join('').toUpperCase();
+      }
+      const texto = document.createElement('p');
+      texto.className = 'depoimento-texto';
+      texto.textContent = dep.texto;
+      const nome = document.createElement('div');
+      nome.className = 'depoimento-nome';
+      nome.textContent = dep.nome;
+      const detalhes = document.createElement('div');
+      detalhes.className = 'depoimento-detalhes';
+      detalhes.textContent = dep.detalhes;
+      inner.append(foto, texto, nome, detalhes);
+      card.appendChild(inner);
+      frag.appendChild(card);
+    });
+    track.insertBefore(frag, track.firstChild);
+    atual = 0;
+    montarDots();
+    irPara(0);
+  };
 
   function irPara(index) {
+    const total = cardsDoCarrossel().length;
     atual = (index + total) % total;
     track.style.transform = `translateX(-${atual * 100}%)`;
     document.querySelectorAll('.dot').forEach((d, i) => {
@@ -889,6 +1038,206 @@ Só tenho elogios a fazer a Unifatecie!</p>
     document.getElementById('btn-sei').classList.remove('ativo');
     document.getElementById('btn-conferir').classList.remove('ativo');
     document.getElementById('campo-curso').style.display = 'none';
+  });
+</script>
+<script type="module">
+  /* ===== DEPOIMENTOS (Firestore) =====
+     Mesmo projeto Firebase do painel do polo (black-friday-polo).
+     - Quem envia pelo formulário grava um depoimento "pendente".
+     - O carrossel mostra só os "aprovados" (aprovação na página Depoimentos do painel).
+     Estas chaves não são senha: quem pode ler e gravar é definido pelas regras
+     do Firestore (firestore.rules, no repositório do painel). */
+  const FIREBASE_CONFIG = {
+    apiKey: 'AIzaSyDRwM3Zkuh4KSx8FVN883K-U9hU5WcO5os',
+    authDomain: 'black-friday-polo.firebaseapp.com',
+    projectId: 'black-friday-polo',
+    storageBucket: 'black-friday-polo.firebasestorage.app',
+    messagingSenderId: '655278559934',
+    appId: '1:655278559934:web:3b7bb24f74ea887cd504ef',
+  };
+  const VERSAO_FIREBASE = '13.1.0';
+  const POLOS = { 'ipupiara': 'Polo Ipupiara', 'barra-do-mendes': 'Polo Barra do Mendes' };
+
+  let conexao = null;
+  function firestore() {
+    if (!conexao) {
+      const base = `https://www.gstatic.com/firebasejs/${VERSAO_FIREBASE}`;
+      conexao = Promise.all([import(`${base}/firebase-app.js`), import(`${base}/firebase-firestore.js`)])
+        .then(([{ initializeApp }, F]) => ({ F, db: F.getFirestore(initializeApp(FIREBASE_CONFIG)) }));
+      conexao.catch(() => { conexao = null; });
+    }
+    return conexao;
+  }
+
+  // ---------- carrossel: depoimentos aprovados ----------
+  async function carregarAprovados() {
+    try {
+      const { F, db } = await firestore();
+      const snap = await F.getDocs(F.query(F.collection(db, 'depoimentos'), F.where('status', '==', 'aprovado')));
+      const lista = snap.docs
+        .map((d) => d.data())
+        .sort((a, b) => (b.criadoEm?.toMillis?.() || 0) - (a.criadoEm?.toMillis?.() || 0))
+        .map((d) => ({
+          nome: d.nome,
+          texto: d.texto,
+          foto: d.foto,
+          detalhes: [d.curso, POLOS[d.polo]].filter(Boolean).join(' – '),
+        }));
+      if (lista.length) window.adicionarDepoimentos(lista);
+    } catch (err) {
+      console.warn('Depoimentos:', err.code || err.message);
+    }
+  }
+
+  // Só busca quando a seção de depoimentos chega perto da tela (não pesa o início da página).
+  const secao = document.getElementById('depoimentos');
+  if ('IntersectionObserver' in window) {
+    const observador = new IntersectionObserver((entradas) => {
+      if (entradas.some((e) => e.isIntersecting)) {
+        observador.disconnect();
+        carregarAprovados();
+      }
+    }, { rootMargin: '800px 0px' });
+    observador.observe(secao);
+  } else {
+    carregarAprovados();
+  }
+
+  // ---------- formulário "Deixe seu depoimento" ----------
+  const dlg = document.getElementById('dlgDepoimento');
+  const form = document.getElementById('formDepoimento');
+  const sucesso = document.getElementById('depSucesso');
+  const erro = document.getElementById('depErro');
+  const botaoEnviar = document.getElementById('depEnviar');
+  const inputFoto = document.getElementById('depFoto');
+  const previa = document.getElementById('depFotoPrevia');
+  const rotuloFoto = document.getElementById('depFotoRotulo');
+  const contador = document.getElementById('depContador');
+  let fotoPronta = null;
+
+  function mostrarErro(msg) {
+    erro.textContent = msg;
+    erro.hidden = false;
+    erro.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+
+  function limparFoto() {
+    fotoPronta = null;
+    previa.hidden = true;
+    previa.removeAttribute('src');
+    rotuloFoto.textContent = '📷 Escolher foto';
+  }
+
+  document.getElementById('btnAbrirDepoimento').addEventListener('click', () => {
+    form.hidden = false;
+    sucesso.hidden = true;
+    erro.hidden = true;
+    dlg.showModal();
+    firestore().catch(() => {}); // já vai conectando enquanto o aluno escreve
+  });
+
+  dlg.addEventListener('click', (e) => {
+    if (e.target === dlg || e.target.closest('[data-fechar-depoimento]')) dlg.close();
+  });
+
+  form.texto.addEventListener('input', () => {
+    contador.textContent = `${form.texto.value.length} / 1500`;
+  });
+
+  // Foto: corta em quadrado (em fotos em pé, puxa para cima, onde costuma estar o rosto)
+  // e reduz para 400 × 400 em JPEG, para caber no Firestore sem pesar.
+  async function prepararFoto(arquivo) {
+    let img;
+    try {
+      img = await createImageBitmap(arquivo);
+    } catch {
+      img = await new Promise((ok, falha) => {
+        const i = new Image();
+        i.onload = () => ok(i);
+        i.onerror = falha;
+        i.src = URL.createObjectURL(arquivo);
+      });
+    }
+    const w = img.width;
+    const h = img.height;
+    if (!w || !h) throw new Error('imagem vazia');
+    const lado = Math.min(w, h);
+    const sx = (w - lado) / 2;
+    const sy = h > w ? (h - lado) * 0.2 : (h - lado) / 2;
+    const canvas = document.createElement('canvas');
+    canvas.width = canvas.height = 400;
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#ffffff'; // fundo branco para PNG com transparência
+    ctx.fillRect(0, 0, 400, 400);
+    ctx.drawImage(img, sx, sy, lado, lado, 0, 0, 400, 400);
+    let qualidade = 0.85;
+    let url = canvas.toDataURL('image/jpeg', qualidade);
+    while (url.length > 200000 && qualidade > 0.45) {
+      qualidade -= 0.1;
+      url = canvas.toDataURL('image/jpeg', qualidade);
+    }
+    if (!url.startsWith('data:image/jpeg;base64,')) throw new Error('formato');
+    return url;
+  }
+
+  inputFoto.addEventListener('change', async () => {
+    const arquivo = inputFoto.files[0];
+    if (!arquivo) return;
+    erro.hidden = true;
+    rotuloFoto.textContent = '⏳ Preparando…';
+    try {
+      fotoPronta = await prepararFoto(arquivo);
+      previa.src = fotoPronta;
+      previa.hidden = false;
+      rotuloFoto.textContent = '🔄 Trocar foto';
+    } catch {
+      limparFoto();
+      mostrarErro('Não foi possível ler essa foto. Tente outra (JPG ou PNG).');
+    }
+    inputFoto.value = '';
+  });
+
+  function mostrarSucesso() {
+    form.reset();
+    limparFoto();
+    contador.textContent = '0 / 1500';
+    form.hidden = true;
+    sucesso.hidden = false;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    erro.hidden = true;
+    const limpar = (v) => v.trim().replace(/\s+/g, ' ');
+    const dados = {
+      nome: limpar(form.nome.value),
+      curso: limpar(form.curso.value),
+      polo: form.polo.value,
+      texto: form.texto.value.trim(),
+    };
+    if (dados.nome.length < 2) return mostrarErro('Informe o seu nome.');
+    if (dados.curso.length < 2) return mostrarErro('Informe o seu curso.');
+    if (!POLOS[dados.polo]) return mostrarErro('Selecione o seu polo.');
+    if (dados.texto.length < 20) return mostrarErro('Conte um pouco mais sobre a sua experiência (pelo menos 20 letras).');
+    if (!form.autorizacao.checked) return mostrarErro('Para publicar, marque a autorização no final do formulário.');
+    // Robôs costumam preencher o campo escondido: finge que enviou e não grava nada.
+    if (form.site.value) return mostrarSucesso();
+
+    botaoEnviar.disabled = true;
+    botaoEnviar.textContent = 'Enviando…';
+    try {
+      const { F, db } = await firestore();
+      const novo = { ...dados, autorizacao: true, status: 'pendente', criadoEm: F.serverTimestamp() };
+      if (fotoPronta) novo.foto = fotoPronta;
+      await F.addDoc(F.collection(db, 'depoimentos'), novo);
+      mostrarSucesso();
+    } catch (err) {
+      console.error(err);
+      mostrarErro('Não foi possível enviar agora. Confira a sua internet e tente de novo, ou fale com a gente pelo WhatsApp (74) 98127-0882.');
+    } finally {
+      botaoEnviar.disabled = false;
+      botaoEnviar.textContent = 'Enviar depoimento';
+    }
   });
 </script>
 <script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"c657b0174cbbcda20b664d9d383e0f3e"})});</script>
